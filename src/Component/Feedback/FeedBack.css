@@ -1,0 +1,35 @@
+.heading-2-feedback {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 3.2px;
+  line-height: 32px;
+  color: #2d2d2d;
+
+  text-transform: uppercase;
+}
+
+.c::after {
+  font-family: "Montserrat", sans-serif;
+  content: "“";
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.feedBack-name {
+  font-size: 35px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+  line-height: 44px
+}
+
+.feedBack-job {
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.75px;
+  line-height: 44px
+}
