@@ -6,7 +6,7 @@ import Error from "./Component/Error/Error";
 import Contact from "./Component/Contact/Contact";
 import Gallery from "./Component/GalleryGrid/Gallery";
 import Body from "./Component/Body/Body";
-import App from "./Component/app";
+import App from "./Component/AppLayout";
 
 let browerRouter = createBrowserRouter([
   {
