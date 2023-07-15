@@ -1,10 +1,10 @@
 .fancy {
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid var(--primary-color);
   border-radius: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
@@ -30,7 +30,7 @@
   content: " ";
   width: 1.5625rem;
   height: 2px;
-  background: black;
+  background: var(--primary-color);
   top: 50%;
   left: 1.5em;
   position: absolute;
@@ -55,7 +55,7 @@
   text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
-  color: black;
+  color: var(--primary-color);
 }
 
 .fancy .top-key {
@@ -92,17 +92,17 @@
 }
 
 .fancy:hover {
-  color: white;
-  background: black;
+  color: var(--white);
+  background: var(--primary-color);
 }
 
 .fancy:hover::before {
   width: 0.9375rem;
-  background: white;
+  background: var(--white);
 }
 
 .fancy:hover .textt {
-  color: white;
+  color: var(--white);
   padding-left: 1.5em;
 }
 
@@ -119,14 +119,18 @@
 
 .Price-logo {
   box-sizing: border-box;
-  color: rgb(100, 100, 100);
+  color: var(--gradient);
   display: block;
   font-family: "Roboto", sans-serif;
   font-size: 50px;
+  width: 55px;
+  height: 55px;
   font-style: italic;
   font-weight: 400;
   line-height: 28px;
   overflow-wrap: break-word;
+  text-transform: capitalize;
+  color: #fff;
 }
 
 .price {
@@ -135,12 +139,13 @@
   font-style: normal;
   font-weight: 700;
   line-height: 32px;
+  text-transform: capitalize;
 }
 
 .month-price {
   bottom: 2.4px;
   box-sizing: border-box;
-  color: rgb(100, 100, 100);
+  color: var(--gradient);
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -151,7 +156,7 @@
 }
 
 .price-haeding {
-  color: #000;
+  color: var(--var(--black));
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -163,7 +168,7 @@
   box-sizing: border-box;
   color: rgb(68, 68, 68);
   font-family: "Roboto Slab", serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;

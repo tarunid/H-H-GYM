@@ -1,5 +1,5 @@
 import "./Price.css";
-import { GiHandGrip } from "react-icons/gi";
+// import { GiHandGrip } from "react-icons/gi";
 import { PrcieData } from "../../Api/Home";
 
 const Price = () => {
@@ -10,14 +10,14 @@ const Price = () => {
           <div className="grid grid-cols-1 w-[80%] mx-auto">
             <div className="flex flex-col justify-center items-center text-center my-1">
               <div className="heading-bg text-center my-1">
-                <h3 className="heading-3">PRICE</h3>
+                <h3 className="heading-3-bg">PRICE</h3>
               </div>
 
               <h2 className="heading-2 py-5">Exclusive Pricing Plan</h2>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-4 w-[90%] mx-auto">
             {PrcieData.map((e, index) => {
               return (
                 <>
@@ -25,7 +25,8 @@ const Price = () => {
                     <div className="flex justify-between items-center w-[80%] mx-auto py-5">
                       <h3 className="price-haeding">{e.plan}</h3>
 
-                      <GiHandGrip className="Price-logo" />
+                      <img src={e.imgSrc} alt="priceImg" className="Price-logo"/>
+
                     </div>
 
                     <ul className="w-[80%] mx-auto py-5 leading-loose ul-tag">

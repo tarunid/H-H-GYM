@@ -1,3 +1,9 @@
+.bg-footer {
+  background-image: url('https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/footer-1-bg.png');
+  width: 100%;
+  background-size: cover;
+}
+
 .container-1,
 .container-4 {
   display: flex;
@@ -10,6 +16,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 25px;
+  color: #b1b1b1;
 }
 
 .container-2,
@@ -28,7 +35,7 @@
 }
 
 .footer-heading {
-  color: #000;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-style: normal;
@@ -38,4 +45,8 @@
 
 ul > li {
   font-size: 18px;
+}
+
+ul > *:hover {
+  color: var(--primary-color);
 }

@@ -79,7 +79,7 @@ const Contact = () => {
                   </Link>
 
                   <Link to="">
-                    <li className="flex justify-start items-center gap-2 py-2 contact-content">
+                    <li className="flex justify-start items-center gap-2 py-2 contact-content text-xs">
                       <BiLogoGmail />
                       handhfitnessclub@gmail.com
                     </li>
@@ -89,9 +89,6 @@ const Contact = () => {
                   <h3 className="contact-sub-heading">Follow Us On</h3>
                   <div className="bg-red-600 w-10 h-1 my-5"></div>
                   <div className="flex justify-start py-5 w-[100%] gap-5">
-                    <span className="bg-[#efefef] rounded-full p-3">
-                      <AiOutlineInstagram />
-                    </span>
                     <span className="bg-[#efefef] rounded-full p-3">
                       <AiOutlineInstagram />
                     </span>

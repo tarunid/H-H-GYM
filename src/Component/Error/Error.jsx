@@ -1,6 +1,6 @@
 const Error = () => {
   return (
-    <div>Error</div>
+    <div className="flex flex-col justify-center items-center h-screen">Error Page</div>
   )
 }
 

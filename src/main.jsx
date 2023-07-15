@@ -7,6 +7,9 @@ import Contact from "./Component/Contact/Contact";
 import Gallery from "./Component/GalleryGrid/Gallery";
 import Body from "./Component/Body/Body";
 import App from "./Component/AppLayout";
+import { TermCondition } from "./Component/TermAndCondition/TermCondition";
+import { PrivacyPolicy } from "./Component/PrivacyPolicy/PrivacyPolicy";
+import About from "./Component/About/About";
 
 let browerRouter = createBrowserRouter([
   {
@@ -14,16 +17,28 @@ let browerRouter = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path:"/",
-        element: <Body/>
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/contact",
         element: <Contact />,
       },
       {
+        path: "/about",
+        element: <About />,
+      },
+      {
         path: "/gallery",
         element: <Gallery />,
+      },
+      {
+        path: "/terms-and-condition",
+        element: <TermCondition />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
     errorElement: <Error />,

@@ -13,8 +13,8 @@ const Featuers = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 w-[90%] mx-auto">
-            <div className="flex flex-col justify-center items-center gap-6 py-10">
+          <div className="grid grid-cols-1 w-[90%] mx-auto bg-features h-[100%]">
+            <div className="flex flex-col justify-center items-center gap-6 pt-10 visible md:invisible">
               <div className="flex justify-center items-center gap-6 py-2">
                 <div>
                   <img

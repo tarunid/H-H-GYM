@@ -8,7 +8,8 @@ const contentStyle = {
   height: "560px",
   color: "#fff",
   textAlign: "center",
-  background: "#364d79",
+  background: "var(--black)",
+  // borderRadius: "50px",
 };
 
 const FeedBack = () => {
@@ -27,7 +28,7 @@ const FeedBack = () => {
           </div>
 
           <div className="grid grid-cols-1 w-[90%] mx-auto">
-            <div className="py-5">
+            <div className="py-5 rounded-full">
               <Carousel ref={ref}
                 autoplay
                 dots={true}
@@ -148,10 +149,10 @@ const FeedBack = () => {
 
           <div className="grid grid-cols-1 w-[90%] mx-auto">
             <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
-              <button onClick={()=>{ref.current.prev()}} className="bg-red-500 p-4 rounded-xl">
+              <button onClick={()=>{ref.current.prev()}} className="bg-[var(--primary-color)] p-4 rounded-xl">
                 <IoIosArrowBack />
               </button>
-              <button onClick={()=>{ref.current.next()}} className="bg-red-500 p-4 rounded-xl">
+              <button onClick={()=>{ref.current.next()}} className="bg-[var(--primary-color)] p-4 rounded-xl">
                 <IoIosArrowForward />
               </button>
             </div>
