@@ -1,23 +1,20 @@
-import Trainer from "../Trainer/Trainer";
+import "./choose.css";
 
-const About = () => {
+const Choose = () => {
   return (
     <>
-      <section className="py-5">
+      <section className="py-5 bg-choose">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-5">
             <div className="relative">
-              <img
-                src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/03/choose-1.png"
-                className="img-line"
-              />
+              <img  src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/03/choose-1.png" className="img-line" />
             </div>
             <div className="flex flex-col justify-start">
               <div className="py-5 bg-heroSection-heading">
-                <p className="text-[#fff]">Who We Are</p>
+                <p className="text-[#fff]">WHY CHOOSE US</p>
               </div>
-              <h2 className="choose-heading py-5 tex-[#000]">
-              We Will Give You Strength and Health
+              <h2 className="choose-heading py-5">
+                We Can Give A Shape Of Your Body Here!
               </h2>
               <div className="py-3">
                 <p className="choose-paragraph">
@@ -66,10 +63,8 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      <Trainer />
     </>
   );
 };
 
-export default About;
+export default Choose;

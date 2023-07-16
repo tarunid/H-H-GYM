@@ -5,7 +5,6 @@ import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = () => {
   const scrollTop = () => {
-
     window.scrollToTop({
       top: 0,
       behaviour: "smooth",
@@ -17,12 +16,14 @@ const Footer = () => {
       <footer className="py-20 bg-[#fff] text-[#040405] bg-footer">
         <div className="2xl:container mx-auto">
           <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly">
-            <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%]">
-              <ul className="">
-                {/* <Link to="/">
-                  <img src={Logo} alt="Logo" className="w-[165px] py-5" />
-                </Link> */}
+            <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%] relative">
+              <img
+                src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png"
+                alt="Logo"
+                className="absolute bottom-[0px] left-0"
+              />
 
+              <ul className="">
                 <p>
                   It was popularised in the 1960s with the release of Letraset
                   PageMaker including versions of Lorem Ipsum.
@@ -30,13 +31,13 @@ const Footer = () => {
 
                 <div className="flex justify-start gap-5 py-5 w-[100%]">
                   <span className="bg-[#efefef] rounded-full p-3">
-                    <AiOutlineInstagram style={{"color":"#000"}}/>
+                    <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>
                   <span className="bg-[#efefef] rounded-full p-3">
-                    <AiOutlineInstagram style={{"color":"#000"}} />
+                    <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>
                   <span className="bg-[#efefef] rounded-full p-3">
-                    <AiOutlineInstagram style={{"color":"#000"}}/>
+                    <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>
                 </div>
               </ul>
@@ -46,16 +47,16 @@ const Footer = () => {
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
                 <Link to="/" onClick={scrollTop}>
-                  <li >Home</li>
+                  <li>Home</li>
                 </Link>
                 <Link to="/about" onClick={scrollTop}>
-                  <li >About us</li>
+                  <li>About us</li>
                 </Link>
                 <Link to="/gallery" onClick={scrollTop}>
-                  <li >Gallery View</li>
+                  <li>Gallery View</li>
                 </Link>
                 <Link to="/error" onClick={scrollTop}>
-                  <li >Error Page Demo</li>
+                  <li>Error Page Demo</li>
                 </Link>
               </ul>
             </div>
@@ -63,14 +64,14 @@ const Footer = () => {
               <h3 className="footer-heading">Support</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
-                <Link to="contact" onClick={scrollTop}>
-                  <li >Contact us</li>
+                <Link to="/contact" onClick={scrollTop}>
+                  <li>Contact us</li>
                 </Link>
-                <Link to="terms-and-condition" onClick={scrollTop}>
-                  <li >Terms and Condition</li>
+                <Link to="/terms-and-condition" onClick={scrollTop}>
+                  <li>Terms and Condition</li>
                 </Link>
-                <Link to="privacy-policy" onClick={scrollTop}>
-                  <li >Privacy Policy</li>
+                <Link to="/privacy-policy" onClick={scrollTop}>
+                  <li>Privacy Policy</li>
                 </Link>
               </ul>
             </div>

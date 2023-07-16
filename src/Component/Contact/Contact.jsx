@@ -24,7 +24,7 @@ const Contact = () => {
     });
   return (
     <>
-      <section className="py-5">
+      <section className="py-10 mt-[10vh]">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[90%] mx-auto">
             <div className="flex flex-col justify-center items-center text-center">
@@ -35,7 +35,7 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
             <div className="py-10">
-              <div className="flex flex-col justify-center items-center text-center">
+              <div className="flex flex-col md:flex-row justify-center items-center">
                 {/* <Map google={this.props.google}
                 style = {{width:"100%",height:"100%"}}
                 zoom = {10}
@@ -47,8 +47,8 @@ const Contact = () => {
                 }
                 /> */}
               </div>
-              <div className="flex justify-between items-start">
-                <div className="w-[50%]">
+              <div className="flex flex-col md:flex-row justify-between items-start">
+                <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Address</h3>
                   <div className="bg-red-600 w-10 h-1 my-5"></div>
                   <p className="contact-content break-words">
@@ -59,7 +59,7 @@ const Contact = () => {
                     Pammal, Chennai, Tamil Nadu 600075
                   </p>
                 </div>
-                <div className="w-[50%]">
+                <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Opening Hours</h3>
                   <div className="bg-red-600 w-10 h-1 my-5"></div>
                   <p className="contact-content break-words">
@@ -67,8 +67,8 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-between items-start">
-                <div className="py-5 w-[50%]">
+              <div className="flex flex-col sm:flex-row justify-between items-start">
+                <div className="py-5 w-[100%] sm:w-[50%]">
                   <h3 className="contact-sub-heading">Information</h3>
                   <div className="bg-red-600 w-10 h-1 my-5"></div>
                   <Link to="">
@@ -85,7 +85,7 @@ const Contact = () => {
                     </li>
                   </Link>
                 </div>
-                <div className="py-5 w-[50%]">
+                <div className="py-5 w-[100%] sm:w-[50%]">
                   <h3 className="contact-sub-heading">Follow Us On</h3>
                   <div className="bg-red-600 w-10 h-1 my-5"></div>
                   <div className="flex justify-start py-5 w-[100%] gap-5">

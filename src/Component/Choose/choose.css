@@ -1,0 +1,49 @@
+.choose-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.choose-paragraph {
+  color: rgb(180, 180, 180);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  overflow-wrap: break-word;
+  text-align: start;
+  text-rendering: optimizelegibility;
+}
+
+.choose-sub-para {
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  overflow-wrap: break-word;
+  text-align: start;
+}
+
+
+.img-line::before {
+  content: "";
+  height: 461px;
+  width: 10px;
+  background-color: #ff0336;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%)rotate(174deg);
+  transform: translateY(-50%)rotate(174deg);
+  right: 0;
+}
