@@ -1,3 +1,11 @@
+.contact-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px
+}
+
 .contact-sub-heading {
   box-sizing: border-box;
   color: rgb(0, 0, 0);
@@ -46,7 +54,7 @@
 }
 
 .cssbuttons-io-button {
-  background: red;
+  background: var(--primary-color);
   color: white;
   font-family: "Roboto Slab", serif;
   padding: 0.35em;

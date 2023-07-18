@@ -21,7 +21,7 @@ const Price = () => {
             {PrcieData.map((e, index) => {
               return (
                 <>
-                  <div key={index} className="flex flex-col justify-center items-center w-[90%] mx-auto py-5  bg-[#e8e8e8] text-[#000] rounded-lg my-5">
+                  <div key={index} className="flex flex-col justify-center items-center w-[90%] mx-auto bg-[#e8e8e8] text-[#000] rounded-lg my-5 py-5 hover:scale-105">
                     <div className="flex justify-between items-center w-[80%] mx-auto py-5">
                       <h3 className="price-haeding">{e.plan}</h3>
 

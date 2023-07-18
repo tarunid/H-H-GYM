@@ -2,6 +2,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import Logo from "../../assets/HH_Logo.png"
 
 let Header = () => {
   let [isMobile, setisMobile] = useState(false);
@@ -51,14 +52,15 @@ let Header = () => {
         <div className="Nav-bar">
           <div className="Nav-logo-div">
             <Link to="/">
-              <p className="text-xl">Logo</p>
+              {/* <p className="text-xl">Logo</p> */}
+              <img src={Logo} className="h-[6vh]"/>
             </Link>
           </div>
 
           <ul className={isMobile ? "Nav-ul-Active" : "Nav-ul"}>
             <li className="Nav-li" id="1">
-              <Link to="/" className="Nav-a" onClick={() => autoClose()}>
-                Pricing
+              <Link to="/gallery" className="Nav-a" onClick={() => autoClose()}>
+                Gallery View
               </Link>
             </li>
             <li className="Nav-li" id="2">
@@ -78,7 +80,7 @@ let Header = () => {
                   <span className="btnn circle" aria-hidden="true">
                     <span className="icon arrow"></span>
                   </span>
-                  <span className="btnn btn-text">Learn More</span>
+                  <span className="btnn btn-text">Login</span>
                 </button>
               </Link>
             </div>

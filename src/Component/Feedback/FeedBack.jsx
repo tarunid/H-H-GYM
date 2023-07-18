@@ -9,7 +9,7 @@ const contentStyle = {
   color: "#fff",
   textAlign: "center",
   background: "var(--black)",
-  // borderRadius: "50px",
+  borderradius : "50px",
 };
 
 const FeedBack = () => {
@@ -34,7 +34,7 @@ const FeedBack = () => {
                 dots={true}
                 pauseOnHover={true}
                 pauseOnDotsHover={true}
-                draggable>
+                draggable className="rounded-full">
                 <div className="grid grid-cols-1" style={contentStyle}>
                   <div
                     className="flex flex-col justify-center items-center h-[100%] py-10"
@@ -48,7 +48,7 @@ const FeedBack = () => {
                     </div>
                     <div className="h-[10%] text-center py-5">
                       <h3 className="feedBack-name p-1">Name of Client</h3>
-                      <p className="feedBack-job p-1">Web Developer/Home Maker</p>
+                      <p className="feedBack-job p-1">Home Maker</p>
                     </div>
                     <div className="flex flex-col justify-center items-center pt-10">
                       <div className="c pt-5"></div>
@@ -75,7 +75,7 @@ const FeedBack = () => {
                     </div>
                     <div className="h-[10%] text-center py-5">
                       <h3 className="feedBack-name p-1">Name of Client</h3>
-                      <p className="feedBack-job p-1">Web Developer/Home Maker</p>
+                      <p className="feedBack-job p-1">Home Maker</p>
                     </div>
                     <div className="flex flex-col justify-center items-center pt-10">
                       <div className="c pt-5"></div>
@@ -102,7 +102,7 @@ const FeedBack = () => {
                     </div>
                     <div className="h-[10%] text-center py-5">
                       <h3 className="feedBack-name p-1">Name of Client</h3>
-                      <p className="feedBack-job p-1">Web Developer/Home Maker</p>
+                      <p className="feedBack-job p-1">Home Maker</p>
                     </div>
                     <div className="flex flex-col justify-center items-center pt-10">
                       <div className="c pt-5"></div>
@@ -129,7 +129,7 @@ const FeedBack = () => {
                     </div>
                     <div className="h-[10%] text-center py-5">
                       <h3 className="feedBack-name p-1">Name of Client</h3>
-                      <p className="feedBack-job p-1">Web Developer/Home Maker</p>
+                      <p className="feedBack-job p-1">Home Maker</p>
                     </div>
                     <div className="flex flex-col justify-center items-center pt-10">
                       <div className="c pt-5"></div>
@@ -149,10 +149,10 @@ const FeedBack = () => {
 
           <div className="grid grid-cols-1 w-[90%] mx-auto">
             <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
-              <button onClick={()=>{ref.current.prev()}} className="bg-[var(--primary-color)] p-4 rounded-xl">
+              <button onClick={()=>{ref.current.prev()}} className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]">
                 <IoIosArrowBack />
               </button>
-              <button onClick={()=>{ref.current.next()}} className="bg-[var(--primary-color)] p-4 rounded-xl">
+              <button onClick={()=>{ref.current.next()}} className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]">
                 <IoIosArrowForward />
               </button>
             </div>

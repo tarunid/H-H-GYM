@@ -13,15 +13,16 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="py-20 bg-[#fff] text-[#040405] bg-footer">
+      <footer className="py-20 bg-[#fff] text-[#040405] bg-footer relative">
+        <img src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png" className="absolute bottom-0" /> 
         <div className="2xl:container mx-auto">
-          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly">
-            <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%] relative">
-              <img
-                src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png"
+          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly pb-20">
+            <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%] static">
+              {/* <img
+                src=""
                 alt="Logo"
-                className="absolute bottom-[0px] left-0"
-              />
+                className="static bottom-0 left-0"
+              /> */}
 
               <ul className="">
                 <p>
@@ -29,7 +30,7 @@ const Footer = () => {
                   PageMaker including versions of Lorem Ipsum.
                 </p>
 
-                <div className="flex justify-start gap-5 py-5 w-[100%]">
+                <div className="flex justify-start gap-5 py-5 w-[100%] z-50">
                   <span className="bg-[#efefef] rounded-full p-3">
                     <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>

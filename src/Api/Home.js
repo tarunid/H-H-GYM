@@ -39,7 +39,7 @@ export const TrainerData = [
 
 export const OfferData = [
   {
-    "imgSrc":"https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-1.png",
+    "imgSrc":"https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-2.png",
     "title":"CROSS FIT",
     "content":"Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes."
   },
@@ -54,7 +54,7 @@ export const OfferData = [
     "content":"Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes."
   },
   {
-    "imgSrc":"https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-4.png",
+    "imgSrc":"https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png",
     "title":"CROSS FIT",
     "content":"Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes."
   }

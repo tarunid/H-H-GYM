@@ -1,53 +1,55 @@
+// import { Table } from "antd";
 import { Table } from "antd";
 import { useFormik } from "formik";
 import { useState } from "react";
+// import DataTable from "react-data-table-component";
 // import { basicSchema } from "../Contact/schema/schema";
 
 const Bmi = () => {
-  let[height , setheight] = useState(0);
-  let[weight, setweight] = useState(0);
-  let[BmiValue, setBmiValue] = useState();
-  let[BmiMessage, setBmiMessage] = useState();
+  let [height, setheight] = useState(0);
+  let [weight, setweight] = useState(0);
+  let [BmiValue, setBmiValue] = useState(0);
+  let [BmiMessage, setBmiMessage] = useState();
 
+  const calculateBmi = (a, b) => {
+    if (a && b) {
+      const heightInMeters = a / 100;
+      const bmi = (a / (heightInMeters * heightInMeters)).toFixed(2);
+      setBmiValue(bmi);
 
-  const calculateBmi = () => {
-    if (height && weight) {
-        const heightInMeters = height / 100;
-        const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
-        setBmiValue(bmi);
-
-        let message = '';
-        if (bmi < 18.5) {
-            message = 'You are Underweight';
-        } else if (bmi >= 18.5 && bmi < 25) {
-            message = 'You are Normal weight';
-        } else if (bmi >= 25 && bmi < 30) {
-            message = 'You are Overweight';
-        } else {
-            message = 'You are Obese';
-        }
-        setBmiMessage(message);
+      let message = "";
+      if (bmi < 18.5) {
+        message = "You are Underweight";
+      } else if (bmi >= 18.5 && bmi < 25) {
+        message = "You are Normal weight";
+      } else if (bmi >= 25 && bmi < 30) {
+        message = "You are Overweight";
+      } else {
+        message = "You are Obese";
+      }
+      setBmiMessage(message);
     } else {
-        setBmiValue('');
-        setBmiMessage('');
+      setBmiValue("");
+      setBmiMessage("");
     }
-};
+  };
   const { values, touched, handleSubmit, handleBlur, handleChange, errors } =
     useFormik({
       initialValues: {
         weight: "",
-        age: ""
+        age: "",
       },
       // validationSchema: basicSchema,
       onSubmit: async (values, actions) => {
         setheight(values.age);
         setweight(values.weight);
+        calculateBmi(weight, height);
         await new Promise((resolve) => setTimeout(resolve, 1000));
         actions.resetForm();
       },
     });
 
-  const dataSource = [
+  const columns = [
     {
       key: "1",
       bmi: "BLOW 18.5",
@@ -70,7 +72,7 @@ const Bmi = () => {
     },
   ];
 
-  const columns = [
+  const data = [
     {
       title: "BMI",
       dataIndex: "bmi",
@@ -88,15 +90,21 @@ const Bmi = () => {
       <section className="py-5">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto">
-            <div className="flex flex-col justify-center items-center text-center">
-              <h3 className="heading-3">BMI CALCULATOR CHART</h3>
+            <div className="flex flex-col justify-start items-center text-center">
+              <h3 className="heading-3 self-start">BMI CALCULATOR CHART</h3>
 
               <div className="py-5">
-                <Table dataSource={dataSource} columns={columns} />
+                <Table
+                  className="text-center"
+                  dataSource={columns}
+                  bordered
+                  columns={data}
+                /> 
+                {/* <DataTable columns={columns} data={data} /> */}
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <h3 className="heading-3">BMI CALCULATOR CHART</h3>
+            <div className="flex flex-col justify-start items-start text-start">
+              <h3 className="heading-3">BMI CALCULATOR</h3>
               <form
                 autoComplete="off"
                 onSubmit={handleSubmit}
@@ -141,8 +149,18 @@ const Bmi = () => {
                   )}
                 </div>
 
+                <div>
+                  {
+                    BmiValue !== 0 ? <p>{BmiValue} {BmiMessage}</p> : ""
+                  }
+                 
+                </div>
+
                 <div className="p-5 flex justify-start">
-                  <button className="cssbuttons-io-button" type="submit" onClick={calculateBmi}>
+                  <button
+                    className="cssbuttons-io-button"
+                    type="submit"
+                    onSubmit={calculateBmi}>
                     Send
                     <div className="icon">
                       <svg
@@ -157,11 +175,6 @@ const Bmi = () => {
                       </svg>
                     </div>
                   </button>
-
-                  {height}
-                  {weight}
-                  {BmiValue}
-                  {BmiMessage}
                 </div>
               </form>
             </div>

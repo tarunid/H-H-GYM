@@ -1,0 +1,121 @@
+.strok-text-about {
+  color: brown;
+  font-family: roboto, sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0.54em;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #dedede;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  color: inherit;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.about-heading {
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+.about-paragraph {
+  color: rgb(100, 100, 100);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.title-expert-count {
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.title-expert-info {
+  color: rgb(173, 173, 173);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.btn-text {
+  z-index: 2;
+}
+
+.btn-text {
+  z-index: 2;
+}
+
+.btn-about {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: var(--primary-color) solid 0.15em;
+  border-radius: 0.25em;
+  color: var(--primary-color);
+  font-family: var(--poppins);
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.btn-about:hover {
+  color: var(--white);
+}
+
+.btn-about:active {
+  border-color: var(--primary-color);
+}
+
+.btn-circle {
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: var(--primary-color);
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
+}
+
+.btn-circle:nth-child(1) {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.btn-circle:nth-child(2) {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.btn-about:hover .btn-circle:nth-child(1) {
+  transform: translateX(-1em);
+}
+
+.btn-about:hover .btn-circle:nth-child(2) {
+  transform: translateX(1em);
+}
+
+.btn-about:active .btn-circle {
+  background: var(--primary-color);
+}

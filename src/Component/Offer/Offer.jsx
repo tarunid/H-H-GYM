@@ -13,27 +13,28 @@ const Offer = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 w-[90%] mx-auto">
-            {
-              OfferData.map((e)=>{
-                return(<>
-                <div className="flex flex-col justify-center items-center text-center gap-4 py-5">
-              <img
-                src={e.imgSrc}
-                className=""
-                alt="w"
-                loading="lazy"
-                width="53"
-                height="70"
-              />
-              <h3 className="heading-3">{e.title}</h3>
-              <p>
-                {e.content}
-              </p>
-            </div>
-                </>)
-              })
-            }
-            
+            {OfferData.map((e) => {
+              return (
+                <>
+                  <div className="flex flex-col justify-center items-center text-center gap-4 py-5">
+                    <img
+                      src={e.imgSrc}
+                      className=""
+                      alt="w"
+                      loading="lazy"
+                      width="53"
+                      height="70"
+                    />
+                    <h3 className="heading-3 hover:text-[var(--primary-color)]">
+                      {e.title}
+                    </h3>
+                    <p className="hover:text-[var(--primary-color)]">
+                      {e.content}
+                    </p>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </section>

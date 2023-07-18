@@ -24,11 +24,20 @@ const Contact = () => {
     });
   return (
     <>
-      <section className="py-10 mt-[10vh]">
+      <section className="py-10">
+        <div className="bg-hero-common w-[100%] h-[430px] mt-[3vh] flex flex-col justify-center items-start">
+          <div className="grid grid-cols-1 w-[70%] mx-auto">
+            <h1 className="contact-title">Contact</h1>
+            <p className="bg-black-rappper">
+              H&H &ndash; 
+              <span className="text-[var(--primary-color)] uppercase"> &#160;Contact</span>
+            </p>
+          </div>
+        </div>
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[90%] mx-auto">
-            <div className="flex flex-col justify-center items-center text-center">
-              <h3 className="heading-3">We are here for help you! </h3>
+            <div className="flex flex-col justify-center items-center text-center py-10">
+              <h3 className="heading-3">We are here for help you!</h3>
               <h2 className="heading-2 py-2">To Shape Your Body.</h2>
             </div>
           </div>
@@ -50,7 +59,7 @@ const Contact = () => {
               <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Address</h3>
-                  <div className="bg-red-600 w-10 h-1 my-5"></div>
+                  <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                   <p className="contact-content break-words">
                     NO.9, 2ND FLOOR, Ekambaram St,
                     <br />
@@ -61,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Opening Hours</h3>
-                  <div className="bg-red-600 w-10 h-1 my-5"></div>
+                  <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                   <p className="contact-content break-words">
                     Mon to Fri: 7:30 am — 1:00 am &nbsp;
                   </p>
@@ -70,7 +79,7 @@ const Contact = () => {
               <div className="flex flex-col sm:flex-row justify-between items-start">
                 <div className="py-5 w-[100%] sm:w-[50%]">
                   <h3 className="contact-sub-heading">Information</h3>
-                  <div className="bg-red-600 w-10 h-1 my-5"></div>
+                  <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                   <Link to="">
                     <li className="flex justify-start items-center gap-2 py-2 contact-content">
                       <AiFillPhone />
@@ -87,7 +96,7 @@ const Contact = () => {
                 </div>
                 <div className="py-5 w-[100%] sm:w-[50%]">
                   <h3 className="contact-sub-heading">Follow Us On</h3>
-                  <div className="bg-red-600 w-10 h-1 my-5"></div>
+                  <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                   <div className="flex justify-start py-5 w-[100%] gap-5">
                     <span className="bg-[#efefef] rounded-full p-3">
                       <AiOutlineInstagram />
@@ -106,7 +115,7 @@ const Contact = () => {
             <div className="py-10">
               <div className="w-[100%] md:w-[70%] mx-auto bg-[#f8f8f8] pt-7 pb-10 px-8 rounded-lg">
                 <h3 className="contact-sub-heading">Leave Us Your Info</h3>
-                <div className="bg-red-600 w-10 h-1 my-5"></div>
+                <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                 <form autoComplete="off" onSubmit={handleSubmit}>
                   <div className="flex flex-col justify-start items-start m-2">
                     <input
