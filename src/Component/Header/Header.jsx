@@ -75,7 +75,7 @@ let Header = () => {
             </li>
 
             <div className="a">
-              <Link to="/Login">
+              <Link to="/login">
                 <button className="btn learn-more">
                   <span className="btnn circle" aria-hidden="true">
                     <span className="icon arrow"></span>

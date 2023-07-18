@@ -10,6 +10,7 @@ import App from "./Component/AppLayout";
 import { TermCondition } from "./Component/TermAndCondition/TermCondition";
 import { PrivacyPolicy } from "./Component/PrivacyPolicy/PrivacyPolicy";
 import About from "./Component/About/About";
+import Login from "./Component/Login/Login";
 
 let browerRouter = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ let browerRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/contact",
