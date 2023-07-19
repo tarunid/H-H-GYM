@@ -9,7 +9,7 @@ const Price = () => {
         <div className="2xl:container mx-auto bg">
           <div className="grid grid-cols-1 w-[80%] mx-auto">
             <div className="flex flex-col justify-center items-center text-center my-1">
-              <div className="heading-bg text-center my-1">
+              <div className="bg-heroSection-heading py-5">
                 <h3 className="heading-3-bg">PRICE</h3>
               </div>
 
