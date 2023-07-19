@@ -24,8 +24,8 @@ const Contact = () => {
     });
   return (
     <>
-      <section className="py-10">
-        <div className="bg-hero-common w-[100%] h-[430px] mt-[3vh] flex flex-col justify-center items-start">
+      <section className="pb-10">
+        <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
           <div className="grid grid-cols-1 w-[70%] mx-auto">
             <h1 className="contact-title">Contact</h1>
             <p className="bg-black-rappper">

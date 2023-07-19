@@ -1,15 +1,19 @@
+import "./Bmi.css";
 // import { Table } from "antd";
 import { Table } from "antd";
 import { useFormik } from "formik";
 import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { useEffect } from "react";
 // import DataTable from "react-data-table-component";
 // import { basicSchema } from "../Contact/schema/schema";
 
 const Bmi = () => {
   let [height, setheight] = useState(0);
   let [weight, setweight] = useState(0);
-  let [BmiValue, setBmiValue] = useState(0);
+  let [BmiValue, setBmiValue] = useState();
   let [BmiMessage, setBmiMessage] = useState();
+  let [close, setclose] = useState(false);
 
   const calculateBmi = (a, b) => {
     if (a && b) {
@@ -28,6 +32,7 @@ const Bmi = () => {
         message = "You are Obese";
       }
       setBmiMessage(message);
+      setclose(true);
     } else {
       setBmiValue("");
       setBmiMessage("");
@@ -37,11 +42,13 @@ const Bmi = () => {
     useFormik({
       initialValues: {
         weight: "",
-        age: "",
+        height: "",
       },
-      // validationSchema: basicSchema,
+      // validationSchema: () => {
+      //   setheight(height), setweight(weight);
+      // },
       onSubmit: async (values, actions) => {
-        setheight(values.age);
+        setheight(values.height);
         setweight(values.weight);
         calculateBmi(weight, height);
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -52,7 +59,7 @@ const Bmi = () => {
   const columns = [
     {
       key: "1",
-      bmi: "BLOW 18.5",
+      bmi: "BELOW 18.5",
       status: "Underweight",
     },
     {
@@ -85,13 +92,23 @@ const Bmi = () => {
     },
   ];
 
+  const closeBtn = () => {
+    setclose(false);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setclose(false);
+    }, 12000);
+  }, [close]);
+
   return (
     <>
       <section className="py-5">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto">
             <div className="flex flex-col justify-start items-center text-center">
-              <h3 className="heading-3 self-start">BMI CALCULATOR CHART</h3>
+              <h3 className="heading-3 self-center">BMI CALCULATOR CHART</h3>
 
               <div className="py-5">
                 <Table
@@ -99,12 +116,12 @@ const Bmi = () => {
                   dataSource={columns}
                   bordered
                   columns={data}
-                /> 
+                />
                 {/* <DataTable columns={columns} data={data} /> */}
               </div>
             </div>
             <div className="flex flex-col justify-start items-start text-start">
-              <h3 className="heading-3">BMI CALCULATOR</h3>
+              <h3 className="heading-3 text-center w-[100%]">BMI CALCULATOR</h3>
               <form
                 autoComplete="off"
                 onSubmit={handleSubmit}
@@ -131,29 +148,45 @@ const Bmi = () => {
 
                 <div className="flex flex-col justify-start items-start m-2">
                   <input
-                    id="age"
-                    name="age"
+                    id="height"
+                    name="height"
                     type="text"
-                    placeholder="Age"
+                    placeholder="Height"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.age}
+                    value={values.height}
                     className={
-                      errors.age && touched.age
+                      errors.height && touched.height
                         ? "border border-red-600 w-[100%] form-style"
                         : "w-[100%] form-style"
                     }
                   />
-                  {errors.age && touched.age && (
-                    <p className="text-red-700">{"*" + errors.age}</p>
+                  {errors.height && touched.height && (
+                    <p className="text-red-700">{"*" + errors.height}</p>
                   )}
                 </div>
 
                 <div>
-                  {
-                    BmiValue !== 0 ? <p>{BmiValue} {BmiMessage}</p> : ""
-                  }
-                 
+                  {close ? (
+                    <>
+                      <div className="text-center bg-slate-500 py-5 w-[90%] mx-auto rounded-xl font-['Montserrat'] flex justify-between items-center px-3">
+                        <p className="text-center">
+                          {BmiValue !== 0 ? (
+                            <p>
+                              {BmiValue} {BmiMessage}
+                            </p>
+                          ) : (
+                            ""
+                          )}
+                        </p>
+                        <p onClick={closeBtn}>
+                          <AiOutlineClose />
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </div>
 
                 <div className="p-5 flex justify-start">

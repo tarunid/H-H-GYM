@@ -4,19 +4,15 @@ import { AiOutlineInstagram, AiFillPhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = () => {
-  const scrollTop = () => {
-    window.scrollToTop({
-      top: 0,
-      behaviour: "smooth",
-    });
-  };
-
   return (
     <>
       <footer className="py-20 bg-[#fff] text-[#040405] bg-footer relative">
-        <img src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png" className="absolute bottom-0" /> 
+        <img
+          src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png"
+          className="absolute bottom-0"
+        />
         <div className="2xl:container mx-auto">
-          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly pb-20">
+          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly">
             <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%] static">
               {/* <img
                 src=""
@@ -47,16 +43,16 @@ const Footer = () => {
               <h3 className="footer-heading">Quick Links</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
-                <Link to="/" onClick={scrollTop}>
+                <Link to="/">
                   <li>Home</li>
                 </Link>
-                <Link to="/about" onClick={scrollTop}>
+                <Link to="/about">
                   <li>About us</li>
                 </Link>
-                <Link to="/gallery" onClick={scrollTop}>
+                <Link to="/gallery">
                   <li>Gallery View</li>
                 </Link>
-                <Link to="/error" onClick={scrollTop}>
+                <Link to="/error">
                   <li>Error Page Demo</li>
                 </Link>
               </ul>
@@ -65,13 +61,13 @@ const Footer = () => {
               <h3 className="footer-heading">Support</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
-                <Link to="/contact" onClick={scrollTop}>
+                <Link to="/contact">
                   <li>Contact us</li>
                 </Link>
-                <Link to="/terms-and-condition" onClick={scrollTop}>
+                <Link to="/terms-and-condition">
                   <li>Terms and Condition</li>
                 </Link>
-                <Link to="/privacy-policy" onClick={scrollTop}>
+                <Link to="/privacy-policy">
                   <li>Privacy Policy</li>
                 </Link>
               </ul>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -25,8 +25,8 @@ function Login() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen ">
-        <div className="flex flex-col w-[500px] space-y-5 items-center border-2 border-500 shadow-2xl  p-5">
+      <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col w-[500px] space-y-5 items-center border-2 border-500 shadow-2xl rounded-xl p-5">
           <Toaster position="top-center"></Toaster>
           <h1 className="text-3xl">Login Page</h1>
           <input
@@ -43,10 +43,10 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <div className="flex justify-between items-end w-[260px]">
-            <Link className="underline" to="/Register">
+          <div className="flex justify-center items-center w-[260px]">
+            {/* <Link className="underline" to="/Register">
               Go to Register
-            </Link>
+            </Link> */}
             <button
               className="bg-blue-800 text-white px-5 py-2"
               onClick={Login}>

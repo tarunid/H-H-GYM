@@ -1,0 +1,20 @@
+.ant-table-wrapper .ant-table-thead > tr > th {
+  position: relative;
+  color: rgba(255, 247, 247, 0.88);
+  font-weight: 600;
+  text-align: start;
+  background: #f5420b;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+  width: 250px;
+  font-family: Montserrat;
+  text-align: center;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  position: relative;
+  padding: 16px 16px;
+  overflow-wrap: normal;
+  font-family: Montserrat;
+  text-align: center;
+}

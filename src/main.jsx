@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Component/Error/Error";
-import Contact from "./Component/Contact/Contact";
-import Gallery from "./Component/GalleryGrid/Gallery";
-import Body from "./Component/Body/Body";
+import Body from "./pages/Body";
 import App from "./Component/AppLayout";
 import { TermCondition } from "./Component/TermAndCondition/TermCondition";
 import { PrivacyPolicy } from "./Component/PrivacyPolicy/PrivacyPolicy";
-import About from "./Component/About/About";
 import Login from "./Component/Login/Login";
+import AboutPage from "./pages/About";
+import GalleryPage from "./pages/Gallery";
+import ContactPage from "./pages/Contact";
 
 let browerRouter = createBrowserRouter([
   {
@@ -27,15 +27,15 @@ let browerRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <ContactPage />,
       },
       {
         path: "/about",
-        element: <About />,
+        element: <AboutPage/>,
       },
       {
         path: "/gallery",
-        element: <Gallery />,
+        element: <GalleryPage />,
       },
       {
         path: "/terms-and-condition",

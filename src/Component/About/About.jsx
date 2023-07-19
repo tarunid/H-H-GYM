@@ -4,8 +4,8 @@ import Trainer from "../Trainer/Trainer";
 const About = () => {
   return (
     <>
-      <section className="py-5">
-        <div className="bg-hero-common w-[100%] h-[430px] mt-[5vh] flex flex-col justify-center items-start">
+      <section className="pb-10">
+        <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
           <div className="grid grid-cols-1 w-[70%] mx-auto">
             <h1 className="contact-title">About us</h1>
             <p className="bg-black-rappper">
@@ -17,7 +17,7 @@ const About = () => {
           </div>
         </div>
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-10">
             <div className="bg-about flex justify-center items-center">
               <div className="relative">
                 {/* <h3 className="strok-text-about bg-slate-400 absolute mr-5">
@@ -50,23 +50,19 @@ const About = () => {
                 </ul>
               </div>
               <div className="py-5">
-                <button className="btn-about">
-                  <div className="btn-circle"></div>
-                  <div className="btn-circle"></div>
-                  <p className="btn-text">Contact us</p>
-                </button>
+              <button className="button-gallery">Contact US</button>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-5 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-10">
             <div className="flex justify-center items-center">
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>
                   <h2 className="title-expert-count">30+</h2>
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
-                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" />
+                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" className="on-hover-img"/>
               </div>
             </div>
 
@@ -76,14 +72,14 @@ const About = () => {
                   <h2 className="title-expert-count">30+</h2>
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
-                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" />
+                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" className="on-hover-img"/>
               </div>
             </div>
           </div>
+
+          <Trainer />
         </div>
       </section>
-
-      <Trainer />
     </>
   );
 };

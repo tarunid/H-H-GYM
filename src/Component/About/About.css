@@ -44,6 +44,10 @@
   margin-bottom: 16px;
 }
 
+.on-hover-img:hover {
+  filter: invert(38%) sepia(55%) saturate(2374%) hue-rotate(355deg) brightness(100%) contrast(96%);
+}
+
 .title-expert-info {
   color: rgb(173, 173, 173);
   font-family: "Montserrat", sans-serif;
