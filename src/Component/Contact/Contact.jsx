@@ -58,7 +58,7 @@ const Contact = () => {
                   height={450}
                 />
               </div>
-              <div className="flex flex-col md:flex-row justify-between items-start">
+              <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Address</h3>
                   <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
@@ -78,7 +78,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row justify-between items-start">
+              <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div className="py-5 w-[100%] sm:w-[50%]">
                   <h3 className="contact-sub-heading">Information</h3>
                   <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
