@@ -50,13 +50,13 @@ const About = () => {
                 </ul>
               </div>
               <div className="py-5">
-              <button className="button-gallery">Contact US</button>
+              <button className="button-gallery flex">Contact US</button>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-10">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center hover:scale-105">
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>
                   <h2 className="title-expert-count">30+</h2>
@@ -66,7 +66,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center hover:scale-105">
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>
                   <h2 className="title-expert-count">30+</h2>

@@ -108,7 +108,7 @@ const Bmi = () => {
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto">
             <div className="flex flex-col justify-start items-center text-center">
-              <h3 className="heading-3 self-center">BMI CALCULATOR CHART</h3>
+              <h3 className="heading-3 text-start w-[100%]">BMI CALCULATOR CHART</h3>
 
               <div className="py-5">
                 <Table
@@ -121,7 +121,7 @@ const Bmi = () => {
               </div>
             </div>
             <div className="flex flex-col justify-start items-start text-start">
-              <h3 className="heading-3 text-center w-[100%]">BMI CALCULATOR</h3>
+              <h3 className="heading-3 text-start w-[100%]">BMI CALCULATOR</h3>
               <form
                 autoComplete="off"
                 onSubmit={handleSubmit}

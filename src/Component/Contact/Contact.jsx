@@ -29,8 +29,11 @@ const Contact = () => {
           <div className="grid grid-cols-1 w-[70%] mx-auto">
             <h1 className="contact-title">Contact</h1>
             <p className="bg-black-rappper">
-              H&H &ndash; 
-              <span className="text-[var(--primary-color)] uppercase"> &#160;Contact</span>
+              H&H &ndash;
+              <span className="text-[var(--primary-color)] uppercase">
+                {" "}
+                &#160;Contact
+              </span>
             </p>
           </div>
         </div>
@@ -44,17 +47,16 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
             <div className="py-10">
-              <div className="flex flex-col md:flex-row justify-center items-center">
-                {/* <Map google={this.props.google}
-                style = {{width:"100%",height:"100%"}}
-                zoom = {10}
-                initialCenter = { 
-                  {
-                    lat: 28.704060,
-                    lng: 77.102493 
-                  }
-                }
-                /> */}
+              <div className="flex flex-col md:flex-row justify-center items-center py-10">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.893739463705!2d80.1360265!3d12.9735509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f015b70d5d%3A0x6c70774a4ad0497d!2sH%26H%20Fitness%20Studio!5e0!3m2!1sen!2sin!4v1689869883786!5m2!1sen!2sin"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  width={600}
+                  height={450}
+                />
               </div>
               <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="w-full sm:w-[50%]">

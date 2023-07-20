@@ -5,8 +5,8 @@ import { PrcieData } from "../../Api/Home";
 const Price = () => {
   return (
     <>
-      <section className="py-5">
-        <div className="2xl:container mx-auto bg">
+      <section className="py-5 bg">
+        <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[80%] mx-auto">
             <div className="flex flex-col justify-center items-center text-center my-1">
               <div className="bg-heroSection-heading py-5">

@@ -11,7 +11,8 @@
 } */
 
 :root {
-  --primary-color: #f85a12;
+  /* --primary-color: #f85a12;*/
+  --primary-color: #ff0336; 
   --black: #000;
   --white: #fff;
   --gradient: rgb(100, 100, 100);
@@ -121,18 +122,18 @@
 }
 
 .bg-heroSection {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/03/banner-9-1.jpg");
+  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/c_scale,w_1536/v1689867666/L_d2rs5f.jpg");
 
-  background-size: cover;
+  background-size: contain;
   width: 100%;
   height: 100%;
   color: #fff;
-  background-color: #f85a12;
   background-repeat: no-repeat;
 }
 
 .bg-heroSection-heading {
-  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689788531/WhatsApp_Image_2023-07-18_at_23.39.22-removebg-preview_mh7kbp.png");
+  /* background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689788531/WhatsApp_Image_2023-07-18_at_23.39.22-removebg-preview_mh7kbp.png"); */
+  background-image: url('https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/section-title.svg');
   background-size: cover;
   width: 248px;
   height: 28px;

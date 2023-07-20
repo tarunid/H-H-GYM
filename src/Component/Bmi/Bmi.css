@@ -1,10 +1,21 @@
+.ant-table-wrapper .ant-table.ant-table-bordered > .ant-table-container {
+  border-top: 0;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  /* border-bottom: 0; */
+  border: 1px dashed #000;
+  border-left: 0;
+  background-color: transparent;
+}
+
 .ant-table-wrapper .ant-table-thead > tr > th {
   position: relative;
-  color: rgba(255, 247, 247, 0.88);
+  color: #000;
   font-weight: 600;
   text-align: start;
-  background: #f5420b;
-  border-bottom: 1px solid #f0f0f0;
+  background: transparent;
+  border-bottom: 1.5px solid #000;
   transition: background 0.2s ease;
   width: 250px;
   font-family: Montserrat;

@@ -30,7 +30,7 @@ const Choose = () => {
                 <div className="flex gap-4 items-center">
                   <img
                     src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-center"
+                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
@@ -38,7 +38,7 @@ const Choose = () => {
                 <div className="flex gap-4 items-center">
                   <img
                     src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-center"
+                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
@@ -48,7 +48,7 @@ const Choose = () => {
                 <div className="flex gap-4 items-center">
                   <img
                     src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-center"
+                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
@@ -56,7 +56,7 @@ const Choose = () => {
                 <div className="flex gap-4 items-center">
                   <img
                     src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-center"
+                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
