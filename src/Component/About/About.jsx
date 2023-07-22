@@ -4,9 +4,9 @@ import Trainer from "../Trainer/Trainer";
 const About = () => {
   return (
     <>
-      <section className="pb-10">
+      <section className="pb-14">
         <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
-          <div className="grid grid-cols-1 w-[70%] mx-auto">
+          <div className="grid grid-cols-1 w-[70%] mx-auto py-16">
             <h1 className="contact-title">About us</h1>
             <p className="bg-black-rappper">
               H&H &ndash;
@@ -17,15 +17,8 @@ const About = () => {
           </div>
         </div>
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-10">
-            <div className="bg-about flex justify-center items-center">
-              <div className="relative">
-                {/* <h3 className="strok-text-about bg-slate-400 absolute mr-5">
-                  Since 1995
-                </h3> */}
-              </div>
-
-              {/* <img src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/03/about-5.jpg" /> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
+            <div className="bg-about flex justify-center items-center">  
             </div>
             <div className="flex flex-col justify-start">
               <div className="py-5 bg-heroSection-heading">
@@ -55,7 +48,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
             <div className="flex justify-center items-center hover:scale-105">
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>

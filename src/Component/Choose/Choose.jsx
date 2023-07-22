@@ -4,12 +4,12 @@ import video from "../../assets/video.mp4";
 const Choose = () => {
   return (
     <>
-      <section className="py-5 bg-choose">
+      <section className="bg-choose py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
             <div className="flex justify-center">
               <video height={"400px"} controls>
-                <source src={video} />{" "}
+                <source src={video} />
               </video>
             </div>
             <div className="flex flex-col justify-start">

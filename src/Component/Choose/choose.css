@@ -49,31 +49,32 @@
 
 .rotate-in-diag-1:hover {
   -webkit-animation: rotate-in-diag-1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    3 both;
-  animation: rotate-in-diag-1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3 both;
+    both;
+  animation: rotate-in-diag-1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(103%) contrast(103%);
 }
 
 @-webkit-keyframes rotate-in-diag-1 {
   0% {
     -webkit-transform: rotate3d(1, 1, 0, -360deg);
-            transform: rotate3d(1, 1, 0, -360deg);
+    transform: rotate3d(1, 1, 0, -360deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotate3d(1, 1, 0, 0deg);
-            transform: rotate3d(1, 1, 0, 0deg);
+    transform: rotate3d(1, 1, 0, 0deg);
     opacity: 1;
   }
 }
 @keyframes rotate-in-diag-1 {
   0% {
     -webkit-transform: rotate3d(1, 1, 0, -360deg);
-            transform: rotate3d(1, 1, 0, -360deg);
+    transform: rotate3d(1, 1, 0, -360deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotate3d(1, 1, 0, 0deg);
-            transform: rotate3d(1, 1, 0, 0deg);
+    transform: rotate3d(1, 1, 0, 0deg);
     opacity: 1;
   }
 }

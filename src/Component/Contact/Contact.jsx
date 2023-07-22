@@ -11,7 +11,7 @@ const Contact = () => {
     useFormik({
       initialValues: {
         name: "",
-        email: "",
+        number: "",
         message: "",
       },
       validationSchema: basicSchema,
@@ -24,7 +24,7 @@ const Contact = () => {
     });
   return (
     <>
-      <section className="pb-10">
+      <section className="pb-14">
         <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
           <div className="grid grid-cols-1 w-[70%] mx-auto">
             <h1 className="contact-title">Contact</h1>
@@ -58,7 +58,8 @@ const Contact = () => {
                   height={450}
                 />
               </div>
-              <div className="flex flex-col md:flex-row justify-between items-center">
+
+              <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Address</h3>
                   <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
@@ -141,21 +142,21 @@ const Contact = () => {
 
                   <div className="flex flex-col justify-start items-start m-2">
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Email address"
+                      id="number"
+                      name="number"
+                      type="number"
+                      placeholder="Mobile Number"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.email}
+                      value={values.number}
                       className={
-                        errors.email && touched.email
+                        errors.number && touched.number
                           ? "border border-red-600 w-[100%] form-style"
                           : "w-[100%] form-style"
                       }
                     />
-                    {errors.email && touched.email && (
-                      <p className="text-red-700">{"*" + errors.email}</p>
+                    {errors.number && touched.number && (
+                      <p className="text-red-700">{"*" + errors.number}</p>
                     )}
                   </div>
 

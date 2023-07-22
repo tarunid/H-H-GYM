@@ -14,9 +14,9 @@ const FeedBack = () => {
   let ref = useRef();
   return (
     <>
-      <section className="py-5">
+      <section className="py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 w-[60%] mx-auto">
+          <div className="grid grid-cols-1 w-[60%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center">
               <h3 className="heading-3 text-center">Getting into Shape</h3>
               <h2 className="heading-2-feedback py-2">
@@ -25,9 +25,9 @@ const FeedBack = () => {
             </div>
           </div>
 
-          <div className="py-5 mx-auto">
+          <div className="mx-auto">
             <div className="grid grid-cols-1 w-[60%] mx-auto bg-black rounded-3xl">
-              <div className="py-5 ">
+              <div className="">
                 <Carousel
                   ref={ref}
                   autoplay
@@ -150,7 +150,7 @@ const FeedBack = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 w-[60%] mx-auto">
+          <div className="grid grid-cols-1 w-[60%] mx-auto py-5">
             <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
               <button
                 onClick={() => {

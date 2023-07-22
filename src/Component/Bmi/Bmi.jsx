@@ -18,7 +18,7 @@ const Bmi = () => {
   const calculateBmi = (a, b) => {
     if (a && b) {
       const heightInMeters = a / 100;
-      const bmi = (a / (heightInMeters * heightInMeters)).toFixed(2);
+      const bmi = (b / (heightInMeters * heightInMeters)).toFixed(2);
       setBmiValue(bmi);
 
       let message = "";
@@ -104,11 +104,11 @@ const Bmi = () => {
 
   return (
     <>
-      <section className="py-5">
+      <section className="py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto pb-14">
             <div className="flex flex-col justify-start items-center text-center">
-              <h3 className="heading-3 text-start w-[100%]">BMI CALCULATOR CHART</h3>
+              <h3 className="heading-3 text-start w-[100%] py-5">BMI CALCULATOR CHART</h3>
 
               <div className="py-5">
                 <Table
@@ -117,11 +117,15 @@ const Bmi = () => {
                   bordered
                   columns={data}
                 />
+
+                <p className="flex py-5 self-start heading-5">*<span className="font-bold">BMR</span>&nbsp; Metabolic Rate /&nbsp; <span className="font-bold">BMI</span>&nbsp; Body Mass Index </p> 
                 {/* <DataTable columns={columns} data={data} /> */}
               </div>
             </div>
             <div className="flex flex-col justify-start items-start text-start">
-              <h3 className="heading-3 text-start w-[100%]">BMI CALCULATOR</h3>
+              <h3 className="heading-3 text-start w-[100%] py-5">BMI CALCULATOR</h3>
+
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi qui obcaecati repudiandae consequuntur aliquam pariatur, sed debitis nostrum iusto ullam itaque officiis sint quisquam cumque modi consectetur, accusantium cupiditate nobis?</p>
               <form
                 autoComplete="off"
                 onSubmit={handleSubmit}

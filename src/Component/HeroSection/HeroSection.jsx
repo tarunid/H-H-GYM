@@ -3,9 +3,9 @@ import "../HeroSection/HeroSection.css";
 const HeroSection = () => {
   return (
     <>
-      <section className="pb-5 mt-[9vh] bg-heroSection">
-        <div className="2xl:container mx-auto  h-[100%] scroll-pt-2.5">
-          <div className="grid grid-cols-1 w-[90%] h-[648px] mx-auto">
+      <section className="mt-[9vh] bg-heroSection w-[100%] py-14">
+        <div className="2xl:container mx-auto h-[100%] scroll-pt-2.5">
+          <div className="grid grid-cols-1 w-[90%] h-[648px] mx-auto pb-14">
             <div className="flex flex-col justify-center items-start text-start h-[100%]">
               <div className="p-5">
                 <div className="py-5 bg-heroSection-heading">

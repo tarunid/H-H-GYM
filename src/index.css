@@ -13,6 +13,8 @@
 :root {
   --primary-color: #f85a12;
   /* --primary-color: #ff0336;  */
+  --opacity-color: invert(40%) sepia(99%) saturate(2486%) hue-rotate(355deg) brightness(99%) contrast(96%);
+  --img-overlay : rgba(145, 54, 12, 0.45);
   --black: #000;
   --white: #fff;
   --gradient: rgb(100, 100, 100);
@@ -63,6 +65,20 @@
   text-transform: uppercase;
 }
 
+.heading-5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 27.7333px;
+}
+ 
+.paragraph {
+  
+}
+
 .heading-bg {
   background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/section-title.svg");
   background-size: cover;
@@ -99,7 +115,7 @@
 }
 
 .bg-about {
-  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689683658/1111_nlpv14.jpg");
+  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1690024642/11rsg_l6y4av.jpg");
   background-size: contain;
   width: 100%;
   height: 640px;
@@ -123,8 +139,7 @@
 
 .bg-heroSection {
   background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/c_scale,w_1536/v1689867666/L_d2rs5f.jpg");
-
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   height: 100%;
   color: #fff;
@@ -133,7 +148,7 @@
 
 .bg-heroSection-heading {
   /* background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689788531/WhatsApp_Image_2023-07-18_at_23.39.22-removebg-preview_mh7kbp.png"); */
-  background-image: url('https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/section-title.svg');
+  background-image: url('https://res.cloudinary.com/dsq5spft3/image/upload/v1690022119/newww_jzicql.svg');
   background-size: cover;
   width: 248px;
   height: 28px;

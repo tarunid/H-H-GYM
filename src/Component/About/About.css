@@ -45,7 +45,7 @@
 }
 
 .on-hover-img:hover {
-  filter: invert(15%) sepia(85%) saturate(5512%) hue-rotate(342deg) brightness(97%) contrast(109%);
+  filter: var(--opacity-color);
 }
 
 .title-expert-info {

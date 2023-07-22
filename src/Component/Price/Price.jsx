@@ -5,9 +5,9 @@ import { PrcieData } from "../../Api/Home";
 const Price = () => {
   return (
     <>
-      <section className="py-5 bg">
+      <section className="py-14 bg">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 w-[80%] mx-auto">
+          <div className="grid grid-cols-1 w-[80%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center my-1">
               <div className="bg-heroSection-heading py-5">
                 <h3 className="heading-3-bg">PRICE</h3>
@@ -17,7 +17,7 @@ const Price = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-4 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-4 w-[90%] mx-auto">
             {PrcieData.map((e, index) => {
               return (
                 <>

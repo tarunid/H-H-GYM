@@ -3,9 +3,9 @@ import { OfferData } from "../../Api/Home";
 const Offer = () => {
   return (
     <>
-      <section className="py-5">
+      <section className="py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 w-[90%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center">
               <h3 className="heading-3">WHAT WE OFFER</h3>
               <h2 className="heading-2 py-2">DEFINE YOUR GOAL</h2>

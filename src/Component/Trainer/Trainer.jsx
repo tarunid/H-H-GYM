@@ -6,9 +6,9 @@ import { TrainerData } from "../../Api/Home";
 const Trainer = () => {
   return (
     <>
-      <section className="py-5">
+      <section className="py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 w-[90%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center">
               <h3 className="heading-3">TRAIN WITH EXPERTS</h3>
               <h2 className="heading-2 py-2">OUR TEAM</h2>
@@ -36,15 +36,15 @@ const Trainer = () => {
                       <span className="flex justify-center items-center gap-5 py-4">
                         <AiFillInstagram
                           style={{ fontSize: "21px" }}
-                          className="hover:fill-red-600"
+                          className="hover:fill-[var(--primary-color)]"
                         />
                         <BsFacebook
                           style={{ fontSize: "18px" }}
-                          className="hover:fill-red-600"
+                          className="hover:fill-[var(--primary-color)]"
                         />
                         <AiFillTwitterCircle
                           style={{ fontSize: "21px" }}
-                          className="hover:fill-red-600"
+                          className="hover:fill-[var(--primary-color)]"
                         />
                       </span>
                     </div>

@@ -2,15 +2,15 @@ import FeedBack from "../Component/Feedback/FeedBack";
 import Offer from "../Component/Offer/Offer";
 import Price from "../Component/Price/Price";
 import HeroSection from "../Component/HeroSection/HeroSection";
-// import Featuers from "../Component/Features/Featuers";
 import Bmi from "../Component/Bmi/Bmi";
 import Choose from "../Component/Choose/Choose";
+import Featuers from "../Component/Features/Features";
 
 const Body = () => {
   return (
     <>
       <HeroSection/>
-      {/* <Featuers /> */}
+      <Featuers /> 
       <Offer />
       <Choose/>
       <FeedBack />
