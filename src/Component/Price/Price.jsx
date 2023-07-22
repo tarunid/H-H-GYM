@@ -21,19 +21,27 @@ const Price = () => {
             {PrcieData.map((e, index) => {
               return (
                 <>
-                  <div key={index} className="flex flex-col justify-center items-center w-[90%] mx-auto bg-[#e8e8e8] text-[#000] rounded-lg my-5 py-5 hover:scale-105">
+                  <div
+                    key={index}
+                    className="flex flex-col justify-center items-center w-[90%] mx-auto bg-[#e8e8e8] text-[#000] rounded-lg my-5 py-5 hover:scale-105">
                     <div className="flex justify-between items-center w-[80%] mx-auto py-5">
                       <h3 className="price-haeding">{e.plan}</h3>
 
-                      <img src={e.imgSrc} alt="priceImg" className="Price-logo"/>
-
+                      <img
+                        src={e.imgSrc}
+                        alt="priceImg"
+                        className="Price-logo"
+                      />
                     </div>
 
                     <ul className="w-[80%] mx-auto py-5 leading-loose ul-tag">
-                    {
-                        e.planContent.map((E)=>{return(<><li>&#10003;{E}
-                        </li></>)})
-                      }
+                      {e.planContent.map((E) => {
+                        return (
+                          <>
+                            <li>&#10003;{E}</li>
+                          </>
+                        );
+                      })}
                     </ul>
 
                     <h2 className="flex justify-start items-center text-center w-[80%] mx-auto py-5">

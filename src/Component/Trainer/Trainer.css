@@ -18,7 +18,7 @@
   height: 100%;
   background: var(--img-overlay);
   -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px); 
+  backdrop-filter: blur(1px);
   color: #fff;
   display: flex;
   flex-direction: column;

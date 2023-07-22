@@ -2,7 +2,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import Logo from "../../assets/HH_Logo.png"
+import Logo from "../../assets/HH_Logo.png";
 
 let Header = () => {
   let [isMobile, setisMobile] = useState(false);
@@ -53,7 +53,7 @@ let Header = () => {
           <div className="Nav-logo-div">
             <Link to="/">
               {/* <p className="text-xl">Logo</p> */}
-              <img src={Logo} className="h-[6vh]"/>
+              <img src={Logo} className="h-[6vh]" />
             </Link>
           </div>
 

@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Error from "./Component/Error/Error";
-import Body from "./pages/Body";
-import App from "./Component/AppLayout";
 import { TermCondition } from "./Component/TermAndCondition/TermCondition";
 import { PrivacyPolicy } from "./Component/PrivacyPolicy/PrivacyPolicy";
+import App from "./Component/AppLayout";
+import Error from "./Component/Error/Error";
 import Login from "./Component/Login/Login";
+import Body from "./pages/Body";
 import AboutPage from "./pages/About";
 import GalleryPage from "./pages/Gallery";
 import ContactPage from "./pages/Contact";
@@ -26,16 +26,16 @@ let browerRouter = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/contact",
-        element: <ContactPage />,
+        path: "/gallery",
+        element: <GalleryPage />,
       },
       {
         path: "/about",
-        element: <AboutPage/>,
+        element: <AboutPage />,
       },
       {
-        path: "/gallery",
-        element: <GalleryPage />,
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/terms-and-condition",

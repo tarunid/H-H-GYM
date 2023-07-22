@@ -18,8 +18,7 @@ const About = () => {
         </div>
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
-            <div className="bg-about flex justify-center items-center">  
-            </div>
+            <div className="bg-about flex justify-center items-center"></div>
             <div className="flex flex-col justify-start">
               <div className="py-5 bg-heroSection-heading">
                 <p className="text-[#fff]">Who We Are</p>
@@ -43,7 +42,7 @@ const About = () => {
                 </ul>
               </div>
               <div className="py-5">
-              <button className="button-gallery flex">Contact US</button>
+                <button className="button-gallery flex">Contact US</button>
               </div>
             </div>
           </div>
@@ -55,7 +54,10 @@ const About = () => {
                   <h2 className="title-expert-count">30+</h2>
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
-                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" className="on-hover-img"/>
+                <img
+                  src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
+                  className="on-hover-img"
+                />
               </div>
             </div>
 
@@ -65,7 +67,10 @@ const About = () => {
                   <h2 className="title-expert-count">30+</h2>
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
-                <img src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png" className="on-hover-img"/>
+                <img
+                  src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
+                  className="on-hover-img"
+                />
               </div>
             </div>
           </div>

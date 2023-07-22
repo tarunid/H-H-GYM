@@ -9,13 +9,13 @@ import Featuers from "../Component/Features/Features";
 const Body = () => {
   return (
     <>
-      <HeroSection/>
-      <Featuers /> 
+      <HeroSection />
+      <Featuers />
       <Offer />
-      <Choose/>
+      <Choose />
       <FeedBack />
-      <Price /> 
-      <Bmi/>
+      <Price />
+      <Bmi />
     </>
   );
 };

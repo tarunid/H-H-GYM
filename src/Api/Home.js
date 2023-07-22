@@ -120,7 +120,6 @@ export const PrcieData = [
 
 ];
 
-
 export const FeaturedData = [
   {
     "title":"Workout",
@@ -138,4 +137,4 @@ export const FeaturedData = [
     "title":"Workout",
     "content":"They also provide insights about the profession’s most colorful personalities and powerful institutions,..."
   }
-]
+];

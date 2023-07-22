@@ -26,7 +26,10 @@ const HeroSection = () => {
                   </span>
                 </button>
                 <div className="self-end">
-                  <img src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/gym-text.png" alt="FitImg" />
+                  <img
+                    src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/gym-text.png"
+                    alt="FitImg"
+                  />
                 </div>
               </div>
             </div>

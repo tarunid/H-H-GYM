@@ -1,12 +1,11 @@
-import Gallery from "../Component/GalleryGrid/Gallery"
-
+import Gallery from "../Component/GalleryGrid/Gallery";
 
 const GalleryPage = () => {
   return (
     <>
-    <Gallery/>
+      <Gallery />
     </>
-  )
-}
+  );
+};
 
-export default GalleryPage
+export default GalleryPage;

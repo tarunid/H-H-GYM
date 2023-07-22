@@ -5,7 +5,6 @@
   letter-spacing: 3.2px;
   line-height: 32px;
   color: #2d2d2d;
-
   text-transform: uppercase;
 }
 
@@ -22,7 +21,7 @@
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.75px;
-  line-height: 44px
+  line-height: 44px;
 }
 
 .feedBack-job {
@@ -31,5 +30,5 @@
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.75px;
-  line-height: 44px
+  line-height: 44px;
 }

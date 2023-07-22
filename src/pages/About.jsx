@@ -3,9 +3,9 @@ import About from "../Component/About/About";
 const AboutPage = () => {
   return (
     <>
-    <About/>
+      <About />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

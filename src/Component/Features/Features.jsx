@@ -1,5 +1,5 @@
 import "./Features.css";
-import { FeaturedData  } from "../../Api/Home";
+import { FeaturedData } from "../../Api/Home";
 
 const Featuers = () => {
   return (
@@ -17,7 +17,7 @@ const Featuers = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 w-[90%] mx-auto h-[100%] py-5 gap-5">
-            {FeaturedData .map((e) => {
+            {FeaturedData.map((e) => {
               return (
                 <>
                   <div
@@ -45,9 +45,7 @@ const Featuers = () => {
 
                     <h4 className="py-2 feature-title">{e.title}</h4>
 
-                    <p className="py-2 feature-content">
-                      {e.content}
-                    </p>
+                    <p className="py-2 feature-content">{e.content}</p>
 
                     <div className="absolute bottom-0 right-0 pr-3 z-10">
                       <img src="https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png" />
