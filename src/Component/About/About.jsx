@@ -1,6 +1,6 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-import video from "../../assets/video2.mp4";
+import video2 from "../../assets/video2.mp4";
 
 const About = () => {
   return (
@@ -57,7 +57,7 @@ const About = () => {
             </div>
             <div className="flex justify-center">
               <video height={"400px"} controls>
-                <source src={video} />
+                <source src={video2} />
               </video>
             </div>
           </div>
