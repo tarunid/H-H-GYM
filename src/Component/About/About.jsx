@@ -1,6 +1,6 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-import video2 from "../../assets/video2.mp4";
+
 
 const About = () => {
   return (
@@ -57,7 +57,7 @@ const About = () => {
             </div>
             <div className="flex justify-center">
               <video height={"400px"} controls>
-                <source src={video2} />
+                <source src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4" />
               </video>
             </div>
           </div>
