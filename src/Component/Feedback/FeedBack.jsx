@@ -65,8 +65,8 @@ const FeedBack = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2">
-            <div className="w-[90%] mx-auto  rounded-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="w-[90%] mx-auto rounded-3xl order-2 md:order-1">
               <Carousel
                 ref={ref}
                 autoplay
@@ -204,7 +204,7 @@ const FeedBack = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[90%] mx-auto">
+            <div className="w-[90%] mx-auto order-1 md:order-2">
               <img src={galleryData[slideNumber].imgSrc} />
             </div>
           </div>

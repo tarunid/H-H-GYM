@@ -1,7 +1,6 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
 
-
 const About = () => {
   return (
     <>
@@ -48,17 +47,19 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 w-[90%] mx-auto py-14 bg-choose">
-            <div className="text-start w-[90%] mx-auto">
-              <div className="py-5 bg-heroSection-heading">
-                <p className="text-[#fff]">WHY CHOOSE US</p>
+          <div className="bg-choose">
+            <div className="grid grid-cols-1 w-[90%] mx-auto py-14">
+              <div className="text-start w-[90%] mx-auto">
+                <div className="py-5 bg-heroSection-heading">
+                  <p className="text-[#fff]">WHY CHOOSE US</p>
+                </div>
+                {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
               </div>
-              {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
-            </div>
-            <div className="flex justify-center">
-              <video height={"400px"} controls>
-                <source src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4" />
-              </video>
+              <div className="flex justify-center">
+                <video height={"400px"} controls>
+                  <source src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4" />
+                </video>
+              </div>
             </div>
           </div>
 
