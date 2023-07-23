@@ -133,6 +133,16 @@
   padding: 60px 0px 120px 0px;
 }
 
+.bg-feedback {
+  background-image: url("https://assets.website-files.com/5dd3758e77520f215548fb15/5dd3758e77520f23e748fb2a_shape_02.svg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-repeat: no-repeat;
+  
+}
+
 .feature-list > li {
   padding: 10px;
 }

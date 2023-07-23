@@ -18,7 +18,7 @@ const Price = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 w-[90%] mx-auto">
-            {PrcieData.map((e, index) => {
+            {PrcieData.map((e,index) => {
               return (
                 <>
                   <div

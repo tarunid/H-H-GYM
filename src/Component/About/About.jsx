@@ -1,5 +1,6 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
+import video from "../../assets/video2.mp4"
 
 const About = () => {
   return (
@@ -44,6 +45,20 @@ const About = () => {
               <div className="py-5">
                 <button className="button-gallery flex">Contact US</button>
               </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 w-[90%] mx-auto py-14 bg-choose">
+            <div className="text-start w-[90%] mx-auto">
+              <div className="py-5 bg-heroSection-heading">
+                <p className="text-[#fff]">WHY CHOOSE US</p>
+              </div>
+              {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
+            </div>
+            <div className="flex justify-center">
+              <video height={"400px"} controls>
+                <source src={video} />
+              </video>
             </div>
           </div>
 

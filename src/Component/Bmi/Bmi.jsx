@@ -5,29 +5,29 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect } from "react";
+import * as yup from "yup";
 // import DataTable from "react-data-table-component";
 // import { basicSchema } from "../Contact/schema/schema";
 
 const Bmi = () => {
-  let [height, setheight] = useState(0);
-  let [weight, setweight] = useState(0);
   let [BmiValue, setBmiValue] = useState();
   let [BmiMessage, setBmiMessage] = useState();
   let [close, setclose] = useState(false);
 
   const calculateBmi = (a, b) => {
     if (a && b) {
-      const heightInMeters = a / 100;
-      const bmi = (b / (heightInMeters * heightInMeters)).toFixed(2);
+      console.log(a, b);
+      const heightInMeters = parseInt(a) / 100;
+      const bmi = (parseInt(b) / (heightInMeters * heightInMeters)).toFixed(2);
       setBmiValue(bmi);
 
       let message = "";
       if (bmi < 18.5) {
-        message = "You are Underweight";
+        message = "You are Under weight";
       } else if (bmi >= 18.5 && bmi < 25) {
         message = "You are Normal weight";
       } else if (bmi >= 25 && bmi < 30) {
-        message = "You are Overweight";
+        message = "You are Over weight";
       } else {
         message = "You are Obese";
       }
@@ -38,24 +38,27 @@ const Bmi = () => {
       setBmiMessage("");
     }
   };
-  const { values, touched, handleSubmit, handleBlur, handleChange, errors } =
-    useFormik({
-      initialValues: {
-        weight: "",
-        height: "",
-      },
-      // validationSchema: () => {
-      //   setheight(height), setweight(weight);
-      // },
-      onSubmit: async (values, actions) => {
-        setheight(values.height);
-        setweight(values.weight);
-        calculateBmi(weight, height);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        actions.resetForm();
-      },
-    });
-
+  const formik = useFormik({
+    initialValues: {
+      weight: "",
+      height: "",
+    },
+    validationSchema: yup.object().shape({
+      weight: yup
+        .number()
+        .required("Please Enter your weight")
+        .min(1, "You must be at 1 kg"),
+      height: yup
+        .number()
+        .required("Please Enter your height")
+        .min(1, "You must be at 1 cm"),
+    }),
+    onSubmit: async (values, actions) => {
+      calculateBmi(values.height, values.weight);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      actions.resetForm();
+    },
+  });
   const columns = [
     {
       key: "1",
@@ -65,7 +68,7 @@ const Bmi = () => {
     {
       key: "2",
       bmi: "18.5 - 24.9",
-      status: "Healthy",
+      status: "Normal weight",
     },
     {
       key: "3",
@@ -141,56 +144,57 @@ const Bmi = () => {
               </p>
               <form
                 autoComplete="off"
-                onSubmit={handleSubmit}
+                onSubmit={formik.handleSubmit}
                 className="py-5 w-[100%]">
-                <div className="flex flex-col justify-start items-start m-2">
-                  <input
-                    id="weight"
-                    name="weight"
-                    type="text"
-                    placeholder="weight"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.weight}
-                    className={
-                      errors.weight && touched.weight
-                        ? "border border-red-600 w-[100%] form-style"
-                        : "w-[100%] form-style"
-                    }
-                  />
-                  {errors.weight && touched.weight && (
-                    <p className="text-red-700">{"*" + errors.name}</p>
-                  )}
-                </div>
 
                 <div className="flex flex-col justify-start items-start m-2">
                   <input
                     id="height"
                     name="height"
                     type="text"
-                    placeholder="Height"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.height}
+                    placeholder="Height (in cm)"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.height}
                     className={
-                      errors.height && touched.height
+                      formik.errors.height && formik.touched.height
                         ? "border border-red-600 w-[100%] form-style"
                         : "w-[100%] form-style"
                     }
                   />
-                  {errors.height && touched.height && (
-                    <p className="text-red-700">{"*" + errors.height}</p>
+                  {formik.errors.height && formik.touched.height && (
+                    <p className="text-red-700">{"*" + formik.errors.height}</p>
+                  )}
+                </div>
+
+                <div className="flex flex-col justify-start items-start m-2">
+                  <input
+                    id="weight"
+                    name="weight"
+                    type="text"
+                    placeholder="weight (in kg)"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.weight}
+                    className={
+                      formik.errors.weight && formik.touched.weight
+                        ? "border border-red-600 w-[100%] form-style"
+                        : "w-[100%] form-style"
+                    }
+                  />
+                  {formik.errors.weight && formik.touched.weight && (
+                    <p className="text-red-700">{"*" + formik.errors.weight}</p>
                   )}
                 </div>
 
                 <div>
                   {close ? (
                     <>
-                      <div className="text-center bg-slate-500 py-5 w-[90%] mx-auto rounded-xl font-['Montserrat'] flex justify-between items-center px-3">
+                      <div className="text-center bg-[var(--primary-color)] text-white py-5 w-[90%] mx-auto rounded-xl font-['Montserrat'] flex justify-between items-center px-3">
                         <p className="text-center">
                           {BmiValue !== 0 ? (
                             <p>
-                              {BmiValue} {BmiMessage}
+                              {BmiValue}{", "}{BmiMessage}
                             </p>
                           ) : (
                             ""
@@ -207,10 +211,7 @@ const Bmi = () => {
                 </div>
 
                 <div className="p-5 flex justify-start">
-                  <button
-                    className="cssbuttons-io-button"
-                    type="submit"
-                    onSubmit={calculateBmi}>
+                  <button className="cssbuttons-io-button" type="submit">
                     Calculate
                     <div className="icon">
                       <svg

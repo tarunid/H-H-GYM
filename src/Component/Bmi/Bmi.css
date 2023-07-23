@@ -4,18 +4,18 @@
 
 .ant-table-wrapper .ant-table-tbody > tr > td {
   /* border-bottom: 0; */
-  border: 1px dashed #000;
+  /* border: 1px dashed #000;
   border-left: 0;
-  background-color: transparent;
+  background-color: transparent; */
 }
 
 .ant-table-wrapper .ant-table-thead > tr > th {
   position: relative;
-  color: #000;
+  color: #fff;
   font-weight: 600;
   text-align: start;
-  background: transparent;
-  border-bottom: 1.5px solid #000;
+  background: var(--primary-color);
+  /* border-bottom: 1.5px solid #000; */
   transition: background 0.2s ease;
   width: 250px;
   font-family: Montserrat;
