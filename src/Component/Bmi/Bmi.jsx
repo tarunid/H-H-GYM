@@ -146,7 +146,6 @@ const Bmi = () => {
                 autoComplete="off"
                 onSubmit={formik.handleSubmit}
                 className="py-5 w-[100%]">
-
                 <div className="flex flex-col justify-start items-start m-2">
                   <input
                     id="height"
@@ -194,7 +193,9 @@ const Bmi = () => {
                         <p className="text-center">
                           {BmiValue !== 0 ? (
                             <p>
-                              {BmiValue}{", "}{BmiMessage}
+                              {BmiValue}
+                              {", "}
+                              {BmiMessage}
                             </p>
                           ) : (
                             ""

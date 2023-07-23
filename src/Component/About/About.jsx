@@ -1,6 +1,6 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-import video from "../../assets/video2.mp4"
+import video from "../../assets/video2.mp4";
 
 const About = () => {
   return (
