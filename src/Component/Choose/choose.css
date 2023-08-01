@@ -51,8 +51,10 @@
   -webkit-animation: rotate-in-diag-1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: rotate-in-diag-1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg)
-    brightness(103%) contrast(103%);
+  /* filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(152deg)
+    brightness(103%) contrast(103%); */
+  fill: #ff0336;
+  stroke: aqua;
 }
 
 @-webkit-keyframes rotate-in-diag-1 {

@@ -1,5 +1,6 @@
 import "./choose.css";
 import video from "../../assets/video.mp4";
+import dub from "../../assets/dumbell.svg";
 
 const Choose = () => {
   return (
@@ -27,36 +28,36 @@ const Choose = () => {
                 </p>
               </div>
               <div className="flex justify-between items-center py-5">
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center hover:scale-105">
                   <img
-                    src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
+                    src={dub}
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
                 </div>
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center hover:scale-105">
                   <img
-                    src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
+                    src={dub}
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
                 </div>
               </div>
               <div className="flex justify-between items-center py-5">
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center hover:scale-105">
                   <img
-                    src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
+                    src={dub}
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>
                 </div>
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center hover:scale-105">
                   <img
-                    src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                    className="bg-[#2b2b2b] rounded-full p-3 rotate-in-diag-1"
+                    src={dub}
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Fitness Training</p>

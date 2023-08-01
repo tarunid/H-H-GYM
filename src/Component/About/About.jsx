@@ -1,7 +1,14 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
+import { useContext } from "react";
+import UserContext from "../../Context/UserContext";
+
 
 const About = () => {
+
+  let { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
+
   return (
     <>
       <section className="pb-14">
@@ -47,12 +54,12 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-choose">
+          <div className="bg">
             <div className="grid grid-cols-1 w-[90%] mx-auto py-14">
               <div className="text-start w-[90%] mx-auto">
-                <div className="py-5 bg-heroSection-heading">
+                {/* <div className="py-5 bg-heroSection-heading">
                   <p className="text-[#fff]">WHY CHOOSE US</p>
-                </div>
+                </div> */}
                 {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
               </div>
               <div className="flex justify-center">

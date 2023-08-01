@@ -12,21 +12,15 @@ const Footer = () => {
           className="absolute bottom-0"
         />
         <div className="2xl:container mx-auto">
-          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly">
-            <div className="container-1 w-full lg:w-[25%] bg-footer-holder h-[100%] static">
-              {/* <img
-                src=""
-                alt="Logo"
-                className="static bottom-0 left-0"
-              /> */}
-
+          <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly relative z-[9999]">
+            <div className="relative z-[9999] container-1 w-full lg:w-[25%] bg-footer-holder h-[100%]">
               <ul className="">
                 <p>
                   It was popularised in the 1960s with the release of Letraset
                   PageMaker including versions of Lorem Ipsum.
                 </p>
 
-                <div className="flex justify-start gap-5 py-5 w-[100%] z-50">
+                <div className="flex justify-start gap-5 py-5 w-[100%]">
                   <span className="bg-[#efefef] rounded-full p-3">
                     <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>
@@ -39,7 +33,7 @@ const Footer = () => {
                 </div>
               </ul>
             </div>
-            <div className="container-2 w-full lg:w-[25%]">
+            <div className="relative z-[9999] container-2 w-full lg:w-[25%]">
               <h3 className="footer-heading">Quick Links</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
@@ -57,7 +51,7 @@ const Footer = () => {
                 </Link>
               </ul>
             </div>
-            <div className="container-3 w-full lg:w-[25%]">
+            <div className="relative z-[9999] container-3 w-full lg:w-[25%]">
               <h3 className="footer-heading">Support</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>
@@ -72,7 +66,7 @@ const Footer = () => {
                 </Link>
               </ul>
             </div>
-            <div className="container-4 w-full lg:w-[25%]">
+            <div className="relative z-[9999] container-4 w-full lg:w-[25%]">
               <h3 className="footer-heading">LOCATION</h3>
               <span className="bg-[var(--primary-color)] w-10 h-1 my-5"></span>
               <ul>

@@ -76,8 +76,6 @@
   line-height: 27.7333px;
 }
 
-.paragraph {
-}
 
 .heading-bg {
   background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/section-title.svg");
@@ -197,13 +195,17 @@
 }
 
 .bg-choose {
-  background-color: #000;
+  background-image: url('https://expert-themes.com/html/gym/images/background/1.jpg');
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 .ant-table-wrapper .ant-table-pagination.ant-pagination {
+  display: none;
+}
+
+.ant-modal .ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
   display: none;
 }
 
