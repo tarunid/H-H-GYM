@@ -1,13 +1,13 @@
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-import { useContext } from "react";
-import UserContext from "../../Context/UserContext";
+// import { useContext } from "react";
+// import UserContext from "../../Context/UserContext";
 
 
 const About = () => {
 
-  let { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser);
+  // let { loggedInUser } = useContext(UserContext);
+  // console.log(loggedInUser);
 
   return (
     <>
