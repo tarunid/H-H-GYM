@@ -1,9 +1,8 @@
-import "react-html5video/dist/styles.css";
+// import "react-html5video/dist/styles.css";
 import "./choose.css";
 import video from "../../assets/video.mp4";
 import dub from "../../assets/dumbell.svg";
 import { DefaultPlayer as Video } from "react-html5video";
-
 
 const Choose = () => {
   return (
