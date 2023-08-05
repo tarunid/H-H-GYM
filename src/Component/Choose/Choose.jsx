@@ -1,6 +1,9 @@
+import "react-html5video/dist/styles.css";
 import "./choose.css";
 import video from "../../assets/video.mp4";
 import dub from "../../assets/dumbell.svg";
+import { DefaultPlayer as Video } from "react-html5video";
+
 
 const Choose = () => {
   return (
@@ -9,9 +12,25 @@ const Choose = () => {
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
             <div className="flex justify-center">
-              <video height={"400px"} controls>
+              {/* <video height={"400px"} controls>
                 <source src={video} />
-              </video>
+              </video> */}
+              <Video
+                  autoPlay
+                  loop
+                  controls={[
+                    "PlayPause",
+                    "Seek",
+                    "Time",
+                    "Volume",
+                    "Fullscreen",
+                  ]}
+                  poster={""}>
+                  <source
+                    src={video}
+                    type="video/mp4"
+                  />
+                </Video>
             </div>
             <div className="flex flex-col justify-start">
               <div className="py-5 bg-heroSection-heading">

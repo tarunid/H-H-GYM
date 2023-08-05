@@ -1,14 +1,10 @@
+import "react-html5video/dist/styles.css";
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-// import { useContext } from "react";
-// import UserContext from "../../Context/UserContext";
-
+import { DefaultPlayer as Video } from "react-html5video";
+import poster from "../../assets/HH_Logo.png";
 
 const About = () => {
-
-  // let { loggedInUser } = useContext(UserContext);
-  // console.log(loggedInUser);
-
   return (
     <>
       <section className="pb-14">
@@ -62,10 +58,23 @@ const About = () => {
                 </div> */}
                 {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
               </div>
-              <div className="flex justify-center">
-                <video height={"400px"} controls>
-                  <source src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4" />
-                </video>
+              <div className="flex justify-center rounded-xl">
+                <Video
+                  autoPlay
+                  loop
+                  controls={[
+                    "PlayPause",
+                    "Seek",
+                    "Time",
+                    "Volume",
+                    "Fullscreen",
+                  ]}
+                  poster={poster}>
+                  <source
+                    src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4"
+                    type="video/mp4"
+                  />
+                </Video>
               </div>
             </div>
           </div>
