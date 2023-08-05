@@ -32,3 +32,21 @@
   letter-spacing: 1.75px;
   line-height: 44px;
 }
+
+.symbol {
+  font-family: "Montserrat", Times, serif;
+  font-size: 40px;
+}
+
+.ant-carousel .slick-dots li button {
+  background-color: var(--primary-color);
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: var(--primary-color);
+}
+
+/* .ant-carousel .slick-dots li.slick-active{
+  background-color: var(--primary-color);
+  border-color: black;
+} */
