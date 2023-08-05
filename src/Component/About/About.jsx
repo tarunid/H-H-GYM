@@ -1,7 +1,7 @@
+import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
-import { DefaultPlayer as Video } from "react-html5video";
 import poster from "../../assets/HH_Logo.png";
 
 const About = () => {
