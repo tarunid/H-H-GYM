@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import Logo from "../../assets/HH_Logo.png";
+import { useAuth } from "../../hooks/useAuth";
 
 let Header = () => {
+  let { accessToken } = useAuth();
   let [isMobile, setisMobile] = useState(false);
   let [autoClosecomponent, setautoClosecomponent] = useState(false);
   let [isMinWidthReached, setIsMinWidthReached] = useState(
@@ -52,7 +54,6 @@ let Header = () => {
         <div className="Nav-bar">
           <div className="Nav-logo-div">
             <Link to="/">
-              {/* <p className="text-xl">Logo</p> */}
               <img src={Logo} className="h-[6vh]" />
             </Link>
           </div>
@@ -63,6 +64,7 @@ let Header = () => {
                 Gallery View
               </Link>
             </li>
+
             <li className="Nav-li" id="2">
               <Link to="/about" className="Nav-a" onClick={() => autoClose()}>
                 About us
@@ -75,26 +77,23 @@ let Header = () => {
             </li>
 
             <div className="a">
-              <Link to="/login">
-                <button className="btn learn-more">
+              {accessToken ? (<Link to="/dashboard">
+                <button className="btn learn-more" onClick={() => autoClose()}>
                   <span className="btnn circle" aria-hidden="true">
                     <span className="icon arrow"></span>
                   </span>
-                  <span className="btnn btn-text">Login</span>
+                  <span className="btnn btn-text" >DashBoard</span>
                 </button>
-              </Link>
-            </div>
+              </Link>):(<Link to="/login">
+                <button className="btn learn-more" onClick={() => autoClose()}>
+                  <span className="btnn circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
+                  </span>
+                  <span className="btnn btn-text" >Login</span>
+                </button>
+              </Link>)}
 
-            {/* <div className="Comb-Btn-Container">
-              <div className="Login-Btn-Container-Mobile">
-                <Link to="/Login" onClick={() => showSwitch()}>
-                  <button className="Login-Btn-Style">
-                    <AiOutlineLogin />
-                    <h6 className="Btn-Text">Login</h6>
-                  </button>
-                </Link>
-              </div>
-            </div> */}
+            </div>
           </ul>
 
           <button className="Nav-bar-icon" onClick={() => showSwitch()}>

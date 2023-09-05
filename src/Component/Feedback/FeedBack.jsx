@@ -54,7 +54,7 @@ const FeedBack = () => {
 
   return (
     <>
-      <section className="py-14 ">
+      <section className="py-14">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[60%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center">

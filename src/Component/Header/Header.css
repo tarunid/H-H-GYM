@@ -27,7 +27,7 @@
 .Nav-bar {
   width: 95%;
   margin: auto;
-  height: 10vh;
+  min-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 
 .Nav-logo-div {
-  width: 20%;
+  min-width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,21 +67,20 @@
 }
 
 .Nav-a {
-  color: var(--white-color);
+  color: var(--black);
   text-decoration: none !important;
   font-weight: 20px;
   font-weight: 500;
 }
 
 .Nav-a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .Nav-bar-icon {
   display: none;
   margin-right: 10px;
   width: 10%;
-  background-color: #fff;
   border: 0;
   border-width: 0;
   outline: none;
@@ -201,6 +200,10 @@
     align-items: center;
   }
 
+  .Nav-a:hover {
+    color: #fff;
+  }
+  
   .Nav-bar-icon {
     display: block;
     width: 10%;

@@ -1,6 +1,10 @@
 import "antd/dist/antd";
 import { Tabs } from "antd";
 import All from "./All";
+import Equipments from "./Equipments";
+import Dumbbell from "./Dumbbell";
+
+
 
 const items = [
   {
@@ -11,14 +15,15 @@ const items = [
   {
     key: "2",
     label: `Equipments`,
-    children: <All />,
+    children: <Equipments />,
   },
   {
     key: "3",
     label: `Dumbbell`,
-    children: <All />,
+    children: <Dumbbell />,
   },
 ];
+
 
 const options = { tabPane: "true" };
 
@@ -46,12 +51,6 @@ const Gallery = () => (
           animated={options}
           className="p-5"
         />
-
-        <div className="grid grid-cols-1 w-[70%] mx-auto">
-          <div className="flex justify-center items-center py-10">
-            <button className="button-gallery">LOAD MORE</button>
-          </div>
-        </div>
       </div>
     </section>
   </>

@@ -22,7 +22,7 @@ const Featuers = () => {
                 <>
                   <div
                     className="box-features w-[270px] h-[327px] py-10 px-5 relative rounded-md"
-                    id="p1">
+                    id="p1" key={e.id}>
                     <div className="feacture-bg-top" id="c1"></div>
 
                     <svg

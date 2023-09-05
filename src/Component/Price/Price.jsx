@@ -18,12 +18,12 @@ const Price = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 w-[90%] mx-auto">
-            {PrcieData.map((e,index) => {
+            {PrcieData.map((e) => {
               return (
                 <>
-                  <div
-                    key={index}
-                    className="flex flex-col justify-center items-center w-[90%] mx-auto bg-[#e8e8e8] text-[#000] rounded-lg my-5 py-5 hover:scale-105">
+                  <div key={e.id}
+                    className="flex flex-col justify-center items-center w-[90%] mx-auto bg-[#e8e8e8] text-[#000] rounded-lg my-5 py-5 hover:scale-105"
+                    >
                     <div className="flex justify-between items-center w-[80%] mx-auto py-5">
                       <h3 className="price-haeding">{e.plan}</h3>
 
@@ -38,7 +38,7 @@ const Price = () => {
                       {e.planContent.map((E) => {
                         return (
                           <>
-                            <li>&#10003;{E}</li>
+                            <li key={e.id}>&#10003;{E}</li>
                           </>
                         );
                       })}

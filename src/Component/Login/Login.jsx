@@ -1,57 +1,78 @@
-// import { Link } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import { useFormik } from "formik";
+import { useAuth } from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../interceptors/axiosInstance";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const Login = async () => {
-    const userid = {
-      email,
-      password,
-    };
+  const Login = async (values) => {
 
     try {
-      toast.loading("Loading..");
-      let response = await axios.post("/api/auth/login", userid);
-      toast.dismiss();
-      toast.success(response.data.message);
+      let toastId = toast.loading('Loading..');
+      const formData = JSON.stringify(values);
+      const response = await axiosInstance.post("/auth/login", { formData });
+      login(response.data);
+      toast.dismiss(toastId);
+      toast.success(response.message);
+      navigate('/dashboard');  
     } catch (err) {
-      console.log(err);
+      console.log(err.message)
+      toast.error(err.message)
+      toast.error(err)
     }
   };
 
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: async (values) => {
+      Login(values);
+    },
+  });
+
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen">
-        <div className="flex flex-col w-[500px] space-y-5 items-center border-2 border-500 shadow-2xl rounded-xl p-5">
-          <Toaster position="top-center"></Toaster>
-          <h1 className="text-3xl">Login Page</h1>
-          <input
-            type="text"
-            className="border-2 w-[260px] h-[40px] p-2"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            className="border-2 w-[260px] h-[40px] p-2"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          <div className="flex justify-center items-center w-[260px]">
-            {/* <Link className="underline" to="/Register">
-              Go to Register
-            </Link> */}
-            <button
-              className="bg-blue-800 text-white px-5 py-2"
-              onClick={Login}>
-              Login
-            </button>
+      <div className="2xl:container mx-auto">
+        <div className="w-[90%] mx-auto grid grid-cols-1">
+          <div className="flex flex-col justify-center items-center h-screen">
+            <form
+              className="bg-gray-300 flex flex-col min-w-[300px] space-y-5 items-center border-2 border-500 shadow-2xl rounded-xl p-5"
+              onSubmit={formik.handleSubmit}
+            >
+              <input
+                type="text"
+                placeholder="Email"
+                id="email"
+                name="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+                className="w-[100%] p-2"
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+                className="w-[100%] p-2"
+                required
+              />
+              <button
+                className="bg-red-500 p-3 w-[100%] rounded-xl"
+                type="submit" disabled={false}
+              >
+                Login
+              </button>
+            </form>
           </div>
         </div>
       </div>
