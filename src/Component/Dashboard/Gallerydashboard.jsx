@@ -90,7 +90,7 @@ const Gallerydashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/gallery-all-all", {
+      const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/gallery-all-all", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
