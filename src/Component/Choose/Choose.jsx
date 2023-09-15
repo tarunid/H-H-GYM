@@ -15,7 +15,6 @@ const Choose = () => {
                 <source src={video} />
               </video> */}
               <Video
-                  autoPlay
                   loop
                   controls={[
                     "PlayPause",

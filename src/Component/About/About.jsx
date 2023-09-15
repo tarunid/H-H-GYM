@@ -60,7 +60,6 @@ const About = () => {
               </div>
               <div className="flex justify-center rounded-xl">
                 <Video
-                  autoPlay
                   loop
                   controls={[
                     "PlayPause",

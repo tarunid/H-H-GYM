@@ -69,7 +69,6 @@ const FeedBack = () => {
   <div className="w-[90%] mx-auto rounded-3xl order-2 md:order-1">
     <Carousel
       ref={ref}
-      autoplay
       dots={true}
       pauseOnHover={true}
       pauseOnDotsHover={true}
