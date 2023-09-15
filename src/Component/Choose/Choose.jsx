@@ -31,7 +31,7 @@ const Choose = () => {
                   />
                 </Video>
             </div>
-            <div className="flex flex-col justify-start">
+            <div className="flex flex-col justify-start mt-5">
               <div className="py-5 bg-heroSection-heading">
                 <p className="text-[#fff]">WHY CHOOSE US</p>
               </div>

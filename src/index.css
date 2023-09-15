@@ -40,6 +40,14 @@
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+  .heading-2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+
 .heading-3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -52,6 +60,7 @@
   line-height: 27.7333px;
   text-transform: uppercase;
 }
+
 
 .heading-3-bg {
   font-family: "Montserrat", sans-serif;
