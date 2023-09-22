@@ -1,11 +1,11 @@
 import "./style.css"
-import axios from "axios";
 import axiosInstance from "../../interceptors/axiosInstance";
 import { useAuth } from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
 import { Table, Button, Modal } from "antd";
 import { useFormik } from "formik";
 import { ExclamationCircleFilled } from '@ant-design/icons';
+import toast from "react-hot-toast"
 
 const Gallerydashboard = () => {
   const {accessToken} = useAuth();
@@ -90,7 +90,7 @@ const Gallerydashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/gallery-all-all", {
+      const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/gallery/gallery-all-all", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -111,7 +111,7 @@ const Gallerydashboard = () => {
     let value = JSON.stringify(values);
     console.log(accessToken)
     try {
-      await axiosInstance.post("/galleryview", {
+      await axiosInstance.post("/gallery/galleryview", {
         value,
       }, {
         headers: {
@@ -129,7 +129,7 @@ const Gallerydashboard = () => {
   const updateFunction = async (values) => {
     let value = JSON.stringify(values);
     try {
-      await axios.put("https://hh-gym-backend-production.up.railway.app/api/galleryview/" + id, {
+      await axiosInstance.put("/gallery/galleryview/" + id, {
         value,
       });
       setConfirmLoading(true);
@@ -161,8 +161,8 @@ const Gallerydashboard = () => {
     let { ID } = record;
     console.log("jjj");
     try {
-      const response = await axios.delete(
-        "https://hh-gym-backend-production.up.railway.app/api/deletegallery/" + ID,
+      const response = await axiosInstance.delete(
+        "/gallery/galleryview/" + ID,
         {
           headers: { // Fix the typo here
             "Content-Type": "application/json",
@@ -171,7 +171,7 @@ const Gallerydashboard = () => {
           },
         }
       );
-      console.log(response);
+      toast.success(response.status);
       fetchData();
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -411,13 +411,12 @@ const Gallerydashboard = () => {
               </label>
               <select
                 name="type1"
+                defaultValue="General"
                 value={formikUpdate.values.type1}
                 onChange={formikUpdate.handleChange}
                 onBlur={formikUpdate.handleBlur}
                 style={{ display: "block", padding: "10px" }}>
-                <option value="" label="Select the Category">
-                  Select the Category
-                </option>
+                
                 <option value="General" label="General">
                   General
                 </option>
