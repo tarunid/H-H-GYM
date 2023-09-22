@@ -4,8 +4,6 @@ import All from "./All";
 import Equipments from "./Equipments";
 import Dumbbell from "./Dumbbell";
 
-
-
 const items = [
   {
     key: "1",
@@ -23,7 +21,6 @@ const items = [
     children: <Dumbbell />,
   },
 ];
-
 
 const options = { tabPane: "true" };
 

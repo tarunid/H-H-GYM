@@ -6,6 +6,7 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useEffect } from "react";
+import axiosInstance from "../../interceptors/axiosInstance";
 
 const Equipments = () => {
   const [galleryData, setgalleryData] = useState([]);
@@ -17,17 +18,9 @@ const Equipments = () => {
 
   let FetchData = async () => {
     try {
-      const response = await fetch("https://hh-gym-backend-production.up.railway.app/gallery-Equipments-limit", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5ld3VzZXIiLCJpYXQiOjE2OTAzMDU0MTB9.JJTMne-C4s4fv_sVgKyFw1NX8_2m_YmrcGAcPQzYkVQ",
-        },
-      });
-      const jsonData = await response.json();
-      setgalleryData(jsonData);
-      setGalleryImages(jsonData);
+      const response = await axiosInstance.get("/gallery/gallery-all-all");
+      setgalleryData(response.data);
+      setGalleryImages(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -35,18 +28,9 @@ const Equipments = () => {
 
   let FetchAllData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/gallery-Equipments-all", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5ld3VzZXIiLCJpYXQiOjE2OTAzMDU0MTB9.JJTMne-C4s4fv_sVgKyFw1NX8_2m_YmrcGAcPQzYkVQ",
-        },
-      });
-      const jsonData = await response.json();
-      console.log(jsonData)
-      setgalleryData(jsonData);
-      setGalleryImages(jsonData);
+      const response = await axiosInstance.get("/gallery-Equipments-all");
+      setgalleryData(response.data);
+      setGalleryImages(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

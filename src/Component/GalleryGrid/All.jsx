@@ -1,44 +1,59 @@
 import { useState } from "react";
-import { galleryData } from "../../Api/Gallery";
+// import { galleryData } from "../../Api/Gallery";
 import "./Gallery.css";
 // import LightGallery from 'lightgallery/react/Lightgallery.es5';
 import { IoIosCloseCircle } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
+import { useEffect } from "react";
+import { useAuth } from "../../hooks/useAuth";
+import axiosInstance from "../../interceptors/axiosInstance";
+
 
 const All = () => {
-  const galleryImages = [
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-9.jpg",
-      textName: "Name",
-    },
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-2.jpg",
-      textName: "Name",
-    },
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-3.jpg",
-      textName: "Name",
-    },
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-4.jpg",
-      textName: "Name",
-    },
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-5.jpg",
-      textName: "Name",
-    },
-    {
-      imgSrc:
-        "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-6.jpg",
-      textName: "Name",
-    },
-  ];
+  const [galleryData, setgalleryData] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const {accessToken} = useAuth();
+
+  useEffect(() => {
+    FetchData();
+  },[]);
+
+  let FetchData = async () => {
+    try {
+      const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/gallery/gallery-all-all", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5ld3VzZXIiLCJpYXQiOjE2OTAzMDU0MTB9.JJTMne-C4s4fv_sVgKyFw1NX8_2m_YmrcGAcPQzYkVQ",
+        },
+      });
+      const jsonData = await response.json();
+      setgalleryData(jsonData);
+      setGalleryImages(jsonData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  let FetchAllData = async () => {
+    try {
+      const response = await axiosInstance.get("/gallery/gallery-all-all", {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${accessToken}`
+        }
+      });
+      const jsonData = await response.json();
+      console.log(jsonData)
+      setgalleryData(jsonData);
+      setGalleryImages(jsonData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -84,6 +99,7 @@ const All = () => {
           </div>
         </div>
       )}
+
       <div className="2xl:container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
           {galleryData.map((e, index) => {
@@ -108,6 +124,12 @@ const All = () => {
               </>
             );
           })}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 w-[70%] mx-auto">
+        <div className="flex justify-center items-center py-10">
+          <button className="button-gallery" onClick={FetchAllData}>LOAD MORE</button>
         </div>
       </div>
     </>
