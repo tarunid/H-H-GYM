@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const refreshAccessToken = async () => {
       try {
-        const response = await axiosInstance.post("auth/refresh", { refreshToken });
+        const response = await axiosInstance.post("auth/renewAccessToken", { refreshToken });
         const { accessToken: newAccessToken } = response.data;
         updateTokens(newAccessToken, refreshToken);
       } catch (error) {
