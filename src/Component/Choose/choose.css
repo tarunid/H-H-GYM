@@ -35,6 +35,13 @@
   text-align: start;
 }
 
+@media screen and (max-width: 600px) {
+  .choose-sub-para {
+    font-size: 14px;
+  }
+}
+
+
 .img-line::before {
   content: "";
   height: 461px;

@@ -66,160 +66,154 @@ const FeedBack = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-1">
-            <div className="w-[90%] mx-auto rounded-3xl order-2 md:order-1">
-              <Carousel
-                ref={ref}
-                autoplay
-                dots={true}
-                pauseOnHover={true}
-                pauseOnDotsHover={true}
-                draggable
-                easing
-                className="rounded-full">
-                <div className="grid grid-cols-1" style={contentStyle}>
-                  <div className="py-10 grid grid-cols-2" style={contentStyle}>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1" style={contentStyle}>
-                  <div className="py-10 grid grid-cols-2" style={contentStyle}>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1" style={contentStyle}>
-                  <div className="py-10 grid grid-cols-2" style={contentStyle}>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full"
-                          alt="img"
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">Name of Client</h3>
-                        <p className="py-1 feedBack-job">Home Maker</p>
-                        <p className="text-start py-5">
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Sunt sequi eos debitis quidem repudiandae illo
-                          corporis quos aliquid natus ex reiciendis voluptates
-                          dignissimos quam possimus asperiores aperiam, qui nam
-                          voluptatibus.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Carousel>
-            </div>
-            {/* <div className="w-[90%] mx-auto order-1 md:order-2">
-              <img src={galleryData[slideNumber].imgSrc} />
-            </div> */}
+  <div className="w-[90%] mx-auto rounded-3xl order-2 md:order-1">
+    <Carousel
+      ref={ref}
+      dots={true}
+      pauseOnHover={true}
+      pauseOnDotsHover={true}
+      draggable
+      easing
+      className="rounded-full"
+    >
+      { /* 1st Card */ }
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
           </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      { /* 2nd Card (Repeat the structure as needed for other cards) */ }
+      { /* ... */ }
+
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
+          </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
+          </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
+          </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
+          </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
+        <div className="py-10 flex justify-center items-center gap-5 px-2">
+          { /* First section of card */ }
+          <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
+            <img
+              src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
+              className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
+              alt="img"
+            />
+            <p className="py-5 symbol">&#34;</p>
+          </div>
+          { /* Second section of card */ }
+          <div className="flex flex-col justify-start items-start h-[50%] px-1">
+            <h3 className="py-2 feedBack-name">Name of Client</h3>
+            <p className="py-1 feedBack-job">Home Maker</p>
+            <p className="text-start py-5">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt sequi eos debitis quidem repudiandae illo corporis quos aliquid natus ex reiciendis voluptates dignissimos quam possimus asperiores aperiam, qui nam voluptatibus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Carousel>
+  </div>
+</div>
           <div className="grid grid-cols-1 w-[60%] mx-auto py-5">
             <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
               <button

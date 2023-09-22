@@ -16,8 +16,10 @@ const Gallerydashboard = () => {
   const [confirmLoadingAdd, setConfirmLoadingAdd] = useState(false);
   const [dataImg, setDataImg] = useState();
   const [datatext, setDataText] = useState();
+  const [type, setType] = useState();
   const [id, setID] = useState();
   const { confirm } = Modal;
+  
 
   const formikAdd = useFormik({
     initialValues: {
@@ -41,7 +43,18 @@ const Gallerydashboard = () => {
     },
     // validationSchema:
     onSubmit: async (values, actions) => {
-      console.log(values);
+      console.log(values.type1);
+      if (values){
+        if (values.imgSrc1 === ""){
+          values.imgSrc1 = dataImg;
+        }
+        if (values.textName1 === ""){
+          values.textName1 = datatext;
+        }
+        if (values.type1 === ""){
+          values.type1 = type;
+        }
+      }
       updateFunction(values);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       actions.resetForm();
@@ -53,6 +66,7 @@ const Gallerydashboard = () => {
     setID(record.ID);
     setDataImg(record.imgSrc);
     setDataText(record.textName);
+    setType(record.type);
   };
 
   const showModalAdd = () => {
@@ -375,7 +389,7 @@ const Gallerydashboard = () => {
                 }
               />
               {formikUpdate.errors.height && formikUpdate.touched.height && (
-                <p className="text-red-700">
+                <p className="text-red-700"> 
                   {"*" + formikUpdate.errors.height}
                 </p>
               )}
@@ -415,8 +429,12 @@ const Gallerydashboard = () => {
                 value={formikUpdate.values.type1}
                 onChange={formikUpdate.handleChange}
                 onBlur={formikUpdate.handleBlur}
-                style={{ display: "block", padding: "10px" }}>
-                
+                defaultChecked={type}
+                style={{ display: "block", 
+                padding: "10px" }}>
+                <option value="" label="Select the Category">
+                  Select the Category
+                </option>
                 <option value="General" label="General">
                   General
                 </option>

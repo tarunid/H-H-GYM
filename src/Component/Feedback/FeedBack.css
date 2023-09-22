@@ -8,6 +8,13 @@
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+  .heading-2-feedback {
+    font-size: 22px;
+  }
+}
+
+
 .c::after {
   font-family: "Montserrat", sans-serif;
   content: "“";
