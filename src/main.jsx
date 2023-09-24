@@ -13,10 +13,11 @@ import ContactPage from "./pages/Contact";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import Login from "./Component/Login/Login";
 import Gympricedashboard from "./Component/Dashboard/Gympricedashboard";
-import Trainerdashboard from "./Component/Dashboard/Trainerdashboard";
 import GoogleProducts from "./Component/Dashboard/GoogleProducts";
 import TermCondition from "./Component/TermAndCondition/TermCondition";
 import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy";
+import TestimonialDashboard from "./Component/Dashboard/TestimonialDashboard";
+import GymTrainerDashboard from "./Component/Dashboard/GymTrainerDashboard";
 
 let browerRouter = createBrowserRouter([
   {
@@ -68,13 +69,17 @@ let browerRouter = createBrowserRouter([
             element: <Gallerydashboard />,
           },
           {
-            path: "trainer-info-dashboard",
-            element: <Trainerdashboard />,
-          },
-          {
             path: "gym-price-dashboard",
             element: <Gympricedashboard />,
           },
+          {
+            path:"trainer-dashboard",
+            element:<GymTrainerDashboard/>
+          },
+          {
+            path: "feedback-dashboard",
+            element: <TestimonialDashboard />,
+          }
         ],
       },
     ],
