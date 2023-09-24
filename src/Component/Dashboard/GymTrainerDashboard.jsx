@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 import { Table, Button, Modal } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axiosInstance from "../../interceptors/axiosInstance";
-import { useAuth } from "../../hooks/useAuth";
 import { ExclamationCircleFilled } from "@ant-design/icons";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
-const Gympricedashboard = () => {
-  const { accessToken } = useAuth();
+const GymTrainerDashboard = () => {
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [openAdd, setOpenAdd] = useState(false);
@@ -16,9 +13,10 @@ const Gympricedashboard = () => {
   const [confirmLoadingAdd, setConfirmLoadingAdd] = useState(false);
 
   const [tableValues, setTableValues] = useState({
-    tag: "",
-    description: "",
-    price: "",
+    name: "",
+    trainerType: "",
+    socialLinks: "",
+    imageLink: "",
   });
 
   const [id, setID] = useState();
@@ -26,29 +24,19 @@ const Gympricedashboard = () => {
 
   const formikAdd = useFormik({
     initialValues: {
-      tag: "",
-      description: "",
-      price: "",
+      name: "",
+      trainerType: "",
+      socialLinks: "",
+      imageLink: "",
     },
     validationSchema: Yup.object({
-      tag: Yup.string().required("Tag is required"),
-      description: Yup.string()
-        .required("Description is required")
-        .matches(/\|/, "Description should contain at least one delimiter |"),
-      price: Yup.number()
-        .required("Price is required")
-        .positive("Price must be a positive number")
-        .integer("Price must be an integer"),
+      name: Yup.string().required("Name is required"),
+      trainerType: Yup.string().required("Trainer Type is required"),
+      socialLinks: Yup.string().required("Social Links is required"),
+      imageLink: Yup.string().required("Image Link is required"),
     }),
     onSubmit: async (values, actions) => {
-      const descriptionArray = values.description.split("|").map((item) => item.trim());
-
-      const processedValues = {
-        ...values,
-        description: descriptionArray,
-      };
-
-      addfunction(processedValues);
+      addFunction(values);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       actions.resetForm();
     },
@@ -56,19 +44,16 @@ const Gympricedashboard = () => {
 
   const formikUpdate = useFormik({
     initialValues: {
-      tag: "",
-      description: "",
-      price: "",
+      name: "",
+      trainerType: "",
+      socialLinks: "",
+      imageLink: "",
     },
     validationSchema: Yup.object({
-      tag: Yup.string().required("Tag is required"),
-      description: Yup.string()
-        .required("Description is required")
-        .matches(/\|/, "Description should contain at least one delimiter |"),
-      price: Yup.number()
-        .required("Price is required")
-        .positive("Price must be a positive number")
-        .integer("Price must be an integer"),
+      name: Yup.string().required("Name is required"),
+      trainerType: Yup.string().required("Trainer Type is required"),
+      socialLinks: Yup.string().required("Social Links is required"),
+      imageLink: Yup.string().required("Image Link is required"),
     }),
     onSubmit: async (values, actions) => {
       updateFunction(values);
@@ -81,9 +66,10 @@ const Gympricedashboard = () => {
     setOpen(true);
     setID(record.id);
     setTableValues({
-      tag: record.tag,
-      description: record.description,
-      price: record.price,
+      name: record.name,
+      trainerType: record.trainerType,
+      socialLinks: record.socialLinks,
+      imageLink: record.imageLink,
     });
   };
 
@@ -123,63 +109,69 @@ const Gympricedashboard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://hh-gym-backend-production.up.railway.app/api/price/all",
+        "https://hh-gym-backend-production.up.railway.app/api/trainer/all",
         {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: "Bearer",
           },
         }
       );
       const jsonData = await response.json();
-      setData(jsonData.deserializedPriceCards);
+      setData(jsonData.trainers);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  const addfunction = async (values) => {
+  const addFunction = async (values) => {
+    let value = JSON.stringify(values);
     try {
-      const response = await axiosInstance.post(
-        "/price/add",
-        JSON.stringify(values),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      toast.success(response.status);
+      await fetch("https://hh-gym-backend-production.up.railway.app/api/trainer/add", {
+        method: "POST",
+        body: value,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      toast.success("Data added successfully");
       fetchData();
     } catch (error) {
-      console.error("Error adding data:", error);
+      toast.error("Error adding data:", error);
     }
   };
 
   const updateFunction = async (values) => {
+    let value = JSON.stringify(values);
     try {
-      const response = await axiosInstance.put(
-        `/price/update/${id}`,
-        JSON.stringify(values)
-      );
-      toast.success(response.data.message);
-      setOpen(false);
+      // Replace with your API endpoint for updating data
+      await fetch(`https://hh-gym-backend-production.up.railway.app/api/trainer/update/${id}`, {
+        method: "PUT",
+        body: value,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      toast.success("Data updated successfully");
       fetchData();
+      handleOk();
     } catch (error) {
-      console.error("Error updating data:", error);
+      toast.error("Error updating data:", error);
     }
   };
 
   const showConfirm = (record) => {
     confirm({
-      title: "Do you Want to delete these items?",
+      title: "Do you Want to delete this item?",
       icon: <ExclamationCircleFilled />,
-      content: "Some descriptions",
+      content: "This action cannot be undone.",
       onOk() {
-        deletefunction(record);
+        deleteFunction(record);
       },
       onCancel() {
         console.log("Cancel");
@@ -187,22 +179,26 @@ const Gympricedashboard = () => {
     });
   };
 
-  const deletefunction = async (record) => {
+  const deleteFunction = async (record) => {
+    let { id } = record;
     try {
-      const response = await axiosInstance.delete(
-        `/price/delete/${record.id}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      toast.success(response.data.message);
-      fetchData();
+      // Replace with your API endpoint for deleting data
+      const response = await fetch(`https://hh-gym-backend-production.up.railway.app/api/trainer/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      if (response.status === 200) {
+        toast.success("Data deleted successfully");
+        fetchData();
+      } else {
+        toast.error("Error deleting data");
+      }
     } catch (error) {
-      console.error("Error deleting data:", error);
+      toast.error("Error deleting data:", error);
     }
   };
 
@@ -213,25 +209,29 @@ const Gympricedashboard = () => {
       key: "id",
     },
     {
-      title: "Tag",
-      dataIndex: "tag",
-      key: "tag",
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
     },
     {
-      title: "Description TAG",
-      dataIndex: "description",
-      key: "description",
-      render: (text) => text.join(" | "), // Render the array as a string
+      title: "Trainer Type",
+      dataIndex: "trainerType",
+      key: "trainerType",
     },
     {
-      title: "TYPE TAG",
-      dataIndex: "price",
-      key: "price",
+      title: "Social Links",
+      dataIndex: "socialLinks",
+      key: "socialLinks",
+    },
+    {
+      title: "Image Link",
+      dataIndex: "imageLink",
+      key: "imageLink",
     },
     {
       title: "UPDATE",
-      dataIndex: "bhkbh",
-      key: "UPDATE",
+      dataIndex: "update",
+      key: "update",
       render: (text, record) => (
         <button
           className="bg-green-500 py-2 px-3 rounded-xl"
@@ -243,8 +243,8 @@ const Gympricedashboard = () => {
     },
     {
       title: "DELETE",
-      dataIndex: "DELETE",
-      key: "DELETE",
+      dataIndex: "delete",
+      key: "delete",
       render: (text, record) => (
         <button
           className="bg-red-500 py-2 px-3 rounded-xl"
@@ -259,7 +259,7 @@ const Gympricedashboard = () => {
   return (
     <>
       <section className="pt-10 px-6 h-[100vh]">
-        <h1>GALLERY GRID VIEW DASHBOARD</h1>
+        <h1>Trainer Dashboard</h1>
 
         <button
           className="bg-slate-400 h-[33px] w-[97px] rounded-xl mt-5 mx-2"
@@ -279,12 +279,13 @@ const Gympricedashboard = () => {
         </div>
 
         <Modal
-          title="ADD GYM GRID DATA"
+          title="ADD TRAINER DATA"
           visible={openAdd}
           onOk={handleOkAdd}
           confirmLoading={confirmLoadingAdd}
           onCancel={handleCancelAdd}
           okText={"ADD DATA"}
+          okType="primary"
         >
           <form
             autoComplete="off"
@@ -293,46 +294,71 @@ const Gympricedashboard = () => {
           >
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="tag"
-                name="tag"
+                id="name"
+                name="name"
                 type="text"
-                placeholder="Enter Tag"
+                placeholder="Name"
                 onChange={formikAdd.handleChange}
-                value={formikAdd.values.tag}
+                value={formikAdd.values.name}
                 className="w-[100%] form-style"
+                required
               />
-              {formikAdd.touched.tag && formikAdd.errors.tag ? (
-                <div className="error-message">{formikAdd.errors.tag}</div>
-              ) : null}
-            </div>
-
-            <div className="flex flex-col justify-start items-start m-2">
-              <textarea
-                id="description"
-                name="description"
-                placeholder="Enter Description: Example: Abc | def"
-                onChange={formikAdd.handleChange}
-                onBlur={formikAdd.handleBlur}
-                value={formikAdd.values.description}
-                className="w-[100%] form-style"
-              />
-              {formikAdd.touched.description && formikAdd.errors.description ? (
-                <div className="error-message">{formikAdd.errors.description}</div>
+              {formikAdd.touched.name && formikAdd.errors.name ? (
+                <div className="error-message">{formikAdd.errors.name}</div>
               ) : null}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="price"
-                name="price"
-                type="number"
-                placeholder="Enter Price"
+                id="trainerType"
+                name="trainerType"
+                type="text"
+                placeholder="Trainer Type"
                 onChange={formikAdd.handleChange}
-                value={formikAdd.values.price}
+                value={formikAdd.values.trainerType}
                 className="w-[100%] form-style"
+                required
               />
-              {formikAdd.touched.price && formikAdd.errors.price ? (
-                <div className="error-message">{formikAdd.errors.price}</div>
+              {formikAdd.touched.trainerType && formikAdd.errors.trainerType ? (
+                <div className="error-message">
+                  {formikAdd.errors.trainerType}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="socialLinks"
+                name="socialLinks"
+                type="text"
+                placeholder="Social Links"
+                onChange={formikAdd.handleChange}
+                value={formikAdd.values.socialLinks}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikAdd.touched.socialLinks && formikAdd.errors.socialLinks ? (
+                <div className="error-message">
+                  {formikAdd.errors.socialLinks}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="imageLink"
+                name="imageLink"
+                type="text"
+                placeholder="Image Link"
+                onChange={formikAdd.handleChange}
+                value={formikAdd.values.imageLink}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikAdd.touched.imageLink && formikAdd.errors.imageLink ? (
+                <div className="error-message">
+                  {formikAdd.errors.imageLink}
+                </div>
               ) : null}
             </div>
 
@@ -359,7 +385,7 @@ const Gympricedashboard = () => {
         </Modal>
 
         <Modal
-          title="UPDATE GYM GRID DATA"
+          title="UPDATE TRAINER DATA"
           visible={open}
           onOk={handleOk}
           confirmLoading={confirmLoading}
@@ -374,46 +400,80 @@ const Gympricedashboard = () => {
           >
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="tag"
-                name="tag"
+                id="name"
+                name="name"
                 type="text"
-                placeholder={tableValues.tag}
+                placeholder={tableValues.name}
                 onChange={formikUpdate.handleChange}
-                value={formikUpdate.values.tag}
+                value={formikUpdate.values.name}
                 className="w-[100%] form-style"
+                required
               />
-            </div>
-
-            <div className="flex flex-col justify-start items-start m-2">
-              <textarea
-                id="description"
-                name="description"
-                placeholder={tableValues.description}
-                onChange={formikUpdate.handleChange}
-                onBlur={formikUpdate.handleBlur}
-                value={formikUpdate.values.description}
-                className="w-[100%] form-style"
-              />
-              {formikUpdate.touched.description && formikUpdate.errors.description ? (
-                <div>{formikUpdate.errors.description}</div>
+              {formikUpdate.touched.name && formikUpdate.errors.name ? (
+                <div className="error-message">{formikUpdate.errors.name}</div>
               ) : null}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="price"
-                name="price"
-                type="number"
-                placeholder={tableValues.price}
+                id="trainerType"
+                name="trainerType"
+                type="text"
+                placeholder={tableValues.trainerType}
                 onChange={formikUpdate.handleChange}
-                value={formikUpdate.values.price}
+                value={formikUpdate.values.trainerType}
                 className="w-[100%] form-style"
+                required
               />
+              {formikUpdate.touched.trainerType &&
+              formikUpdate.errors.trainerType ? (
+                <div className="error-message">
+                  {formikUpdate.errors.trainerType}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="socialLinks"
+                name="socialLinks"
+                type="text"
+                placeholder={tableValues.socialLinks}
+                onChange={formikUpdate.handleChange}
+                value={formikUpdate.values.socialLinks}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikUpdate.touched.socialLinks &&
+              formikUpdate.errors.socialLinks ? (
+                <div className="error-message">
+                  {formikUpdate.errors.socialLinks}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="imageLink"
+                name="imageLink"
+                type="text"
+                placeholder={tableValues.imageLink}
+                onChange={formikUpdate.handleChange}
+                value={formikUpdate.values.imageLink}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikUpdate.touched.imageLink &&
+              formikUpdate.errors.imageLink ? (
+                <div className="error-message">
+                  {formikUpdate.errors.imageLink}
+                </div>
+              ) : null}
             </div>
 
             <div className="p-5 flex justify-start">
               <button className="cssbuttons-io-button" type="submit">
-                UPDATE
+                UPDATE DATA
                 <div className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -432,10 +492,10 @@ const Gympricedashboard = () => {
             </div>
           </form>
         </Modal>
-
       </section>
+      <Toaster />
     </>
   );
 };
 
-export default Gympricedashboard;
+export default GymTrainerDashboard;

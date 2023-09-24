@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 import { Table, Button, Modal } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axiosInstance from "../../interceptors/axiosInstance";
-import { useAuth } from "../../hooks/useAuth";
 import { ExclamationCircleFilled } from "@ant-design/icons";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
-const Gympricedashboard = () => {
-  const { accessToken } = useAuth();
+const TestimonialDashboard = () => {
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
   const [openAdd, setOpenAdd] = useState(false);
@@ -16,9 +13,9 @@ const Gympricedashboard = () => {
   const [confirmLoadingAdd, setConfirmLoadingAdd] = useState(false);
 
   const [tableValues, setTableValues] = useState({
-    tag: "",
-    description: "",
-    price: "",
+    username: "",
+    userWork: "",
+    feedback: "",
   });
 
   const [id, setID] = useState();
@@ -26,29 +23,17 @@ const Gympricedashboard = () => {
 
   const formikAdd = useFormik({
     initialValues: {
-      tag: "",
-      description: "",
-      price: "",
+      username: "",
+      userWork: "",
+      feedback: "",
     },
     validationSchema: Yup.object({
-      tag: Yup.string().required("Tag is required"),
-      description: Yup.string()
-        .required("Description is required")
-        .matches(/\|/, "Description should contain at least one delimiter |"),
-      price: Yup.number()
-        .required("Price is required")
-        .positive("Price must be a positive number")
-        .integer("Price must be an integer"),
+      username: Yup.string().required("Username is required"),
+      userWork: Yup.string().required("User Work is required"),
+      feedback: Yup.string().required("Feedback is required"),
     }),
     onSubmit: async (values, actions) => {
-      const descriptionArray = values.description.split("|").map((item) => item.trim());
-
-      const processedValues = {
-        ...values,
-        description: descriptionArray,
-      };
-
-      addfunction(processedValues);
+      addFunction(values);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       actions.resetForm();
     },
@@ -56,19 +41,14 @@ const Gympricedashboard = () => {
 
   const formikUpdate = useFormik({
     initialValues: {
-      tag: "",
-      description: "",
-      price: "",
+      username: "",
+      userWork: "",
+      feedback: "",
     },
     validationSchema: Yup.object({
-      tag: Yup.string().required("Tag is required"),
-      description: Yup.string()
-        .required("Description is required")
-        .matches(/\|/, "Description should contain at least one delimiter |"),
-      price: Yup.number()
-        .required("Price is required")
-        .positive("Price must be a positive number")
-        .integer("Price must be an integer"),
+      username: Yup.string().required("Username is required"),
+      userWork: Yup.string().required("User Work is required"),
+      feedback: Yup.string().required("Feedback is required"),
     }),
     onSubmit: async (values, actions) => {
       updateFunction(values);
@@ -81,9 +61,9 @@ const Gympricedashboard = () => {
     setOpen(true);
     setID(record.id);
     setTableValues({
-      tag: record.tag,
-      description: record.description,
-      price: record.price,
+      username: record.username,
+      userWork: record.userWork,
+      feedback: record.feedback,
     });
   };
 
@@ -123,63 +103,68 @@ const Gympricedashboard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://hh-gym-backend-production.up.railway.app/api/price/all",
+        "https://hh-gym-backend-production.up.railway.app/api/feedback/all",
         {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: "Bearer",
           },
         }
       );
       const jsonData = await response.json();
-      setData(jsonData.deserializedPriceCards);
+      setData(jsonData.TestimonialArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  const addfunction = async (values) => {
+  const addFunction = async (values) => {
+    let value = JSON.stringify(values);
     try {
-      const response = await axiosInstance.post(
-        "/price/add",
-        JSON.stringify(values),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      toast.success(response.status);
+      await fetch("https://hh-gym-backend-production.up.railway.app/api/feedback/update", {
+        method: "POST",
+        body: value,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      toast.success("Feedback added successfully");
       fetchData();
     } catch (error) {
-      console.error("Error adding data:", error);
+      toast.error("Error adding feedback:", error);
     }
   };
 
   const updateFunction = async (values) => {
+    let value = JSON.stringify(values);
     try {
-      const response = await axiosInstance.put(
-        `/price/update/${id}`,
-        JSON.stringify(values)
-      );
-      toast.success(response.data.message);
-      setOpen(false);
+      await fetch(`https://hh-gym-backend-production.up.railway.app/api/feedback/update/${id}`, {
+        method: "PUT",
+        body: value,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      toast.success("Feedback updated successfully");
       fetchData();
+      handleOk();
     } catch (error) {
-      console.error("Error updating data:", error);
+      toast.error("Error updating feedback:", error);
     }
   };
 
   const showConfirm = (record) => {
     confirm({
-      title: "Do you Want to delete these items?",
+      title: "Do you Want to delete this feedback?",
       icon: <ExclamationCircleFilled />,
-      content: "Some descriptions",
+      content: "This action cannot be undone.",
       onOk() {
-        deletefunction(record);
+        deleteFunction(record);
       },
       onCancel() {
         console.log("Cancel");
@@ -187,22 +172,25 @@ const Gympricedashboard = () => {
     });
   };
 
-  const deletefunction = async (record) => {
+  const deleteFunction = async (record) => {
+    let { id } = record;
     try {
-      const response = await axiosInstance.delete(
-        `/price/delete/${record.id}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      toast.success(response.data.message);
-      fetchData();
+      const response = await fetch(`https://hh-gym-backend-production.up.railway.app/api/feedback/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: "Bearer",
+        },
+      });
+      if (response.status === 200) {
+        toast.success("Feedback deleted successfully");
+        fetchData();
+      } else {
+        toast.error("Error deleting feedback");
+      }
     } catch (error) {
-      console.error("Error deleting data:", error);
+      toast.error("Error deleting feedback:", error);
     }
   };
 
@@ -213,25 +201,24 @@ const Gympricedashboard = () => {
       key: "id",
     },
     {
-      title: "Tag",
-      dataIndex: "tag",
-      key: "tag",
+      title: "Username",
+      dataIndex: "username",
+      key: "username",
     },
     {
-      title: "Description TAG",
-      dataIndex: "description",
-      key: "description",
-      render: (text) => text.join(" | "), // Render the array as a string
+      title: "User Work",
+      dataIndex: "userWork",
+      key: "userWork",
     },
     {
-      title: "TYPE TAG",
-      dataIndex: "price",
-      key: "price",
+      title: "Feedback",
+      dataIndex: "feedback",
+      key: "feedback",
     },
     {
       title: "UPDATE",
-      dataIndex: "bhkbh",
-      key: "UPDATE",
+      dataIndex: "update",
+      key: "update",
       render: (text, record) => (
         <button
           className="bg-green-500 py-2 px-3 rounded-xl"
@@ -243,8 +230,8 @@ const Gympricedashboard = () => {
     },
     {
       title: "DELETE",
-      dataIndex: "DELETE",
-      key: "DELETE",
+      dataIndex: "delete",
+      key: "delete",
       render: (text, record) => (
         <button
           className="bg-red-500 py-2 px-3 rounded-xl"
@@ -259,7 +246,7 @@ const Gympricedashboard = () => {
   return (
     <>
       <section className="pt-10 px-6 h-[100vh]">
-        <h1>GALLERY GRID VIEW DASHBOARD</h1>
+        <h1>Testimonial Dashboard</h1>
 
         <button
           className="bg-slate-400 h-[33px] w-[97px] rounded-xl mt-5 mx-2"
@@ -271,7 +258,7 @@ const Gympricedashboard = () => {
         </button>
 
         <Button className="bg-green-500 rounded-xl" onClick={showModalAdd}>
-          ADD DATA
+          ADD FEEDBACK
         </Button>
 
         <div className="py-10">
@@ -279,12 +266,13 @@ const Gympricedashboard = () => {
         </div>
 
         <Modal
-          title="ADD GYM GRID DATA"
+          title="ADD FEEDBACK"
           visible={openAdd}
           onOk={handleOkAdd}
           confirmLoading={confirmLoadingAdd}
           onCancel={handleCancelAdd}
-          okText={"ADD DATA"}
+          okText={"ADD FEEDBACK"}
+          okType="primary"
         >
           <form
             autoComplete="off"
@@ -293,52 +281,55 @@ const Gympricedashboard = () => {
           >
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="tag"
-                name="tag"
+                id="username"
+                name="username"
                 type="text"
-                placeholder="Enter Tag"
+                placeholder="Username"
                 onChange={formikAdd.handleChange}
-                value={formikAdd.values.tag}
+                value={formikAdd.values.username}
                 className="w-[100%] form-style"
+                required
               />
-              {formikAdd.touched.tag && formikAdd.errors.tag ? (
-                <div className="error-message">{formikAdd.errors.tag}</div>
-              ) : null}
-            </div>
-
-            <div className="flex flex-col justify-start items-start m-2">
-              <textarea
-                id="description"
-                name="description"
-                placeholder="Enter Description: Example: Abc | def"
-                onChange={formikAdd.handleChange}
-                onBlur={formikAdd.handleBlur}
-                value={formikAdd.values.description}
-                className="w-[100%] form-style"
-              />
-              {formikAdd.touched.description && formikAdd.errors.description ? (
-                <div className="error-message">{formikAdd.errors.description}</div>
+              {formikAdd.touched.username && formikAdd.errors.username ? (
+                <div className="error-message">{formikAdd.errors.username}</div>
               ) : null}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="price"
-                name="price"
-                type="number"
-                placeholder="Enter Price"
+                id="userWork"
+                name="userWork"
+                type="text"
+                placeholder="User Work"
                 onChange={formikAdd.handleChange}
-                value={formikAdd.values.price}
+                value={formikAdd.values.userWork}
                 className="w-[100%] form-style"
+                required
               />
-              {formikAdd.touched.price && formikAdd.errors.price ? (
-                <div className="error-message">{formikAdd.errors.price}</div>
+              {formikAdd.touched.userWork && formikAdd.errors.userWork ? (
+                <div className="error-message">{formikAdd.errors.userWork}</div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="feedback"
+                name="feedback"
+                type="text"
+                placeholder="Feedback"
+                onChange={formikAdd.handleChange}
+                value={formikAdd.values.feedback}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikAdd.touched.feedback && formikAdd.errors.feedback ? (
+                <div className="error-message">{formikAdd.errors.feedback}</div>
               ) : null}
             </div>
 
             <div className="p-5 flex justify-start">
               <button className="cssbuttons-io-button" type="submit">
-                ADD DATA
+                ADD FEEDBACK
                 <div className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -359,12 +350,12 @@ const Gympricedashboard = () => {
         </Modal>
 
         <Modal
-          title="UPDATE GYM GRID DATA"
+          title="UPDATE FEEDBACK"
           visible={open}
           onOk={handleOk}
           confirmLoading={confirmLoading}
           onCancel={handleCancel}
-          okText={"UPDATE DATA"}
+          okText={"UPDATE FEEDBACK"}
           htmlType={"submit"}
         >
           <form
@@ -374,46 +365,55 @@ const Gympricedashboard = () => {
           >
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="tag"
-                name="tag"
+                id="username"
+                name="username"
                 type="text"
-                placeholder={tableValues.tag}
+                placeholder={tableValues.username}
                 onChange={formikUpdate.handleChange}
-                value={formikUpdate.values.tag}
+                value={formikUpdate.values.username}
                 className="w-[100%] form-style"
+                required
               />
-            </div>
-
-            <div className="flex flex-col justify-start items-start m-2">
-              <textarea
-                id="description"
-                name="description"
-                placeholder={tableValues.description}
-                onChange={formikUpdate.handleChange}
-                onBlur={formikUpdate.handleBlur}
-                value={formikUpdate.values.description}
-                className="w-[100%] form-style"
-              />
-              {formikUpdate.touched.description && formikUpdate.errors.description ? (
-                <div>{formikUpdate.errors.description}</div>
+              {formikUpdate.touched.username && formikUpdate.errors.username ? (
+                <div className="error-message">{formikUpdate.errors.username}</div>
               ) : null}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="price"
-                name="price"
-                type="number"
-                placeholder={tableValues.price}
+                id="userWork"
+                name="userWork"
+                type="text"
+                placeholder={tableValues.userWork}
                 onChange={formikUpdate.handleChange}
-                value={formikUpdate.values.price}
+                value={formikUpdate.values.userWork}
                 className="w-[100%] form-style"
+                required
               />
+              {formikUpdate.touched.userWork && formikUpdate.errors.userWork ? (
+                <div className="error-message">{formikUpdate.errors.userWork}</div>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col justify-start items-start m-2">
+              <input
+                id="feedback"
+                name="feedback"
+                type="text"
+                placeholder={tableValues.feedback}
+                onChange={formikUpdate.handleChange}
+                value={formikUpdate.values.feedback}
+                className="w-[100%] form-style"
+                required
+              />
+              {formikUpdate.touched.feedback && formikUpdate.errors.feedback ? (
+                <div className="error-message">{formikUpdate.errors.feedback}</div>
+              ) : null}
             </div>
 
             <div className="p-5 flex justify-start">
               <button className="cssbuttons-io-button" type="submit">
-                UPDATE
+                UPDATE FEEDBACK
                 <div className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -432,10 +432,10 @@ const Gympricedashboard = () => {
             </div>
           </form>
         </Modal>
-
       </section>
+      <Toaster />
     </>
   );
 };
 
-export default Gympricedashboard;
+export default TestimonialDashboard;

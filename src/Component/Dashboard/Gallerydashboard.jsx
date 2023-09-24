@@ -20,7 +20,6 @@ const Gallerydashboard = () => {
   const [id, setID] = useState();
   const { confirm } = Modal;
   
-
   const formikAdd = useFormik({
     initialValues: {
       imgSrc: "",
@@ -114,7 +113,6 @@ const Gallerydashboard = () => {
       });
       const jsonData = await response.json();
       setData(jsonData);
-      console.log(response);
       console.log(jsonData)
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -215,7 +213,7 @@ const Gallerydashboard = () => {
     },
     {
       title: "UPDATE",
-      dataIndex: "bhkbh",
+      dataIndex: "update",
       key: "UPDATE",
       render: (text, record) => (
         <button

@@ -105,7 +105,7 @@ function Sidebar() {
                   <polyline points="17 8 21 12 17 16" />
                   <line x1={14} y1={4} x2={10} y2={20} />
                 </svg>
-                <Link to="trainer-info-dashboard">
+                <Link to="trainer-dashboard">
                   <button className="px-2">Trainer Info</button>
                 </Link>
               </div>
@@ -118,8 +118,8 @@ function Sidebar() {
                   <polyline points="17 8 21 12 17 16" />
                   <line x1={14} y1={4} x2={10} y2={20} />
                 </svg>
-                <Link to="trainer-info-dashboard">
-                  <button className="px-2">FeedBack Info</button>
+                <Link to="feedback-dashboard">
+                  <button className="px-2">feedback Info</button>
                 </Link>
               </div>
             </li>
@@ -131,7 +131,7 @@ function Sidebar() {
                   <polyline points="4 12 12 16 20 12" />
                   <polyline points="4 16 12 20 20 16" />
                 </svg>
-                <Link to="google-product font-[--poppins]">
+                <Link to="google-product">
                   <button className="px-2">Google Product</button>
                 </Link>
               </div>
