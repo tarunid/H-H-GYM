@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../interceptors/axiosInstance";
 
 function Login() {
-  const { login } = useAuth();
+  const { login, accessToken } = useAuth();
   const navigate = useNavigate();
 
   const Login = async (values) => {
@@ -32,6 +32,10 @@ function Login() {
       Login(values);
     },
   });
+
+  if (accessToken !== null) {
+    navigate("/dashboard")
+  }
 
   return (
     <>
