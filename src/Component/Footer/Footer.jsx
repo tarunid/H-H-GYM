@@ -16,8 +16,7 @@ const Footer = () => {
             <div className="relative z-[9999] container-1 w-full lg:w-[25%] bg-footer-holder h-[100%]">
               <ul className="">
                 <p>
-                  It was popularised in the 1960s with the release of Letraset
-                  PageMaker including versions of Lorem Ipsum.
+                  Elevate your fitness journey with H2H Premium Gym. Top-tier equipment, expert trainers, and exclusive perks for an unparalleled workout experience
                 </p>
 
                 <div className="flex justify-start gap-5 py-5 w-[100%]">

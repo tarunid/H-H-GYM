@@ -46,33 +46,33 @@ export const OfferData = [
     id: 1,
     imgSrc:
       "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-2.png",
-    title: "CROSS FIT",
+    title: "Personalized Training",
     content:
-      "Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.",
+      "Tailored workouts to match your specific fitness objectives.",
   },
   {
     id: 2,
     imgSrc:
       "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-2.png",
-    title: "CROSS FIT",
+    title: "Goal Setting",
     content:
-      "Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.",
+      "Collaborative goal-setting with our expert trainers to track your progress.",
   },
   {
     id: 3,
     imgSrc:
       "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png",
-    title: "CROSS FIT",
+    title: "Diverse Workouts",
     content:
-      "Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.",
+      "Access to a variety of workouts for well-rounded goal achievement.",
   },
   {
     id: 4,
     imgSrc:
       "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png",
-    title: "CROSS FIT",
+    title: "Progress Tracking",
     content:
-      "Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.",
+      "Regular assessments to ensure you're on the right path to success.",
   },
 ];
 
@@ -146,26 +146,26 @@ export const PrcieData = [
 export const FeaturedData = [
   {
     id: 12,
-    title: "Workout",
+    title: "Comprehensive Workouts",
     content:
-      "They also provide insights about the profession’s most colorful personalities and powerful institutions,...",
+      "diverse workouts, suits all fitness levels, latest equipment, and personal goals tailored.",
   },
   {
     id: 13,
-    title: "Workout",
+    title: "Expert Guidance",
     content:
-      "They also provide insights about the profession’s most colorful personalities and powerful institutions,...",
+      "Expert trainers ensure personalized guidance, support, and motivation for your fitness success.",
   },
   {
     id: 14,
-    title: "Workout",
+    title: "Community and Camaraderie",
     content:
-      "They also provide insights about the profession’s most colorful personalities and powerful institutions,...",
+      "Join our fitness community for motivation and camaraderie that keeps you coming back.",
   },
   {
     id: 15,
-    title: "Workout",
+    title: "Health and Wellness",
     content:
-      "They also provide insights about the profession’s most colorful personalities and powerful institutions,...",
+      "We prioritize holistic well-being, with nutrition, recovery, and wellness support for a balanced lifestyle.",
   },
 ];

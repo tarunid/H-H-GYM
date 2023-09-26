@@ -12,12 +12,11 @@ const HeroSection = () => {
                   <p>Find Your Energy</p>
                 </div>
                 <h1 className="py-5 HeroHeading">
-                  MAKE YOUR <br />
-                  BODY FIT & PERFECT
+                REGULAR EXERCISES <br />
+                H&H Fitness Studio
                 </h1>
                 <p className="HeroParagraph">
-                  Gymhen an unknown printer took a galley of type and scrambled.
-                  It has survived nknown printercenturies
+                Unlock Your Full Potential, Transform Your Body, and Find Wellness in Every Rep
                 </p>
                 <button className="button">
                   <span className="button_lg">

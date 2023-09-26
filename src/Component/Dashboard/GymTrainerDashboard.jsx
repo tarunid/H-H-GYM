@@ -78,6 +78,7 @@ const GymTrainerDashboard = () => {
 
     formikUpdate.resetForm({
       values: {
+        name: record.name,
         trainerType: record.trainerType,
         socialLinks: record.socialLinks,
         imageLink: record.imageLink
@@ -161,11 +162,11 @@ const GymTrainerDashboard = () => {
   };
 
   const updateFunction = async (values) => {
-    const value = JSON.stringify(values);
+ 
     const toastId = toast.loading("Updating data...");
 
     try {
-      const response = await axiosInstance.put(`/trainer/update/${id}`, value, {
+      const response = await axiosInstance.put(`/trainer/update/${id}`, values, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

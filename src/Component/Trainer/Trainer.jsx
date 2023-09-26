@@ -1,6 +1,5 @@
 import "./Trainer.css";
-import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
 import { TrainerData } from "../../Api/Home";
 
 const Trainer = () => {
@@ -35,14 +34,6 @@ const Trainer = () => {
                       </span>
                       <span className="flex justify-center items-center gap-5 py-4">
                         <AiFillInstagram
-                          style={{ fontSize: "21px" }}
-                          className="hover:fill-[var(--primary-color)]"
-                        />
-                        <BsFacebook
-                          style={{ fontSize: "18px" }}
-                          className="hover:fill-[var(--primary-color)]"
-                        />
-                        <AiFillTwitterCircle
                           style={{ fontSize: "21px" }}
                           className="hover:fill-[var(--primary-color)]"
                         />

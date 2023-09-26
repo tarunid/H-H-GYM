@@ -109,7 +109,7 @@ const Bmi = () => {
     <>
       <section className="py-14">
         <div className="2xl:container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 w-[90%] mx-auto pb-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto pb-14">
             <div className="flex flex-col justify-start items-center text-center">
               <h3 className="heading-3 text-start w-[100%] py-5">
                 BMI CALCULATOR CHART
@@ -137,10 +137,7 @@ const Bmi = () => {
               </h3>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi qui obcaecati repudiandae consequuntur aliquam
-                pariatur, sed debitis nostrum iusto ullam itaque officiis sint
-                quisquam cumque modi consectetur, accusantium cupiditate nobis?
+                Discover Your Fitness Journey with Our BMI Calculator! Calculate your Body Mass Index (BMI) to kickstart your personalized fitness path.
               </p>
               <form
                 autoComplete="off"

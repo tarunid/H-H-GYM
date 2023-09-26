@@ -184,13 +184,11 @@ const Gympricedashboard = () => {
   };
 
   const updateFunction = async (values) => {
-    const value = JSON.stringify(values);
-    console.log(value)
+
     const toastId = toast.loading("Updating data...");
     try {
-      const response = await axiosInstance.put(
-        `/price/update/${id}`,
-        value
+      const response = await axiosInstance.put(`price/update/${id}`,
+        values
       );
       toast.dismiss(toastId);
       toast.success(response.data.message);
@@ -435,6 +433,9 @@ const Gympricedashboard = () => {
                 className="w-[100%] form-style"
               />
             </div>
+            {formikUpdate.touched.tag && formikUpdate.errors.tag ? (
+                <div className="error-message">{formikUpdate.errors.tag}</div>
+              ) : null}
 
             <div className="flex flex-col justify-start items-start m-2">
               <textarea
@@ -447,7 +448,7 @@ const Gympricedashboard = () => {
                 className="w-[100%] form-style"
               />
               {formikUpdate.touched.description && formikUpdate.errors.description ? (
-                <div>{formikUpdate.errors.description}</div>
+                <div className="error-message">{formikUpdate.errors.description}</div>
               ) : null}
             </div>
 
@@ -462,6 +463,9 @@ const Gympricedashboard = () => {
                 className="w-[100%] form-style"
               />
             </div>
+            {formikUpdate.touched.price && formikUpdate.errors.price ? (
+                <div className="error-message">{formikUpdate.errors.price}</div>
+              ) : null}
 
             <div className="p-5 flex justify-start">
               <button className="cssbuttons-io-button" type="submit">

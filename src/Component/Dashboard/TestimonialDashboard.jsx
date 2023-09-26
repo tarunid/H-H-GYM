@@ -158,11 +158,10 @@ const TestimonialDashboard = () => {
   };
 
   const updateFunction = async (values) => {
-    const value = JSON.stringify(values);
     const toastId = toast.loading("Updating data...");
 
     try {
-      const response = await axiosInstance.put(`/feedback/update/${id}`, value, {
+      const response = await axiosInstance.put(`/feedback/update/${id}`, values, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

@@ -12,7 +12,7 @@ const Featuers = () => {
               <h2 className="heading-2-feedback py-2">
                 Regular Exercises in FitGym
               </h2>
-              <h2 className="heading-3 py-5">offers 6 Key Benefits</h2>
+              <h2 className="heading-3 py-5">offers 4 Key Benefits</h2>
             </div>
           </div>
 
