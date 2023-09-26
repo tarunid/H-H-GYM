@@ -9,20 +9,17 @@ function Login() {
   const navigate = useNavigate();
 
   const Login = async (values) => {
-
+    let toastId = toast.loading("Loading..", { duration: 4000 });
     try {
-      let toastId = toast.loading('Loading..');
       const formData = JSON.stringify(values);
       const response = await axiosInstance.post("/auth/login", { formData });
-      console.log(response)
       login(response.data);
       toast.dismiss(toastId);
       toast.success(response.data.message);
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (err) {
-      console.log(err.message)
-      toast.error(err.message)
-      toast.error(err)
+      toast.dismiss(toastId);
+      toast.error(err.response.data.message);
     }
   };
 
@@ -37,63 +34,15 @@ function Login() {
   });
 
   return (
-
-
-
-
     <>
-      {/* <div className="2xl:container mx-auto">
-        <div className="w-[90%] mx-auto grid grid-cols-1">
-          <div className="flex flex-col justify-center items-center h-screen">
-            <form
-              className="bg-gray-300 flex flex-col min-w-[300px] space-y-5 items-center border-2 border-500 shadow-2xl rounded-xl p-5"
-              onSubmit={formik.handleSubmit}
-            >
-              <input
-                type="text"
-                placeholder="Email"
-                id="email"
-                name="email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-                className="w-[100%] p-2"
-                required
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                id="password"
-                name="password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-                className="w-[100%] p-2"
-                required
-              />
-              <button
-                className="bg-red-500 p-3 w-[100%] rounded-xl"
-                type="submit" disabled={false}
-              >
-                Login
-              </button>
-            </form>
-          </div>
-        </div>
-      </div> */}
       <section className="bg-[#F4F7FF] py-20 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]">
                 <div className="mb-10 text-center md:mb-16">
-                  <a
-                    className="mx-auto inline-block max-w-[160px]"
-                  >
-                    <img
-                      src="/HH-Logo.png"
-                      alt="logo"
-                    />
+                  <a className="mx-auto inline-block max-w-[160px]">
+                    <img src="/HH-Logo.png" alt="logo" />
                   </a>
                 </div>
                 <form onSubmit={formik.handleSubmit}>
@@ -125,8 +74,8 @@ function Login() {
                   </div>
                   <button
                     className="bg-black text-white p-3 w-[100%] rounded-xl"
-                    type="submit" disabled={false}
-                  >
+                    type="submit"
+                    disabled={false}>
                     Login
                   </button>
                 </form>
@@ -138,8 +87,7 @@ function Login() {
                       height={40}
                       viewBox="0 0 40 40"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                      xmlns="http://www.w3.org/2000/svg">
                       <circle
                         cx="1.39737"
                         cy="38.6026"
@@ -260,8 +208,7 @@ function Login() {
                       height={40}
                       viewBox="0 0 29 40"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                      xmlns="http://www.w3.org/2000/svg">
                       <circle
                         cx="2.288"
                         cy="25.9912"
