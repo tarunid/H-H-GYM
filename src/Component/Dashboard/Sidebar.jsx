@@ -1,52 +1,20 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 
-// const Sidebar = () => {
-//   return (
-//     <>
-//       <div className="w-[20%] flex flex-col flex-grow  h-screen justify-start items-center text-center bg-[#93C5F9]">
-//         <div className="w-[100%] flex flex-col items-center  py-5">
-//           <div className="py-5">
-//             <Link>
-//               <button>DashBoard Home</button>
-//             </Link>
-//           </div>
-//           <div className="py-5">
-//             <Link to="gallery-dashboard">
-//               <button>Gallery View</button>
-//             </Link>
-//           </div>
-//           <div className="py-5">
-//             <Link to="gym-price-dashboard">
-//               <button>Gym Price</button>
-//             </Link>
-//           </div>
-//           <div className="py-5">
-//          
-//           </div>
-//           <div className="py-5">
-//            
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
 
 function Sidebar() {
 
   const { logout } = useAuth();
   // const [isSidebarOpen, setSidebarOpen] = useState(false);
-  // // const [activeItem, setActiveItem] = useState('Dashboard');
+  // const [activeItem, setActiveItem] = useState('Dashboard');
 
-  // // const handleSidebarToggle = () => {
-  // //   setSidebarOpen(!isSidebarOpen);
-  // // };
+  // const handleSidebarToggle = () => {
+  //   setSidebarOpen(!isSidebarOpen);
+  // };
 
-  // // const handleItemClick = (item) => {
-  // //   setActiveItem(item);
-  // // };
+  // const handleItemClick = (item) => {
+  //   setActiveItem(item);
+  // };
 
   return (
     <div className="flex flex-no-wrap">
