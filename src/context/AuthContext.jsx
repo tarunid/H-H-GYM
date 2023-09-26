@@ -1,7 +1,7 @@
-import { createContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../interceptors/axiosInstance';
-import PropTypes from 'prop-types';
+import { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../interceptors/axiosInstance";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
 
@@ -15,29 +15,29 @@ export const AuthProvider = ({ children }) => {
   // this function will help to get exp time,create time,data
   function parseJwt(token) {
     try {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const base64Url = token.split(".")[1];
+      const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
       const jsonPayload = decodeURIComponent(
         atob(base64)
-          .split('')
+          .split("")
           .map((c) => {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
           })
-          .join('')
+          .join("")
       );
 
       return JSON.parse(jsonPayload);
     } catch (error) {
       // Handle any parsing errors here
-      console.error('Error parsing JWT:', error);
+      console.error("Error parsing JWT:", error);
       return null;
     }
   }
 
   // Load tokens from local storage on initial render
   useEffect(() => {
-    const storedAccessToken = localStorage.getItem('accessToken');
-    const storedRefreshToken = localStorage.getItem('refreshToken');
+    const storedAccessToken = localStorage.getItem("accessToken");
+    const storedRefreshToken = localStorage.getItem("refreshToken");
 
     if (storedAccessToken && storedRefreshToken) {
       setAccessToken(storedAccessToken);
@@ -52,8 +52,8 @@ export const AuthProvider = ({ children }) => {
     setAccessToken(newAccessToken);
     setRefreshToken(newRefreshToken);
 
-    localStorage.setItem('accessToken', newAccessToken);
-    localStorage.setItem('refreshToken', newRefreshToken);
+    localStorage.setItem("accessToken", newAccessToken);
+    localStorage.setItem("refreshToken", newRefreshToken);
   };
 
   // Function to log in
@@ -62,8 +62,8 @@ export const AuthProvider = ({ children }) => {
     setAccessToken(data.accessToken);
     setRefreshToken(data.refreshToken);
     setUser(user.email);
-    localStorage.setItem('accessToken', data.accessToken);
-    localStorage.setItem('refreshToken', data.refreshToken);
+    localStorage.setItem("accessToken", data.accessToken);
+    localStorage.setItem("refreshToken", data.refreshToken);
   };
 
   // Function to log out
@@ -71,20 +71,28 @@ export const AuthProvider = ({ children }) => {
     setAccessToken(null);
     setRefreshToken(null);
     setUser(null);
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
   };
 
   // Check token expiration and refresh if necessary
   useEffect(() => {
     const refreshAccessToken = async () => {
       try {
-        const response = await axiosInstance.post("auth/renewAccessToken", { refreshToken });
-        const { accessToken: newAccessToken } = response.data;
+        const response = await axiosInstance.post(
+          "auth/renewAccessToken",
+          { refreshToken },
+          {
+            headers: {
+              authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        const { accessToken: newAccessToken } = response.data.accessToken;
         updateTokens(newAccessToken, refreshToken);
       } catch (error) {
-        console.error('Token refresh failed:', error);
-        navigate("/login")
+        console.error("Token refresh failed:", error);
+        navigate("/login");
       }
     };
 
@@ -108,10 +116,19 @@ export const AuthProvider = ({ children }) => {
     return () => {
       clearInterval(tokenCheckInterval);
     };
-  }, [accessToken, refreshToken,navigate]);
+  }, [accessToken, refreshToken, navigate]);
 
   return (
-    <AuthContext.Provider value={{ accessToken, refreshToken, user, updateTokens, login, logout, isLoading }}>
+    <AuthContext.Provider
+      value={{
+        accessToken,
+        refreshToken,
+        user,
+        updateTokens,
+        login,
+        logout,
+        isLoading,
+      }}>
       {children}
     </AuthContext.Provider>
   );
