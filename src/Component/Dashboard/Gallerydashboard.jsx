@@ -18,12 +18,14 @@ const Gallerydashboard = () => {
   const [openAdd, setOpenAdd] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [confirmLoadingAdd, setConfirmLoadingAdd] = useState(false);
-  const [dataImg, setDataImg] = useState("");
-  const [datatext, setDataText] = useState("");
-  const [type, setType] = useState("");
   const [id, setID] = useState("");
   const { confirm } = Modal;
   const [percent, setPercent] = useState(0);
+  const [tableValues, setTableValues] = useState({
+    imgSrc: "",
+    textName: "",
+    type: "",
+  });
 
   const formikAdd = useFormik({
     initialValues: {
@@ -32,9 +34,9 @@ const Gallerydashboard = () => {
       type: "",
     },
     validationSchema: Yup.object().shape({
-      imgSrc1: Yup.string().required('Image URL is required'),
-      textName1: Yup.string().required('Text Name is required'),
-      type1: Yup.string().required('Type is required'),
+      imgSrc: Yup.string().required('Image URL is required'),
+      textName: Yup.string().required('Text Name is required'),
+      type: Yup.string().required('Type is required'),
     }),
     onSubmit: async (values, actions) => {
       addfunction(values);
@@ -45,27 +47,16 @@ const Gallerydashboard = () => {
 
   const formikUpdate = useFormik({
     initialValues: {
-      imgSrc1: "",
-      textName1: "",
-      type1: "",
+      imgSrc: "",
+      textName: "",
+      type: "",
     },
     validationSchema: Yup.object().shape({
-      imgSrc1: Yup.string().required('Image URL is required'),
-      textName1: Yup.string().required('Text Name is required'),
-      type1: Yup.string().required('Type is required'),
+      imgSrc: Yup.string().required('Image URL is required'),
+      textName: Yup.string().required('Text Name is required'),
+      type: Yup.string().required('Type is required'),
     }),
     onSubmit: async (values, actions) => {
-      if (values) {
-        if (values.imgSrc1 === "") {
-          values.imgSrc1 = dataImg;
-        }
-        if (values.textName1 === "") {
-          values.textName1 = datatext;
-        }
-        if (values.type1 === "") {
-          values.type1 = type;
-        }
-      }
       updateFunction(values);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       actions.resetForm();
@@ -75,9 +66,19 @@ const Gallerydashboard = () => {
   const showModal = (record) => {
     setOpen(true);
     setID(record.ID);
-    setDataImg(record.imgSrc);
-    setDataText(record.textName);
-    setType(record.type);
+    setTableValues({
+      imgSrc: record.imgSrc,
+      textName: record.textName,
+      type: record.type,
+    });
+
+    formikUpdate.resetForm({
+      values: {
+        tag: record.imgSrc,
+        description: record.textName,
+        type: record.type
+      }
+    });
   };
 
   const showModalAdd = () => {
@@ -452,22 +453,22 @@ const Gallerydashboard = () => {
           >
             <div className="flex flex-col justify-start items-start m-2">
               <input
-                id="textName1"
-                name="textName1"
+                id="textName"
+                name="textName"
                 type="text"
-                placeholder={datatext}
+                placeholder={tableValues.textName}
                 onChange={formikUpdate.handleChange}
                 onBlur={formikUpdate.handleBlur}
                 value={formikUpdate.values.textName1}
                 className={
-                  formikUpdate.errors.textName1 &&
-                    formikUpdate.touched.textName1
+                  formikUpdate.errors.textName &&
+                    formikUpdate.touched.textName
                     ? "border border-red-600 w-[100%] form-style"
                     : "w-[100%] form-style"
                 }
               />
-              {formikUpdate.errors.textName1 &&
-                formikUpdate.touched.textName1 && (
+              {formikUpdate.errors.textName &&
+                formikUpdate.touched.textName && (
                   <p className="text-red-700">
                     {"*" + formikUpdate.errors.textName1}
                   </p>
@@ -478,10 +479,10 @@ const Gallerydashboard = () => {
               <Upload {...updateProps}>
                 <Button icon={<UploadOutlined />}>Upload</Button>
               </Upload>
-              {formikUpdate.errors.imgSrc1 &&
-                formikUpdate.touched.imgSrc1 && (
+              {formikUpdate.errors.imgSrc &&
+                formikUpdate.touched.imgSrc && (
                   <p className="text-red-700">
-                    {"*" + formikUpdate.errors.imgSrc1}
+                    {"*" + formikUpdate.errors.imgSrc}
                   </p>
                 )}
             </div>
@@ -494,10 +495,10 @@ const Gallerydashboard = () => {
                 Type
               </label>
               <select
-                id="type1"
-                name="type1"
-                defaultValue="General"
-                value={formikUpdate.values.type1}
+                id="type"
+                name="type"
+                defaultValue={tableValues.type}
+                value={formikUpdate.values.type}
                 onChange={formikUpdate.handleChange}
                 onBlur={formikUpdate.handleBlur}
                 style={{ display: "block", padding: "10px" }}

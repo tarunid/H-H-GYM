@@ -1,14 +1,12 @@
 import { useState } from "react";
-// import { galleryData } from "../../Api/Gallery";
 import "./Gallery.css";
-// import LightGallery from 'lightgallery/react/Lightgallery.es5';
 import { IoIosCloseCircle } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useEffect } from "react";
 import axiosInstance from "../../interceptors/axiosInstance";
 
-const Equipments = () => {
+const Dumbbell = () => {
   const [galleryData, setgalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
 
@@ -18,9 +16,13 @@ const Equipments = () => {
 
   let FetchData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-all-all");
-      setgalleryData(response.data);
-      setGalleryImages(response.data);
+      const response = await axiosInstance.get("/gallery/gallery-type-limit", {
+        data: {
+          typeName: "Equipments",
+        }
+      });
+      setgalleryData(response.data.galleryArray);
+      setGalleryImages(response.data.galleryArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -28,9 +30,13 @@ const Equipments = () => {
 
   let FetchAllData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery-Equipments-all");
-      setgalleryData(response.data);
-      setGalleryImages(response.data);
+      const response = await axiosInstance.get("/gallery/gallery-type-all", {
+        body: {
+          typeName: "Equipments",
+        }
+      });
+      setgalleryData(response.data.galleryArray);
+      setGalleryImages(response.data.galleryArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -117,4 +123,4 @@ const Equipments = () => {
   );
 };
 
-export default Equipments;
+export default Dumbbell;

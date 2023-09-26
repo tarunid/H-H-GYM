@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 
 const App = () => {
   let location = useLocation();
+  // let { isLoading } = useAuth();
 
   useEffect(() => {
     window.scrollTo({
@@ -15,12 +16,18 @@ const App = () => {
     });
   }, [location]);
 
+  // if (isLoading) {
+  //   return <>
+  //     <p>Loading...</p>
+  //   </>
+  // }
+
   return (
     <>
       <AuthProvider>
         <Header />
         <Outlet />
-        <Toaster position="top-center"/>
+        <Toaster position="top-center" />
         <Footer />
       </AuthProvider>
     </>

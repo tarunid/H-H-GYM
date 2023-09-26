@@ -1,20 +1,21 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth.jsx";
+import Loader from "../Loaded/loader.jsx";
 import Sidebar from "./Sidebar.jsx";
 
 const ProtectedRouter = () => {
 
-  let { accessToken,isLoading } = useAuth();
+  let { accessToken, isLoading } = useAuth();
 
-  if(isLoading) {
-    return<>
-    <p>loading...</p>
+  if (isLoading) {
+    return <>
+      <Loader />
     </>
   }
 
   console.log('accessToken inside ProtectedRouter:', accessToken);
 
-  if (!accessToken) {
+  if (accessToken === null) {
     return <Navigate to="/" />;
   }
 

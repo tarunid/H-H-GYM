@@ -6,32 +6,25 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useEffect } from "react";
-import { useAuth } from "../../hooks/useAuth";
 import axiosInstance from "../../interceptors/axiosInstance";
 
 
 const All = () => {
   const [galleryData, setgalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
-  const {accessToken} = useAuth();
 
   useEffect(() => {
     FetchData();
-  },[]);
+  }, []);
 
   let FetchData = async () => {
     try {
-      const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/gallery/gallery-all-all", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5ld3VzZXIiLCJpYXQiOjE2OTAzMDU0MTB9.JJTMne-C4s4fv_sVgKyFw1NX8_2m_YmrcGAcPQzYkVQ",
-        },
-      });
-      const jsonData = await response.json();
-      setgalleryData(jsonData);
-      setGalleryImages(jsonData);
+      const response = await axiosInstance.get("/gallery/gallery-all-all");
+
+      console.log(response)
+
+      setgalleryData(response.data.galleryArray);
+      setGalleryImages(response.data.galleryArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -39,17 +32,10 @@ const All = () => {
 
   let FetchAllData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-all-all", {
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Authorization": `Bearer ${accessToken}`
-        }
-      });
-      const jsonData = await response.json();
-      console.log(jsonData)
-      setgalleryData(jsonData);
-      setGalleryImages(jsonData);
+      const response = await axiosInstance.get("/gallery/gallery-all-all");
+
+      setgalleryData(response.data.galleryArray);
+      setGalleryImages(response.data.galleryArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
