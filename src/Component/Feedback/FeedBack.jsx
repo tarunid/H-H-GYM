@@ -55,7 +55,7 @@ const FeedBack = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-1">
-            <div className="w-[90%] mx-auto rounded-3xl order-2 md:order-1">
+            <div className="w-[90%] mx-auto rounded-lg order-2 md:order-1 bg-slate-300">
               <Carousel
                 ref={ref}
                 dots={true}
@@ -78,7 +78,7 @@ const FeedBack = () => {
                       </div>
                       <div className="flex flex-col justify-start items-start h-[50%] px-1">
                         <h3 className="py-2 feedBack-name">{testimonial.username}</h3>
-                        <p className="py-1 feedBack-job">{testimonial.userWork}</p>
+                        <p className="py-1 feedBack-job">H&H GYM</p>
                         <p className="text-start py-5">
                           {testimonial.feedback}
                         </p>

@@ -37,21 +37,21 @@
 .title-expert-count {
   color: rgb(0, 0, 0);
   font-family: "Montserrat", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
   margin-bottom: 16px;
 }
 
-.on-hover-img:hover {
+.on-hover-img-11:hover {
   filter: var(--opacity-color);
 }
 
 .title-expert-info {
   color: rgb(173, 173, 173);
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px;

@@ -45,7 +45,7 @@ export const OfferData = [
   {
     id: 1,
     imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-2.png",
+      "./sport.png",
     title: "Personalized Training",
     content:
       "Tailored workouts to match your specific fitness objectives.",
@@ -69,7 +69,7 @@ export const OfferData = [
   {
     id: 4,
     imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png",
+      "./report.png",
     title: "Progress Tracking",
     content:
       "Regular assessments to ensure you're on the right path to success.",
@@ -149,23 +149,27 @@ export const FeaturedData = [
     title: "Comprehensive Workouts",
     content:
       "diverse workouts, suits all fitness levels, latest equipment, and personal goals tailored.",
+    image: "./d.png"
   },
   {
     id: 13,
     title: "Expert Guidance",
     content:
       "Expert trainers ensure personalized guidance, support, and motivation for your fitness success.",
+      image: "./muscle.png"
   },
   {
     id: 14,
     title: "Community and Camaraderie",
     content:
       "Join our fitness community for motivation and camaraderie that keeps you coming back.",
+      image: "./fitness.png"
   },
   {
     id: 15,
     title: "Health and Wellness",
     content:
       "We prioritize holistic well-being, with nutrition, recovery, and wellness support for a balanced lifestyle.",
+      image: "./exercise.png"
   },
 ];

@@ -9,13 +9,11 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
-
 const Body = () => {
   useEffect(() => {
     Aos.init({once:true});
   }, []);
   return (
-    
     <>
       <HeroSection />
       <Featuers />

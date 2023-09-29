@@ -27,21 +27,20 @@ const About = () => {
                 <p className="text-[#fff]">Who We Are</p>
               </div>
               <h2 className="about-heading py-5">
-                We Will Give You Strength and Health
+                At H&H Fitness Studio
               </h2>
               <div className="py-3">
                 <p className="about-paragraph">
-                  Gymat an unknown printer took a galley of type and scraey
-                  aretea mbled it to make a type specimen book. May has survived
-                  not only five centuries, but also the leap into electronic.
+                  we are your partners in health and strength. Our mission is to empower you with
                 </p>
               </div>
               <div>
                 <ul className="about-paragraph">
-                  <li>- Gymat an unknown printer</li>
-                  <li>- Scraey aretea bled makea type</li>
-                  <li>- Bookhas survived not onlyive</li>
-                  <li>- Centuries but also the leap electronic.</li>
+                  <li>- Expert Guidance: Certified trainers and nutritionists</li>
+                  <li>- Top-Notch Facilities: State-of-the-art equipment and amenities</li>
+                  <li>- Community Support: Join a vibrant fitness family.</li>
+                  <li>- Wellness Focus: Holistic approach for a healthier you.</li>
+                  <li>- Personalized Journey: Tailored programs for your goals.</li>
                 </ul>
               </div>
               <div className="py-5">
@@ -78,16 +77,16 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14 gap-5">
             <div className="flex justify-center items-center hover:scale-105">
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>
-                  <h2 className="title-expert-count">30+</h2>
+                  <h2 className="title-expert-count">10+</h2>
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
                 <img
                   src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                  className="on-hover-img"
+                  className="on-hover-img-11"
                 />
               </div>
             </div>
@@ -96,11 +95,11 @@ const About = () => {
               <div className="flex justify-between items-center w-[70%] p-6 shadow-lg rounded-xl shadow-slate-200">
                 <span>
                   <h2 className="title-expert-count">30+</h2>
-                  <h3 className="title-expert-info">Expert Trainers</h3>
+                  <h3 className="title-expert-info">Modern Equipments</h3>
                 </span>
                 <img
                   src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
-                  className="on-hover-img"
+                  className="on-hover-img-11"
                 />
               </div>
             </div>

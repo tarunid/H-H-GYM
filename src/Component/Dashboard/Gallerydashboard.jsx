@@ -134,7 +134,6 @@ const Gallerydashboard = () => {
     }
   };
 
-
   const addfunction = async (values) => {
     const tosatId = toast.loading("Adding data...");
     try {

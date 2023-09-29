@@ -13,18 +13,9 @@ const Choose = () => {
             <div className="flex justify-center">
               <Video
                 loop
-                controls={[
-                  "PlayPause",
-                  "Seek",
-                  "Time",
-                  "Volume",
-                  "Fullscreen",
-                ]}
+                controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}
                 poster={""}>
-                <source
-                  src={video}
-                  type="video/mp4"
-                />
+                <source src={video} type="video/mp4" />
               </Video>
             </div>
             <div className="flex flex-col justify-start mt-5">
@@ -36,12 +27,13 @@ const Choose = () => {
               </h2>
               <div className="py-3">
                 <p className="choose-paragraph">
-                  Absolutely, H&H STUDIO is the place to achieve your fitness goals. Their experienced trainers and top-quality equipment transformed my body. Let&#39;s start today!
-
+                  Absolutely, H&H STUDIO is the place to achieve your fitness
+                  goals. Their experienced trainers and top-quality equipment
+                  transformed my body. Let&#39;s start today!
                 </p>
               </div>
-              <div className="flex justify-between items-center py-5">
-                <div className="flex gap-4 items-center hover:scale-105">
+              <div className="flex flex-col gap-4 md:flex-row justify-between items-center py-5">
+                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={dub}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
@@ -49,7 +41,7 @@ const Choose = () => {
                   />
                   <p className="choose-sub-para">Expert Trainers</p>
                 </div>
-                <div className="flex gap-4 items-center hover:scale-105">
+                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={dub}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
@@ -58,21 +50,19 @@ const Choose = () => {
                   <p className="choose-sub-para">Equipment Power</p>
                 </div>
               </div>
-              <div className="flex justify-between items-center py-5">
-                <div className="flex gap-4  items-start hover:scale-105">
+              <div className="flex flex-col gap-4 md:flex-row justify-between items-center py-5">
+                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={dub}
-                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 w-[88.2px] h-[88.2px]"
                     alt="thumbImg"
                   />
-                  <p className="choose-sub-para">
-                    Community Support
-                  </p>
+                  <p className="choose-sub-para">Community Support</p>
                 </div>
-                <div className="flex gap-4 items-center justify-center hover:scale-105">
+                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={dub}
-                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1  "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Holistic Wellness</p>
