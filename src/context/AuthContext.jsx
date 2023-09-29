@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const response = await axiosInstance.post(
           "auth/renewAccessToken",
-          { refreshToken },
+          { refreshToken, accessToken },
           {
             headers: {
               authorization: `Bearer ${accessToken}`,

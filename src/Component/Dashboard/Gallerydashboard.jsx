@@ -39,7 +39,7 @@ const Gallerydashboard = () => {
       type: Yup.string().required('Type is required'),
     }),
     onSubmit: async (values, actions) => {
-      addfunction(values);
+      addFunction(values);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       actions.resetForm();
     },
@@ -47,9 +47,9 @@ const Gallerydashboard = () => {
 
   const formikUpdate = useFormik({
     initialValues: {
-      imgSrc: "",
-      textName: "",
-      type: "",
+      imgSrc: tableValues.imgSrc,
+      textName: tableValues.textName,
+      type: tableValues.type,
     },
     validationSchema: Yup.object().shape({
       imgSrc: Yup.string().required('Image URL is required'),
@@ -74,10 +74,10 @@ const Gallerydashboard = () => {
 
     formikUpdate.resetForm({
       values: {
-        tag: record.imgSrc,
-        description: record.textName,
-        type: record.type
-      }
+        imgSrc: record.imgSrc,
+        textName: record.textName,
+        type: record.type,
+      },
     });
   };
 
@@ -116,17 +116,16 @@ const Gallerydashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-all-all",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
+      const response = await axiosInstance.get("/gallery/gallery-all-all", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
       const jsonData = response.data;
-      setData(jsonData.users);
+      console.log(response)
+      setData(jsonData.galleryArray);
       toast.success("Fetched Data", { duration: 400 });
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -134,12 +133,15 @@ const Gallerydashboard = () => {
     }
   };
 
-  const addfunction = async (values) => {
-    const tosatId = toast.loading("Adding data...");
+  const addFunction = async (values) => {
+
+    let value = JSON.stringify(values);
+    const toastId = toast.loading("Adding data...");
     try {
-      const response = await axiosInstance.post("/gallery/galleryview",
+      const response = await axiosInstance.post(
+        "/gallery/galleryview",
         {
-          value: JSON.stringify(values),
+          value
         },
         {
           headers: {
@@ -149,23 +151,22 @@ const Gallerydashboard = () => {
           },
         }
       );
-      toast.dismiss(tosatId);
+      toast.dismiss(toastId);
       toast.success(response.data.message);
       fetchData();
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error adding data:", error);
+      toast.error("Error adding data");
     }
   };
 
   const updateFunction = async (values) => {
-    const value = JSON.stringify(values);
-    console.log(value)
     const toastId = toast.loading("Updating data...");
     try {
       const response = await axiosInstance.put(
         `/gallery/galleryview/${id}`,
         {
-          value: JSON.stringify(values),
+          values,
         }
       );
       toast.dismiss(toastId);
@@ -173,9 +174,8 @@ const Gallerydashboard = () => {
       handleOk();
       fetchData();
     } catch (error) {
-      toast.dismiss(toastId)
       console.error("Error updating data:", error);
-      toast.error("Error updating data", error);
+      toast.error("Error updating data");
     }
   };
 
@@ -198,25 +198,22 @@ const Gallerydashboard = () => {
     const toastId = toast.loading("Deleting data...");
 
     try {
-      const response = await axiosInstance.delete(`/gallery/galleryview/${ID}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          }
-        });
+      const response = await axiosInstance.delete(`/gallery/galleryview/${ID}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
 
       toast.dismiss(toastId);
       toast.success(response.data.message);
       fetchData();
     } catch (error) {
-      toast.dismiss(toastId);
       console.error("Error deleting data:", error);
       toast.error("Error deleting data");
     }
   };
-
 
   const columns = [
     {
@@ -272,8 +269,7 @@ const Gallerydashboard = () => {
 
   function getUploadProps(componentName) {
     return {
-      action:
-        "https://hh-gym-backend-production.up.railway.app/api/upload/image",
+      action: "https://hh-gym-backend-production.up.railway.app/api/upload/image",
       listType: "picture",
       beforeUpload: () => false,
       async previewFile(file) {
@@ -289,23 +285,22 @@ const Gallerydashboard = () => {
 
         formData.append("image", dataUrl);
 
-        const response = await fetch(
-          "https://hh-gym-backend-production.up.railway.app/api/upload/image",
-          {
-            method: "POST",
-            body: formData,
-            onUploadProgress: (progressEvent) => {
-              const percentCompleted = Math.round(
-                (progressEvent.loaded * 100) / progressEvent.total
-              );
-              setPercent(percentCompleted);
-            },
-          }
-        );
+        const response = await fetch("https://hh-gym-backend-production.up.railway.app/api/upload/image", {
+          method: "POST",
+          body: formData,
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setPercent(percentCompleted);
+          },
+        });
 
         const result = await response.json();
 
-        { componentName == "add" ? formikAdd.values.imgSrc = result.image : formikUpdate.values.imgSrc1 = result.image }
+        if (componentName === "add") {
+          formikAdd.setFieldValue("imgSrc", result.image);
+        } else if (componentName === "update") {
+          formikUpdate.setFieldValue("imgSrc", result.image);
+        }
 
         return result.image;
       },
@@ -315,6 +310,7 @@ const Gallerydashboard = () => {
       },
     };
   }
+
   const updateProps = getUploadProps("update");
   const addProps = getUploadProps("add");
 
@@ -385,10 +381,7 @@ const Gallerydashboard = () => {
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
-              <label
-                htmlFor="type"
-                style={{ display: "block", padding: "10px" }}
-              >
+              <label htmlFor="type" style={{ display: "block", padding: "10px" }}>
                 Type
               </label>
               <select
@@ -458,32 +451,30 @@ const Gallerydashboard = () => {
                 placeholder={tableValues.textName}
                 onChange={formikUpdate.handleChange}
                 onBlur={formikUpdate.handleBlur}
-                value={formikUpdate.values.textName1}
+                value={formikUpdate.values.textName}
                 className={
-                  formikUpdate.errors.textName &&
-                    formikUpdate.touched.textName
+                  formikUpdate.errors.textName && formikUpdate.touched.textName
                     ? "border border-red-600 w-[100%] form-style"
                     : "w-[100%] form-style"
                 }
+                required
               />
-              {formikUpdate.errors.textName &&
-                formikUpdate.touched.textName && (
-                  <p className="text-red-700">
-                    {"*" + formikUpdate.errors.textName1}
-                  </p>
-                )}
+              {formikUpdate.errors.textName && formikUpdate.touched.textName && (
+                <p className="text-red-700">
+                  {"*" + formikUpdate.errors.textName}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">
               <Upload {...updateProps}>
                 <Button icon={<UploadOutlined />}>Upload</Button>
               </Upload>
-              {formikUpdate.errors.imgSrc &&
-                formikUpdate.touched.imgSrc && (
-                  <p className="text-red-700">
-                    {"*" + formikUpdate.errors.imgSrc}
-                  </p>
-                )}
+              {formikUpdate.errors.imgSrc && formikUpdate.touched.imgSrc && (
+                <p className="text-red-700">
+                  {"*" + formikUpdate.errors.imgSrc}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col justify-start items-start m-2">

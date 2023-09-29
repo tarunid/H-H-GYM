@@ -9,6 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   const Login = async (values) => {
+    console.log("dfvf:",values)
     let toastId = toast.loading("Loading..", { duration: 4000 });
     try {
       const formData = JSON.stringify(values);

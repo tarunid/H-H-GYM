@@ -18,9 +18,11 @@ const Dumbbell = () => {
   let FetchData = async () => {
     try {
       const response = await axiosInstance.get("/gallery/gallery-type-limit", {
-        typeName: "Dumbbel",
+        params: {
+          typeName: "Dumbell",
+        }
       });
-
+      console.log(response)
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
@@ -31,7 +33,9 @@ const Dumbbell = () => {
   let FetchAllData = async () => {
     try {
       const response = await axiosInstance.get("/gallery/gallery-type-all", {
-        typeName: "Dumbbel",
+        params: {
+          typeName: "Dumbell",
+        }
       });
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);

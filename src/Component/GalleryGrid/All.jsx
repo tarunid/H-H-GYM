@@ -19,7 +19,7 @@ const All = () => {
 
   let FetchData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-all-all");
+      const response = await axiosInstance.get("/gallery/gallery-all-limit");
 
       console.log(response)
 
