@@ -17,7 +17,7 @@ const items = [
   },
   {
     key: "3",
-    label: `Dumbbell`,
+    label: `GYM`,
     children: <Dumbbell />,
   },
 ];

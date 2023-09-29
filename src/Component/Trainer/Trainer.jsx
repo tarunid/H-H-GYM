@@ -1,8 +1,26 @@
 import "./Trainer.css";
 import { AiFillInstagram } from "react-icons/ai";
-import { TrainerData } from "../../Api/Home";
+import { useEffect, useState } from "react";
+import Link from "antd/es/typography/Link";
 
 const Trainer = () => {
+
+  const [TrainerData, setTrainerData] = useState([]);
+
+  useEffect(() => {
+    const url = 'https://hh-gym-backend-production.up.railway.app/api/trainer/all';
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setTrainerData(data.trainers);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+
   return (
     <>
       <section className="py-14">
@@ -19,24 +37,26 @@ const Trainer = () => {
               return (
                 <>
                   <div key={index} className="card my-5">
-                    <img className="img-img" src={e.imgSrc} alt="GymImg" />
+                    <img className="img-img" src={e.imageLink} alt="GymImg" />
 
                     <div className="img-overlay">
                       <span>
                         <h3 className="img-overlay-name text-center">
-                          {e.trainerName}
+                          {e.name}
                         </h3>
                       </span>
                       <span>
                         <h5 className="img-overlay-tilte text-center">
-                          {e.trainDescription}
+                          {e.trainerType}
                         </h5>
                       </span>
                       <span className="flex justify-center items-center gap-5 py-4">
-                        <AiFillInstagram
-                          style={{ fontSize: "21px" }}
-                          className="hover:fill-[var(--primary-color)]"
-                        />
+                        <Link to={e.Link}>
+                          <AiFillInstagram
+                            style={{ fontSize: "21px" }}
+                            className="hover:fill-[var(--primary-color)]"
+                          />
+                        </Link>
                       </span>
                     </div>
                   </div>
