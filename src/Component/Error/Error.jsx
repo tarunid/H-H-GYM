@@ -1,10 +1,7 @@
 import { Link, useRouteError } from "react-router-dom";
 
 const Error = () => {
-
   const data = useRouteError();
-  console.log(data)
-
   return (
     <>
       <div className="h-screen flex flex-col justify-center items-center">

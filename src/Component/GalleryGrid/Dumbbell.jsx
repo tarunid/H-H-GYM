@@ -17,12 +17,7 @@ const Dumbbell = () => {
 
   let FetchData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-type-limit", {
-        params: {
-          typeName: "Dumbell",
-        }
-      });
-      console.log(response)
+      const response = await axiosInstance.get("/gallery/gallery-type-limit/Dumbell");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
@@ -32,11 +27,8 @@ const Dumbbell = () => {
 
   let FetchAllData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-type-all", {
-        params: {
-          typeName: "Dumbell",
-        }
-      });
+      const response = await axiosInstance.get("/gallery/gallery-type-all/Dumbell");
+      console.log(response)
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
@@ -55,14 +47,14 @@ const Dumbbell = () => {
     setOpenModal(false);
   };
 
-  // Previous Image
+  
   const prevSlide = () => {
     slideNumber === 0
       ? setSlideNumber(galleryImages.length - 1)
       : setSlideNumber(slideNumber - 1);
   };
 
-  // Next Image
+
   const nextSlide = () => {
     slideNumber + 1 === galleryImages.length
       ? setSlideNumber(0)

@@ -16,12 +16,7 @@ const Dumbbell = () => {
 
   let FetchData = async () => {
     try {
-      const response = await axiosInstance.get("/gallery/gallery-type-limit",
-        {
-          typeName: "Equipments",
-        }
-      );
-      console.log(response)
+      const response = await axiosInstance.get("/gallery/gallery-type-limit/Equipments");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
@@ -30,12 +25,8 @@ const Dumbbell = () => {
   };
 
   let FetchAllData = async () => {
-
-    const params = JSON.stringify({
-      typeName: "Equipments",
-    });
     try {
-      const response = await axiosInstance.get("/gallery/gallery-type-all", params);
+      const response = await axiosInstance.get("/gallery/gallery-type-all/Equipments");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {

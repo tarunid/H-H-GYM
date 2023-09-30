@@ -88,11 +88,11 @@ export const AuthProvider = ({ children }) => {
             },
           }
         );
-        const { accessToken: newAccessToken } = response.data.accessToken;
+        const { accessToken: newAccessToken } = response.data.token;
         updateTokens(newAccessToken, refreshToken);
       } catch (error) {
         console.error("Token refresh failed:", error);
-        navigate("/login");
+        // navigate("/login");
       }
     };
 

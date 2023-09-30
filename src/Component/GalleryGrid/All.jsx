@@ -1,7 +1,5 @@
 import { useState } from "react";
-// import { galleryData } from "../../Api/Gallery";
 import "./Gallery.css";
-// import LightGallery from 'lightgallery/react/Lightgallery.es5';
 import { IoIosCloseCircle } from "react-icons/io";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
@@ -20,9 +18,6 @@ const All = () => {
   let FetchData = async () => {
     try {
       const response = await axiosInstance.get("/gallery/gallery-all-limit");
-
-      console.log(response)
-
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
@@ -33,7 +28,6 @@ const All = () => {
   let FetchAllData = async () => {
     try {
       const response = await axiosInstance.get("/gallery/gallery-all-all");
-
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {

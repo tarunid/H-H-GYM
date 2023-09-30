@@ -2,7 +2,12 @@ import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import "./choose.css";
 import video from "../../assets/video.mp4";
-import dub from "../../assets/dumbell.svg";
+
+import dumbellColor from "../../assets/dumbellColor.svg";
+import Wellness from "../../assets/Wellness.svg";
+import Trainer from "../../assets/Trainer.svg"
+import CommunitySupport from "../../assets/CommunitySupport.svg"
+
 
 const Choose = () => {
   return (
@@ -32,10 +37,10 @@ const Choose = () => {
                   transformed my body. Let&#39;s start today!
                 </p>
               </div>
-              <div className="flex flex-col gap-4 md:flex-row justify-between items-center py-5">
+              <div className="flex flex-col gap-4 md:flex-row justify-between items-center">
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
-                    src={dub}
+                    src={Trainer}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
@@ -43,7 +48,7 @@ const Choose = () => {
                 </div>
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
-                    src={dub}
+                    src={dumbellColor}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
                   />
@@ -51,21 +56,23 @@ const Choose = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:flex-row justify-between items-center py-5">
+                
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
-                    src={dub}
-                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 w-[88.2px] h-[88.2px]"
-                    alt="thumbImg"
-                  />
-                  <p className="choose-sub-para">Community Support</p>
-                </div>
-                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
-                  <img
-                    src={dub}
+                    src={Wellness}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1  "
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Holistic Wellness</p>
+                </div>
+
+                <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
+                  <img
+                    src={CommunitySupport}
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 w-[88.2px] h-[88.2px]"
+                    alt="thumbImg"
+                  />
+                  <p className="choose-sub-para">Community Support</p>
                 </div>
               </div>
             </div>
