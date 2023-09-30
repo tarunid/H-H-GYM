@@ -19,6 +19,8 @@ const Price = () => {
       });
   }, []);
 
+  priceCards.sort((a, b) => a.price - b.price);
+
   return (
     <>
       <section className="py-14 bg">

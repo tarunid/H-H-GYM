@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="2xl:container mx-auto">
           <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-evenly relative z-[9999]">
             <div className="relative z-[9999] container-1 w-full lg:w-[25%] bg-footer-holder h-[100%]">
-              <ul className="">
+              <ul>
                 <p className="text-sm">
                   Elevate your fitness journey with H2H Premium Gym. Top-tier equipment, expert trainers, and exclusive perks for an unparalleled workout experience
                 </p>
