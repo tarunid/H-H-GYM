@@ -3,6 +3,7 @@ import "react-html5video/dist/styles.css";
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
 import poster from "../../assets/Poster.jpg";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -44,7 +45,10 @@ const About = () => {
                 </ul>
               </div>
               <div className="py-5">
-                <button className="button-gallery flex">Contact US</button>
+                <Link to="/contact">
+                  <button className="button-gallery flex">Contact US</button>
+                </Link>
+
               </div>
             </div>
           </div>
