@@ -10,6 +10,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const FeedBack = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [swiper, setSwiper] = useState(null);
+  const [slidesPerView, setSlidesPerView] = useState(2);
 
   useEffect(() => {
     axiosInstance
@@ -21,6 +22,27 @@ const FeedBack = () => {
         console.error('Error fetching testimonials:', error);
       });
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+        if (window.innerWidth <= 640) {
+            setSlidesPerView(1);
+        } else {
+            setSlidesPerView(2);
+        }
+    };
+
+    // Call once to set initial state
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []);
 
   const prevSlide = () => {
     if (swiper) {
@@ -50,12 +72,15 @@ const FeedBack = () => {
           </div>
 
           <div className="container">
+            <div className='grid grid-cols-1'>
+          
+            </div>
             <Swiper
               // effect={'coverflow'}
               grabCursor={true}
               centeredSlides={true}
               loop={true}
-              slidesPerView={2}
+              slidesPerView={slidesPerView}
               spaceBetween={30}
               pagination={{
                 clickable: true,
@@ -76,7 +101,7 @@ const FeedBack = () => {
             >
               {testimonials.map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                  <div className="min-h-36  bg-gray-100 p-8 rounded">
+                  <div className="h-full  bg-gray-100 p-8 rounded">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -93,7 +118,7 @@ const FeedBack = () => {
                         className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                       />
                       <span className="flex-grow flex flex-col pl-4">
-                        <span className="title-font font-medium text-gray-900">
+                        <span className="title-font font-medium text-gray-900 leading-relaxed mb-6 text-sm md:text-base">
                           {testimonial.username}
                         </span>
                         <span className="text-gray-500 text-sm">
