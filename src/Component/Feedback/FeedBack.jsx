@@ -1,45 +1,40 @@
-import "./FeedBack.css";
-import { Carousel } from "antd";
-import { useEffect, useRef } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useState } from "react";
-import axiosInstance from "../../interceptors/axiosInstance";
+import './FeedBack.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Import Swiper styles
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'; // Import Swiper modules
 
-const contentStyle = {
-  height: "560px",
-  color: "#000",
-  textAlign: "center",
-  borderradius: "50px",
-};
+import { useEffect, useState } from 'react';
+import axiosInstance from '../../interceptors/axiosInstance';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const FeedBack = () => {
-  let ref = useRef();
-  let [slideNumber, setSlideNumber] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
+  const [swiper, setSwiper] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get("/feedback/all")
-      .then(response => {
+    axiosInstance
+      .get('/feedback/all')
+      .then((response) => {
         setTestimonials(response.data.TestimonialArray);
       })
-      .catch(error => {
-        console.error("Error fetching testimonials:", error);
+      .catch((error) => {
+        console.error('Error fetching testimonials:', error);
       });
   }, []);
 
-  let perv = () => {
-    ref.current.prev();
-    slideNumber === 0
-      ? setSlideNumber(testimonials.length - 1)
-      : setSlideNumber(slideNumber - 1);
+  const prevSlide = () => {
+    if (swiper) {
+      swiper.slidePrev();
+    }
   };
 
-  let nex = () => {
-    ref.current.next();
-    slideNumber + 1 === testimonials.length
-      ? setSlideNumber(0)
-      : setSlideNumber(slideNumber + 1);
+  const nextSlide = () => {
+    if (swiper) {
+      swiper.slideNext();
+    }
   };
+
+  console.log(testimonials)
 
   return (
     <>
@@ -54,60 +49,78 @@ const FeedBack = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1">
-            <div className="w-[90%] mx-auto rounded-lg order-2 md:order-1 bg-slate-300">
-              <Carousel
-                ref={ref}
-                dots={true}
-                pauseOnHover={true}
-                pauseOnDotsHover={true}
-                draggable
-                easing
-                className="rounded-full"
-              >
-                {testimonials.map(testimonial => (
-                  <div key={testimonial.id} className="grid grid-cols-1 md:grid-cols-2" style={contentStyle}>
-                    <div className="py-10 flex justify-center items-center gap-5 px-2">
-                      <div className="flex flex-col justify-start items-center h-[50%] min-w-[20%] py-2">
-                        <img
-                          src="https://maruthi.wpengine.com/wp-content/uploads/2017/12/testim1.jpg"
-                          className="rounded-full w-full md:w-auto h-auto md:h-[50%] mx-auto"
-                          alt={testimonial.username}
-                        />
-                        <p className="py-5 symbol">&#34;</p>
-                      </div>
-                      <div className="flex flex-col justify-start items-start h-[50%] px-1">
-                        <h3 className="py-2 feedBack-name">{testimonial.username}</h3>
-                        <p className="py-1 feedBack-job">H&H GYM</p>
-                        <p className="text-start py-5">
-                          {testimonial.feedback}
-                        </p>
-                      </div>
-                    </div>
+          <div className="container">
+            <Swiper
+              // effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={2}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 2.5,
+              }}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              modules={[EffectCoverflow, Pagination, Navigation]}
+              onSwiper={(swiper) => setSwiper(swiper)}
+              className="swiper_container"
+            >
+              {testimonials.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <div className="min-h-36  bg-gray-100 p-8 rounded">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      className="block w-5 h-5 text-gray-400 mb-4"
+                      viewBox="0 0 975.036 975.036"
+                    >
+                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z" />
+                    </svg>
+                    <p className="leading-relaxed mb-6">{testimonial.feedback}</p>
+                    <a className="inline-flex items-center">
+                      <img
+                        alt="testimonial"
+                        src={testimonial.imageLink}
+                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                      />
+                      <span className="flex-grow flex flex-col pl-4">
+                        <span className="title-font font-medium text-gray-900">
+                          {testimonial.username}
+                        </span>
+                        <span className="text-gray-500 text-sm">
+                          {testimonial.date}
+                        </span>
+                      </span>
+                    </a>
                   </div>
-                ))}
-              </Carousel>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-            </div>
-          </div>
-
-
-          <div className="grid grid-cols-1 w-[60%] mx-auto py-5">
-            <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
-              <button
-                onClick={() => {
-                  perv();
-                }}
-                className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]">
-                <IoIosArrowBack />
-              </button>
-              <button
-                onClick={() => {
-                  nex();
-                }}
-                className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]">
-                <IoIosArrowForward />
-              </button>
+            <div className="grid grid-cols-1 w-[60%] mx-auto py-5">
+              <div className="w-[90%] mx-auto flex justify-center items-center gap-5">
+                <button
+                  onClick={prevSlide}
+                  className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]"
+                >
+                  <IoIosArrowBack />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="bg-[var(--primary-color)] p-4 rounded-xl text-[#fff]"
+                >
+                  <IoIosArrowForward />
+                </button>
+              </div>
             </div>
           </div>
         </div>

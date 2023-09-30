@@ -14,7 +14,6 @@
   }
 }
 
-
 .c::after {
   font-family: "Montserrat", sans-serif;
   content: "“";
@@ -52,8 +51,3 @@
 .ant-carousel .slick-dots li.slick-active button {
   background-color: var(--primary-color);
 }
-
-/* .ant-carousel .slick-dots li.slick-active{
-  background-color: var(--primary-color);
-  border-color: black;
-} */
