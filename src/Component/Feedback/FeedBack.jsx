@@ -71,10 +71,7 @@ const FeedBack = () => {
             </div>
           </div>
 
-          <div className="container">
-            <div className='grid grid-cols-1'>
-          
-            </div>
+          <div className="container w-[90%] mx-auto">
             <Swiper
               // effect={'coverflow'}
               grabCursor={true}
