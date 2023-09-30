@@ -1,5 +1,6 @@
 import "./Price.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Price = () => {
 
@@ -55,12 +56,12 @@ const Price = () => {
 
                 <div className="py-5">
                   <button>
-                    <a className="fancy" href="#">
+                    <Link className="fancy" to="/contact">
                       <span className="top-key"></span>
                       <span className="textt">Enroll Now</span>
                       <span className="bottom-key-1"></span>
                       <span className="bottom-key-2"></span>
-                    </a>
+                    </Link>
                   </button>
                 </div>
               </div>

@@ -1,5 +1,7 @@
 import "../HeroSection/HeroSection.css";
 
+import { HashLink as Link } from "react-router-hash-link";
+
 const HeroSection = () => {
   return (
     <>
@@ -12,18 +14,20 @@ const HeroSection = () => {
                   <p>Find Your Energy</p>
                 </div>
                 <h1 className="py-5 HeroHeading">
-                REGULAR EXERCISES <br />
-                H&H Fitness Studio
+                  REGULAR EXERCISES <br />
+                  H&H Fitness Studio
                 </h1>
                 <p className="HeroParagraph">
-                Unlock Your Full Potential, Transform Your Body, and Find Wellness in Every Rep
+                  Unlock Your Full Potential, Transform Your Body, and Find Wellness in Every Rep
                 </p>
-                <button className="button">
-                  <span className="button_lg">
-                    <span className="button_sl"></span>
-                    <span className="button_text">Get Started</span>
-                  </span>
-                </button>
+                <Link to="#Offer" smoot>
+                  <button className="button">
+                    <span className="button_lg">
+                      <span className="button_sl"></span>
+                      <span className="button_text">Get Started</span>
+                    </span>
+                  </button>
+                </Link>
                 <div className="self-end">
                   <img
                     src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/gym-text.png"

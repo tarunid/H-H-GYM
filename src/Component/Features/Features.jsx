@@ -1,11 +1,10 @@
 import "./Features.css";
 import { FeaturedData } from "../../Api/Home";
 
-
 const Featuers = () => {
   return (
     <>
-      <section className="py-16">
+      <section className="py-16" id="Offer">
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[90%] mx-auto">
             <div className="flex flex-col justify-center items-center text-center">
@@ -85,7 +84,6 @@ const Featuers = () => {
                         />
                       </g>
                     </svg> */}
-
 
                     <img src={e.image} className="rotate-in-center hover:rotate-in-center" width="70px" height="80px" />
 

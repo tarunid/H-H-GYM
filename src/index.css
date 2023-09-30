@@ -117,14 +117,7 @@
   color: var(--primary-color);
 }
 
-.bg-about {
-  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1690024642/11rsg_l6y4av.jpg");
-  background-size: contain;
-  width: 100%;
-  height: 640px;
-  color: #fff;
-  background-repeat: no-repeat;
-}
+
 
 .bg {
   background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/04/shape-47.jpg");

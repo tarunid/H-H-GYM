@@ -2,13 +2,14 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 import { AiOutlineInstagram, AiFillPhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
+import { FooterIcon } from "../../assets/img";
 
 const Footer = () => {
   return (
     <>
       <footer className="py-20 bg-[#fff] text-[#040405] bg-footer relative">
         <img
-          src="https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png"
+          src={FooterIcon}
           className="absolute bottom-0"
         />
         <div className="2xl:container mx-auto">

@@ -1,3 +1,12 @@
+.bg-about {
+  background-image: url("https://ik.imagekit.io/4z8covdo9/GYM/AboutImg.jpg?updatedAt=1696049895809");
+  background-size: contain;
+  width: 100%;
+  height: 640px;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
 .strok-text-about {
   color: brown;
   font-family: roboto, sans-serif;
