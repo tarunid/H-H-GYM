@@ -115,11 +115,11 @@ const FeedBack = () => {
                         className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                       />
                       <span className="flex-grow flex flex-col pl-4">
-                        <span className="title-font font-medium text-gray-900 leading-relaxed mb-6 text-sm md:text-base">
+                        <span className="title-font font-medium text-gray-900 leading-relaxed text-sm md:text-base">
                           {testimonial.username}
                         </span>
                         <span className="text-gray-500 text-sm">
-                          {testimonial.date}
+                          {testimonial.userWork}
                         </span>
                       </span>
                     </a>
