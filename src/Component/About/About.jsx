@@ -48,7 +48,6 @@ const About = () => {
                 <Link to="/contact">
                   <button className="button-gallery flex">Contact US</button>
                 </Link>
-
               </div>
             </div>
           </div>
