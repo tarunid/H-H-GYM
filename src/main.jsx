@@ -5,19 +5,22 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Component/Error/Error";
 import App from "./Component/AppLayout";
 import Body from "./pages/Body";
-import ProtectedRouter from "./Component/Dashboard/ProtectedRouter";
-import Gallerydashboard from "./Component/Dashboard/Gallerydashboard";
 import AboutPage from "./pages/About";
 import GalleryPage from "./pages/Gallery";
 import ContactPage from "./pages/Contact";
-import Dashboard from "./Component/Dashboard/Dashboard";
-import Login from "./Component/Login/Login";
-import Gympricedashboard from "./Component/Dashboard/Gympricedashboard";
-import GoogleProducts from "./Component/Dashboard/GoogleProducts";
-import TermCondition from "./Component/TermAndCondition/TermCondition";
 import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy";
-import TestimonialDashboard from "./Component/Dashboard/TestimonialDashboard";
-import GymTrainerDashboard from "./Component/Dashboard/GymTrainerDashboard";
+import TermCondition from "./Component/TermAndCondition/TermCondition";
+
+// import ProtectedRouter from "./Component/Dashboard/ProtectedRouter";
+// import Gallerydashboard from "./Component/Dashboard/Gallerydashboard";
+// import Dashboard from "./Component/Dashboard/Dashboard";
+// import Login from "./Component/Login/Login";
+// import Gympricedashboard from "./Component/Dashboard/Gympricedashboard";
+// import GoogleProducts from "./Component/Dashboard/GoogleProducts";
+// import TermCondition from "./Component/TermAndCondition/TermCondition";
+// import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy";
+// import TestimonialDashboard from "./Component/Dashboard/TestimonialDashboard";
+// import GymTrainerDashboard from "./Component/Dashboard/GymTrainerDashboard";
 
 let browerRouter = createBrowserRouter([
   {
@@ -28,10 +31,10 @@ let browerRouter = createBrowserRouter([
         path: "/",
         element: <Body />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
+      // {
+      //   path: "/login",
+      //   element: <Login />,
+      // },
       {
         path: "/gallery",
         element: <GalleryPage />,
@@ -52,36 +55,36 @@ let browerRouter = createBrowserRouter([
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
       },
-      {
-        path: "/dashboard",
-        element: <ProtectedRouter />,
-        children: [
-          {
-            path: "/dashboard",
-            element: <Dashboard />,
-          },
-          {
-            path: "google-product",
-            element: <GoogleProducts />,
-          },
-          {
-            path: "gallery-dashboard",
-            element: <Gallerydashboard />,
-          },
-          {
-            path: "gym-price-dashboard",
-            element: <Gympricedashboard />,
-          },
-          {
-            path:"trainer-dashboard",
-            element:<GymTrainerDashboard/>
-          },
-          {
-            path: "feedback-dashboard",
-            element: <TestimonialDashboard />,
-          }
-        ],
-      },
+      // {
+      //   path: "/dashboard",
+      //   element: <ProtectedRouter />,
+      //   children: [
+      //     {
+      //       path: "/dashboard",
+      //       element: <Dashboard />,
+      //     },
+      //     {
+      //       path: "google-product",
+      //       element: <GoogleProducts />,
+      //     },
+      //     {
+      //       path: "gallery-dashboard",
+      //       element: <Gallerydashboard />,
+      //     },
+      //     {
+      //       path: "gym-price-dashboard",
+      //       element: <Gympricedashboard />,
+      //     },
+      //     {
+      //       path:"trainer-dashboard",
+      //       element:<GymTrainerDashboard/>
+      //     },
+      //     {
+      //       path: "feedback-dashboard",
+      //       element: <TestimonialDashboard />,
+      //     }
+      //   ],
+      // },
     ],
     errorElement: <Error />,
   },

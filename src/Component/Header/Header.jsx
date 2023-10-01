@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import Logo from "../../assets/HH_Logo.png";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 
 let Header = () => {
-  let { accessToken } = useAuth();
+  // let { accessToken } = useAuth();
   let [isMobile, setisMobile] = useState(false);
   let [autoClosecomponent, setautoClosecomponent] = useState(false);
   let [isMinWidthReached, setIsMinWidthReached] = useState(
@@ -77,7 +77,7 @@ let Header = () => {
             </li>
 
             <div className="a">
-              {accessToken ? (<Link to="/dashboard">
+              {/* {accessToken ? (<Link to="/dashboard">
                 <button className="btn learn-more" onClick={() => autoClose()}>
                   <span className="btnn circle" aria-hidden="true">
                     <span className="icon arrow"></span>
@@ -91,7 +91,16 @@ let Header = () => {
                   </span>
                   <span className="btnn btn-text" >Login</span>
                 </button>
-              </Link>)}
+              </Link>)} */}
+
+              <Link to="https://hh-dashboard.vercel.app/">
+                <button className="btn learn-more" onClick={() => autoClose()}>
+                  <span className="btnn circle" aria-hidden="true">
+                    <span className="icon arrow"></span>
+                  </span>
+                  <span className="btnn btn-text" >DashBoard</span>
+                </button>
+              </Link>
 
             </div>
           </ul>
