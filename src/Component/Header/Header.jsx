@@ -93,7 +93,7 @@ let Header = () => {
                 </button>
               </Link>)} */}
 
-              <Link to="https://hh-dashboard.vercel.app/">
+              <Link to="https://admin.hhfitnessstudio.com/">
                 <button className="btn learn-more" onClick={() => autoClose()}>
                   <span className="btnn circle" aria-hidden="true">
                     <span className="icon arrow"></span>

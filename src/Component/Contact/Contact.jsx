@@ -4,9 +4,11 @@ import { AiOutlineInstagram, AiFillPhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { useFormik } from "formik";
 import { basicSchema } from "./schema/schema";
-import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import axiosInstance from "../../interceptors/axiosInstance";
 
 const Contact = () => {
+
   const { values, touched, handleSubmit, handleBlur, handleChange, errors } =
     useFormik({
       initialValues: {
@@ -16,12 +18,22 @@ const Contact = () => {
       },
       validationSchema: basicSchema,
       onSubmit: async (values, actions) => {
-        axios.post("api/send", values);
-        console.log(values);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        actions.resetForm();
-      },
-    });
+        try {
+          await axiosInstance.post('/email/send', values);
+
+          toast.success('Email sent successfully', {
+            duration: 3000,
+          });
+
+          actions.resetForm();
+        } catch (error) {
+          console.error('Error sending data:', error);
+          toast.error('Error sending email. Please try again', {
+            duration: 3000,
+          });
+        }
+      }
+    })
   return (
     <>
       <section className="pb-14">
@@ -138,6 +150,7 @@ const Contact = () => {
                     {errors.name && touched.name && (
                       <p className="text-red-700">{"*" + errors.name}</p>
                     )}
+
                   </div>
 
                   <div className="flex flex-col justify-start items-start m-2">
@@ -197,7 +210,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
       </section>
+
     </>
   );
 };
