@@ -98,7 +98,7 @@ const Contact = () => {
                   <Link to="">
                     <li className="flex justify-start items-center gap-2 py-2 contact-content">
                       <AiFillPhone />
-                      <a href="tel:07305014152">73050 14152</a>,<a href="tel:7305014153">73050 14153</a>
+                      <Link to="tel:07305014152">73050 14152</Link>,<Link to="tel:7305014153">73050 14153</Link>
                     </li>
                   </Link>
 
