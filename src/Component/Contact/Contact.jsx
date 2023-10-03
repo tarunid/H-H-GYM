@@ -75,13 +75,13 @@ const Contact = () => {
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Address</h3>
                   <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
-                  <p className="contact-content break-words">
+                  <Link to="https://g.co/kgs/dtpDDZ" className="contact-content break-words">
                     NO.9, 2ND FLOOR, Ekambaram St,
                     <br />
                     Gokulam Colony, Sambanthanar Nagar,
                     <br />
                     Pammal, Chennai, Tamil Nadu 600075
-                  </p>
+                  </Link>
                 </div>
                 <div className="w-full sm:w-[50%]">
                   <h3 className="contact-sub-heading">Opening Hours</h3>
@@ -102,7 +102,7 @@ const Contact = () => {
                     </li>
                   </Link>
 
-                  <Link to="">
+                  <Link to="mailto:handhfitnessclub@gmail.com">
                     <li className="flex justify-start items-center gap-2 py-2 contact-content text-xs">
                       <BiLogoGmail />
                       handhfitnessclub@gmail.com

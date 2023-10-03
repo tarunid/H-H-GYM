@@ -45,9 +45,9 @@ const Footer = () => {
                 <Link to="/gallery">
                   <li>Gallery View</li>
                 </Link>
-                <Link to="/error">
+                {/* <Link to="/error">
                   <li>Error Page Demo</li>
-                </Link>
+                </Link> */}
               </ul>
             </div>
             <div className="relative z-[9999] container-3 w-full lg:w-[25%]">
