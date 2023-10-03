@@ -20,15 +20,15 @@ const Footer = () => {
                   Elevate your fitness journey with H2H Premium Gym. Top-tier equipment, expert trainers, and exclusive perks for an unparalleled workout experience
                 </p>
                 <div className="flex justify-start gap-5 py-5 w-[100%]">
-                  <span className="bg-[#efefef] rounded-full p-3">
+                  <span className="bg-[#efefef] rounded-full p-3 hover:bg-[#fa7e1e]">
+                    <AiOutlineInstagram style={{ color: "#000" }} />
+                  </span>
+                  {/* <span className="bg-[#efefef] rounded-full p-3">
                     <AiOutlineInstagram style={{ color: "#000" }} />
                   </span>
                   <span className="bg-[#efefef] rounded-full p-3">
                     <AiOutlineInstagram style={{ color: "#000" }} />
-                  </span>
-                  <span className="bg-[#efefef] rounded-full p-3">
-                    <AiOutlineInstagram style={{ color: "#000" }} />
-                  </span>
+                  </span> */}
                 </div>
               </ul>
             </div>
@@ -57,12 +57,12 @@ const Footer = () => {
                 <Link to="/contact">
                   <li>Contact us</li>
                 </Link>
-                <Link to="/terms-and-condition">
+                {/* <Link to="/terms-and-condition">
                   <li>Terms and Condition</li>
                 </Link>
                 <Link to="/privacy-policy">
                   <li>Privacy Policy</li>
-                </Link>
+                </Link> */}
               </ul>
             </div>
             <div className="relative z-[9999] container-4 w-full lg:w-[25%]">
@@ -79,7 +79,7 @@ const Footer = () => {
                 <Link to="">
                   <li className="flex justify-start items-center gap-2 py-2">
                     <AiFillPhone />
-                    073050 14152
+                    <a href="tel:07305014152">73050 14152</a>,<a href="tel:7305014153">73050 14153</a>
                   </li>
                 </Link>
 
