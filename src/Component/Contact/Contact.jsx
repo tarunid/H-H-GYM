@@ -66,7 +66,7 @@ const Contact = () => {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  width={600}
+                  width={"100%"}
                   height={450}
                 />
               </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                   <Link to="">
                     <li className="flex justify-start items-center gap-2 py-2 contact-content">
                       <AiFillPhone />
-                      073050 14152
+                      <a href="tel:07305014152">73050 14152</a>,<a href="tel:7305014153">73050 14153</a>
                     </li>
                   </Link>
 
@@ -113,15 +113,15 @@ const Contact = () => {
                   <h3 className="contact-sub-heading">Follow Us On</h3>
                   <div className="bg-[var(--primary-color)] w-10 h-1 my-5"></div>
                   <div className="flex justify-start py-5 w-[100%] gap-5">
-                    <span className="bg-[#efefef] rounded-full p-3">
+                    <span className="bg-[#efefef] rounded-full p-3 hover:bg-[#fa7e1e]">
+                      <AiOutlineInstagram />
+                    </span>
+                    {/* <span className="bg-[#efefef] rounded-full p-3">
                       <AiOutlineInstagram />
                     </span>
                     <span className="bg-[#efefef] rounded-full p-3">
                       <AiOutlineInstagram />
-                    </span>
-                    <span className="bg-[#efefef] rounded-full p-3">
-                      <AiOutlineInstagram />
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
