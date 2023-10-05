@@ -18,13 +18,11 @@ const App = () => {
       top: 0,
       behaviour: "smooth",
     });
+
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, [location]);
 
 
-  useEffect(() => {
-    // Track the page view when the Home component is mounted
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
   // if (isLoading) {
   //   return <>
   //     <p>Loading...</p>
