@@ -5,14 +5,15 @@ import HeroSection from "../Component/HeroSection/HeroSection";
 import Bmi from "../Component/Bmi/Bmi";
 import Choose from "../Component/Choose/Choose";
 import Featuers from "../Component/Features/Features";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import ReactGA from 'react-ga';
 
 const Body = () => {
+  
   useEffect(() => {
-    Aos.init({once:true});
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
+
   return (
     <>
       <HeroSection />

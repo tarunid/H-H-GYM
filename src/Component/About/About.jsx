@@ -3,6 +3,7 @@ import "react-html5video/dist/styles.css";
 import "./About.css";
 import Trainer from "../Trainer/Trainer";
 import poster from "../../assets/Poster.jpg";
+import { video2 } from "../../assets/img"
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -54,12 +55,6 @@ const About = () => {
 
           <div className="bg">
             <div className="grid grid-cols-1 w-[90%] mx-auto py-14">
-              <div className="text-start w-[90%] mx-auto">
-                {/* <div className="py-5 bg-heroSection-heading">
-                  <p className="text-[#fff]">WHY CHOOSE US</p>
-                </div> */}
-                {/* <p className="about-paragraph w-[100%]">Demo Text</p> */}
-              </div>
               <div className="flex justify-center rounded-xl">
                 <Video
                   loop
@@ -72,7 +67,7 @@ const About = () => {
                   ]}
                   poster={poster}>
                   <source
-                    src="https://res.cloudinary.com/dsq5spft3/video/upload/v1690112383/Video2_li33lq.mp4"
+                    src={video2}
                     type="video/mp4"
                   />
                 </Video>
