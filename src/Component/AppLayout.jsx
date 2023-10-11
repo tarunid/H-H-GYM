@@ -6,7 +6,6 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { Toaster } from "react-hot-toast";
 
-
 ReactGA.initialize('G-3GZQHE60S2');
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
 
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, [location]);
-
 
   // if (isLoading) {
   //   return <>
