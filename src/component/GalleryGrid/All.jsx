@@ -66,12 +66,10 @@ const All = () => {
         <div className="sliderWrap">
           <IoIosCloseCircle className="btnClose" onClick={handleCloseModal} />
           <div className="btnPrev" onClick={prevSlide}>
-            <p>Prev</p>
-            <GrFormPreviousLink />
+            <GrFormPreviousLink className="h-11 w-10"/>
           </div>
           <div className="btnNext" onClick={nextSlide}>
-            <p>Next</p>
-            <GrFormNextLink />
+            <GrFormNextLink className="h-11 w-10"/>
           </div>
 
           <div className="fullScreenImage">
