@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Loader from "./component/Loaded/Loader";
 import Error from "./Component/Error/Error";
+import Loader from "./component/Loaded/Loader";
 import App from "./Component/AppLayout";
 import Body from "./pages/Body";
 
