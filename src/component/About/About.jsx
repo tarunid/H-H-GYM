@@ -46,7 +46,24 @@ const About = () => {
               </div>
               <div className="py-5">
                 <Link to="/contact">
-                  <button className="button-gallery flex">Contact US</button>
+                  <button className="buttons">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      viewBox="0 0 24 24"
+                      height={24}
+                      fill="none"
+                      className="svg-icon"
+                    >
+                      <g strokeWidth={2} strokeLinecap="round" stroke="#fff">
+                        <rect y={5} x={4} width={16} rx={2} height={16} />
+                        <path d="m8 3v4" />
+                        <path d="m16 3v4" />
+                        <path d="m4 11h16" />
+                      </g>
+                    </svg>
+                    <span className="lable">Contact US</span>
+                  </button>
                 </Link>
               </div>
             </div>
