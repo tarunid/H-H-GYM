@@ -1,0 +1,123 @@
+.ant-table-wrapper .ant-table.ant-table-bordered > .ant-table-container {
+  border-top: 0;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  /* border-bottom: 0; */
+  /* border: 1px dashed #000;
+  border-left: 0;
+  background-color: transparent; */
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  text-align: start;
+  background: var(--primary-color);
+  /* border-bottom: 1.5px solid #000; */
+  transition: background 0.2s ease;
+  width: 250px;
+  font-family: Montserrat;
+  text-align: center;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  position: relative;
+  padding: 16px 16px;
+  overflow-wrap: normal;
+  font-family: Montserrat;
+  text-align: center;
+}
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+  display: none;
+}
+
+.ant-modal .ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+  display: none;
+}
+
+.form-style {
+  border-radius: 5px;
+  border: 2px #e0e0e0 solid;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: #546274;
+  padding: 10px;
+  width: 98%;
+  margin-right: 10px;
+}
+
+.cssbuttons-io-button {
+  background: var(--primary-color);
+  color: white;
+  font-family: "Roboto Slab", serif;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: inset 0 0 1.6em -0.6em red;
+  box-shadow: inset 0 0 1.6em -0.6em red;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  -webkit-box-shadow: 0.1em 0.1em 0.6em 0.2em red;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em red;
+  right: 0.3em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  color: red;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  -webkit-transform: translateX(0.1em);
+  -ms-transform: translateX(0.1em);
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
