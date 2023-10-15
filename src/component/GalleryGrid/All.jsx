@@ -5,9 +5,11 @@ import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useEffect } from "react";
 import axiosInstance from "../../interceptors/axiosInstance";
+import Loader from "../Loaded/Loader";
 
 
 const All = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [galleryData, setgalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
 
@@ -17,9 +19,11 @@ const All = () => {
 
   let FetchData = async () => {
     try {
+      setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-all-limit");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -66,10 +70,10 @@ const All = () => {
         <div className="sliderWrap">
           <IoIosCloseCircle className="btnClose" onClick={handleCloseModal} />
           <div className="btnPrev" onClick={prevSlide}>
-            <GrFormPreviousLink className="h-11 w-10"/>
+            <GrFormPreviousLink className="h-11 w-10" />
           </div>
           <div className="btnNext" onClick={nextSlide}>
-            <GrFormNextLink className="h-11 w-10"/>
+            <GrFormNextLink className="h-11 w-10" />
           </div>
 
           <div className="fullScreenImage">
@@ -79,30 +83,35 @@ const All = () => {
       )}
 
       <div className="2xl:container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
-          {galleryData.map((e, index) => {
-            return (
-              <>
-                <div
-                  key={index}
-                  className="card-gallery"
-                  onClick={() => {
-                    handeOpenModal(index);
-                  }}>
-                  <img className="img-img" src={e.imgSrc} alt="GymImg" />
+        {isLoading ? (<div className="w-[100%] flex flex-col items-center justify-center">
+          <Loader /></div>) : <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
+          {
+            galleryData.map((e, index) => {
+              return (
+                <>
+                  <div
+                    key={index}
+                    className="card-gallery"
+                    onClick={() => {
+                      handeOpenModal(index);
+                    }}>
+                    <img className="img-img" src={e.imgSrc} alt="GymImg" />
 
-                  <div className="img-overlay">
-                    <span>
-                      <h3 className="img-overlay-name text-center">
-                        {e.textName}
-                      </h3>
-                    </span>
+                    <div className="img-overlay">
+                      <span>
+                        <h3 className="img-overlay-name text-center">
+                          {e.textName}
+                        </h3>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </>
-            );
-          })}
+                </>
+              )
+            })
+          }
         </div>
+        }
+
       </div>
 
       <div className="grid grid-cols-1 w-[70%] mx-auto">

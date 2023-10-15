@@ -5,8 +5,10 @@ import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 import { useEffect } from "react";
 import axiosInstance from "../../interceptors/axiosInstance";
+import Loader from "../Loaded/Loader";
 
 const Dumbbell = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [galleryData, setgalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
 
@@ -16,9 +18,11 @@ const Dumbbell = () => {
 
   let FetchData = async () => {
     try {
+      setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-type-limit/Equipments");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -26,9 +30,11 @@ const Dumbbell = () => {
 
   let FetchAllData = async () => {
     try {
+      setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-type-all/Equipments");
       setgalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -78,6 +84,8 @@ const Dumbbell = () => {
       )}
 
       <div className="2xl:container mx-auto">
+      {isLoading ? (<div className="w-[100%] flex flex-col items-center justify-center">
+          <Loader /></div>) :
         <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
           {galleryData.map((e, index) => {
             return (
@@ -101,7 +109,7 @@ const Dumbbell = () => {
               </>
             );
           })}
-        </div>
+        </div>}
       </div>
 
       <div className="grid grid-cols-1 w-[70%] mx-auto">
