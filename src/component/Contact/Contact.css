@@ -1,0 +1,154 @@
+.bg-contact-common {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/banner.jpg"); */
+  background-size: cover;
+  width: 100%;
+  height: 430px;
+  color: #fff;
+}
+
+.bg-black-rappper {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/breadcumb-shape.svg"); */
+  background-size: cover;
+  width: 200px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.bg-black-rappper:hover {
+  color: var(--primary-color);
+}
+
+.contact-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+.contact-sub-heading {
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  margin-bottom: 5px;
+}
+
+.contact-content {
+  box-sizing: border-box;
+  color: rgb(100, 100, 100);
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  overflow-wrap: break-word;
+  text-align: start;
+  text-rendering: optimizelegibility;
+}
+
+.form-style {
+  border-radius: 5px;
+  border: 2px #e0e0e0 solid;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: #546274;
+  padding: 10px;
+  width: 98%;
+  margin-right: 10px;
+}
+
+.form-style-textarea {
+  border-radius: 5px;
+  border: 2px #e0e0e0 solid;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  color: #1368d6;
+  padding: 10px;
+  width: 98%;
+  margin-right: 10px;
+  min-height: 250px;
+}
+
+.cssbuttons-io-button {
+  background: var(--primary-color);
+  color: white;
+  font-family: "Roboto Slab", serif;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: inset 0 0 1.6em -0.6em red;
+  box-shadow: inset 0 0 1.6em -0.6em red;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  -webkit-box-shadow: 0.1em 0.1em 0.6em 0.2em red;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em red;
+  right: 0.3em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  color: red;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  -webkit-transform: translateX(0.1em);
+  -ms-transform: translateX(0.1em);
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
