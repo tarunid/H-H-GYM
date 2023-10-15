@@ -1,4 +1,4 @@
-import { OfferData } from "../../Api/Home";
+import { OfferData } from "../../api/Home";
 
 const Offer = () => {
   return (

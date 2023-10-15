@@ -1,5 +1,5 @@
 import "./Features.css";
-import { FeaturedData } from "../../Api/Home";
+import { FeaturedData } from "../../api/Home";
 import { Logo } from "../../assets/img";
 
 const Featuers = () => {
