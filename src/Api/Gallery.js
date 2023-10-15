@@ -1,3 +1,5 @@
+// This Sample Data But Extra Like Api Data
+
 export const galleryData = [
 {
   "imgSrc" : "https://prowess.qodeinteractive.com/wp-content/uploads/2018/02/port-img-9.jpg",

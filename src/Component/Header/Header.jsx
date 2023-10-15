@@ -2,11 +2,9 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import Logo from "../../assets/HH_Logo.png";
-// import { useAuth } from "../../hooks/useAuth";
+import { Logo } from "../../assets/img";
 
 let Header = () => {
-  // let { accessToken } = useAuth();
   let [isMobile, setisMobile] = useState(false);
   let [autoClosecomponent, setautoClosecomponent] = useState(false);
   let [isMinWidthReached, setIsMinWidthReached] = useState(
@@ -54,7 +52,7 @@ let Header = () => {
         <div className="Nav-bar">
           <div className="Nav-logo-div">
             <Link to="/">
-              <img src={Logo} className="h-[6vh]" />
+              <img src={Logo} className="h-[6vh]" alt="logo"/>
             </Link>
           </div>
 

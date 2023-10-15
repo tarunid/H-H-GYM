@@ -1,13 +1,10 @@
 import "./Bmi.css";
-// import { Table } from "antd";
 import { Table } from "antd";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect } from "react";
 import * as yup from "yup";
-// import DataTable from "react-data-table-component";
-// import { basicSchema } from "../Contact/schema/schema";
 
 const Bmi = () => {
   let [BmiValue, setBmiValue] = useState();
@@ -128,7 +125,6 @@ const Bmi = () => {
                   /&nbsp; <span className="font-bold">BMI</span>&nbsp; Body Mass
                   Index{" "}
                 </p>
-                {/* <DataTable columns={columns} data={data} /> */}
               </div>
             </div>
             <div className="flex flex-col justify-start items-start text-start">

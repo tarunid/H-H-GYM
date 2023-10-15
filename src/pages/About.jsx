@@ -11,7 +11,6 @@ const AboutPage = () => {
 
   return (
     <>
-
       <Helmet>
         {/* Page Title */}
         <title>About Us - H&H FITNESS STUDIO</title>
@@ -32,7 +31,6 @@ const AboutPage = () => {
         <meta name="twitter:title" content="About Us - H&H FITNESS STUDIO" />
         <meta name="twitter:description" content="Learn about the story, mission, and passionate team behind HH Fitness Studio. Discover how we're dedicated to helping you achieve your fitness goals." />
       </Helmet>
-
       <About />
     </>
   );

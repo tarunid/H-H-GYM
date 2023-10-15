@@ -1,80 +1,68 @@
-export const TrainerData = [
+import { Dumbbell, Exercise, HeroFitness, Heromuscle, OfferIcon1, OfferIcon2, OfferIcon3, OfferIcon4 } from "../assets/img";
+
+export const FeaturedData = [
   {
-    id: 1,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-4.jpg",
-    trainerName: "Trainer",
-    trainDescription: "Personal Trainer",
-    faceBookLink: "https://www.facebook.com/",
-    instargramLink: "https://www.instagram.com/",
-    twitterBookLink: "https://twitter.com/",
+    id: 12,
+    title: "Comprehensive Workouts",
+    content:
+      "diverse workouts, suits all fitness levels, latest equipment, and personal goals tailored.",
+    image: `${Dumbbell}`
   },
   {
-    id: 2,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-4.jpg",
-    trainerName: "Trainer",
-    trainDescription: "Personal Trainer",
-    faceBookLink: "https://www.facebook.com/",
-    instargramLink: "https://www.instagram.com/",
-    twitterBookLink: "https://twitter.com/",
+    id: 13,
+    title: "Expert Guidance",
+    content:
+      "Expert trainers ensure personalized guidance, support, and motivation for your fitness success.",
+      image: `${Heromuscle}`
   },
   {
-    id: 3,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-3.jpg",
-    trainerName: "Trainer Name",
-    trainDescription: "Personal Trainer",
-    faceBookLink: "https://www.facebook.com/",
-    instargramLink: "https://www.instagram.com/",
-    twitterBookLink: "https://twitter.com/",
+    id: 14,
+    title: "Community and Camaraderie",
+    content:
+      "Join our fitness community for motivation and camaraderie that keeps you coming back.",
+      image: `${HeroFitness}`
   },
   {
-    id: 4,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-2.jpg",
-    trainerName: "Trainer Name",
-    trainDescription: "Personal Trainer",
-    faceBookLink: "https://www.facebook.com/",
-    instargramLink: "https://www.instagram.com/",
-    twitterBookLink: "https://twitter.com/",
+    id: 15,
+    title: "Health and Wellness",
+    content:
+      "We prioritize holistic well-being, with nutrition, recovery, and wellness support for a balanced lifestyle.",
+      image: `${Exercise}`
   },
 ];
 
 export const OfferData = [
   {
     id: 1,
-    imgSrc:
-      "./sport.png",
+    imgSrc:`${OfferIcon1}`,
     title: "Personalized Training",
     content:
       "Tailored workouts to match your specific fitness objectives.",
   },
   {
     id: 2,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-2.png",
+    imgSrc:`${OfferIcon2}`,
     title: "Goal Setting",
     content:
       "Collaborative goal-setting with our expert trainers to track your progress.",
   },
   {
     id: 3,
-    imgSrc:
-      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-icon-3.png",
+    imgSrc:`${OfferIcon3}`,
     title: "Diverse Workouts",
     content:
       "Access to a variety of workouts for well-rounded goal achievement.",
   },
   {
     id: 4,
-    imgSrc:
-      "./report.png",
+    imgSrc:`${OfferIcon4}`,
     title: "Progress Tracking",
     content:
       "Regular assessments to ensure you're on the right path to success.",
   },
 ];
+
+// This Both Sample Data But Extra Like Api Data
 
 export const PrcieData = [
   {
@@ -143,33 +131,49 @@ export const PrcieData = [
   },
 ];
 
-export const FeaturedData = [
+export const TrainerData = [
   {
-    id: 12,
-    title: "Comprehensive Workouts",
-    content:
-      "diverse workouts, suits all fitness levels, latest equipment, and personal goals tailored.",
-    image: "./d.png"
+    id: 1,
+    imgSrc:
+      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-4.jpg",
+    trainerName: "Trainer",
+    trainDescription: "Personal Trainer",
+    faceBookLink: "https://www.facebook.com/",
+    instargramLink: "https://www.instagram.com/",
+    twitterBookLink: "https://twitter.com/",
   },
   {
-    id: 13,
-    title: "Expert Guidance",
-    content:
-      "Expert trainers ensure personalized guidance, support, and motivation for your fitness success.",
-      image: "./muscle.png"
+    id: 2,
+    imgSrc:
+      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-4.jpg",
+    trainerName: "Trainer",
+    trainDescription: "Personal Trainer",
+    faceBookLink: "https://www.facebook.com/",
+    instargramLink: "https://www.instagram.com/",
+    twitterBookLink: "https://twitter.com/",
   },
   {
-    id: 14,
-    title: "Community and Camaraderie",
-    content:
-      "Join our fitness community for motivation and camaraderie that keeps you coming back.",
-      image: "./fitness.png"
+    id: 3,
+    imgSrc:
+      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-3.jpg",
+    trainerName: "Trainer Name",
+    trainDescription: "Personal Trainer",
+    faceBookLink: "https://www.facebook.com/",
+    instargramLink: "https://www.instagram.com/",
+    twitterBookLink: "https://twitter.com/",
   },
   {
-    id: 15,
-    title: "Health and Wellness",
-    content:
-      "We prioritize holistic well-being, with nutrition, recovery, and wellness support for a balanced lifestyle.",
-      image: "./exercise.png"
+    id: 4,
+    imgSrc:
+      "https://topfit.qodeinteractive.com/wp-content/uploads/2017/01/h1-team-img-2.jpg",
+    trainerName: "Trainer Name",
+    trainDescription: "Personal Trainer",
+    faceBookLink: "https://www.facebook.com/",
+    instargramLink: "https://www.instagram.com/",
+    twitterBookLink: "https://twitter.com/",
   },
 ];
+
+
+
+

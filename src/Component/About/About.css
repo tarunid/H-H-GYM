@@ -1,10 +1,47 @@
 .bg-about {
-  background-image: url("https://ik.imagekit.io/4z8covdo9/GYM/AboutImg.jpg?updatedAt=1696049895809");
+  /* background-image: url("https://ik.imagekit.io/4z8covdo9/GYM/AboutImg.jpg?updatedAt=1696049895809"); */
   background-size: contain;
   width: 100%;
   height: 640px;
   color: #fff;
   background-repeat: no-repeat;
+}
+
+.bg-black-rappper {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/breadcumb-shape.svg"); */
+  background-size: cover;
+  width: 200px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.bg-black-rappper:hover {
+  color: var(--primary-color);
+}
+
+.bg {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/04/shape-47.jpg"); */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-repeat: no-repeat;
+  padding: 60px 0px 120px 0px;
+}
+
+.bg-about-common {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/banner.jpg"); */
+  background-size: cover;
+  width: 100%;
+  height: 430px;
+  color: #fff;
 }
 
 .strok-text-about {

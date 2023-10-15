@@ -1,3 +1,20 @@
+.bg-choose {
+  /* background-image: url('https://expert-themes.com/html/gym/images/background/1.jpg'); */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  /* background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/04/shape-47.jpg"); */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-repeat: no-repeat;
+  padding: 60px 0px 120px 0px;
+}
+
 .choose-heading {
   font-family: "Montserrat", sans-serif;
   font-size: 36px;
@@ -90,4 +107,35 @@
     transform: rotate3d(1, 1, 0, 0deg);
     opacity: 1;
   }
+}
+
+.rh5v-Overlay_component {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 16px;
+}
+
+.rh5v-Overlay_inner {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-50%);
+  margin-left: -30px;
+  background-color: var(--primary-color);
+  border-radius: 60px;
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
 }

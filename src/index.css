@@ -12,7 +12,6 @@
 
 :root {
   --primary-color: #f85a12;
-  /* --primary-color: #ff0336;  */
   --opacity-color: invert(40%) sepia(99%) saturate(2486%) hue-rotate(355deg)
     brightness(99%) contrast(96%);
   --img-overlay: rgba(145, 54, 12, 0.45);
@@ -38,13 +37,6 @@
   letter-spacing: 9px;
   line-height: 61.8833px;
   text-transform: uppercase;
-}
-
-@media screen and (max-width: 768px) {
-  .heading-2 {
-    font-size: 22px;
-    line-height: 28px;
-  }
 }
 
 .heading-3 {
@@ -82,77 +74,14 @@
   line-height: 27.7333px;
 }
 
-/* .heading-bg {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/section-title.svg");
-  background-size: cover;
-  width: 180px;
-  color: #fff;
-  background-repeat: no-repeat;
-} */
-
-.bg-hero-common {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/banner.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 430px;
-  color: #fff;
-}
-
-.bg-black-rappper {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/img/breadcumb-shape.svg");
-  background-size: cover;
-  width: 200px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-}
-
-.bg-black-rappper:hover {
-  color: var(--primary-color);
-}
-
-
-
-.bg {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/04/shape-47.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-repeat: no-repeat;
-  padding: 60px 0px 120px 0px;
-}
-
-.bg-feedback {
-  background-image: url("https://assets.website-files.com/5dd3758e77520f215548fb15/5dd3758e77520f23e748fb2a_shape_02.svg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-repeat: no-repeat;
-}
-
-.feature-list > li {
-  padding: 10px;
-}
-
-.bg-heroSection {
-  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/c_scale,w_1536/v1689867666/L_d2rs5f.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-repeat: no-repeat;
+@media screen and (max-width: 768px) {
+  .heading-2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
 }
 
 .bg-heroSection-heading {
-  /* background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689788531/WhatsApp_Image_2023-07-18_at_23.39.22-removebg-preview_mh7kbp.png"); */
   background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1690022119/newww_jzicql.svg");
   background-size: cover;
   width: 248px;
@@ -170,44 +99,3 @@
   line-height: 28px;
   text-transform: uppercase;
 }
-
-/* .bg-features {
-  background-image: url("https://res.cloudinary.com/dsq5spft3/image/upload/v1689418066/Screenshot_2023-07-15_161004_o0yqsf.jpg");
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-repeat: no-repeat;
-} */
-
-.bg-footer-holder {
-  background-image: url("https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/themes/gymat/assets/element/footer-2.png");
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 25% 75%;
-}
-
-.bg-choose {
-  background-image: url('https://expert-themes.com/html/gym/images/background/1.jpg');
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.ant-table-wrapper .ant-table-pagination.ant-pagination {
-  display: none;
-}
-
-.ant-modal .ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
-  display: none;
-}
-
-/* @media (max-width: 700px) {
-  .bg-features {
-    background-image: url("");
-  }
-} */

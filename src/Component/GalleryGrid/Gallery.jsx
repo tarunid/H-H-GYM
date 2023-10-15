@@ -1,3 +1,4 @@
+import { CommomHero, CommonTextBlackWrapper } from "../../assets/img";
 import "antd/dist/antd";
 import { Tabs } from "antd";
 import All from "./All";
@@ -27,10 +28,10 @@ const options = { tabPane: "true" };
 const Gallery = () => (
   <>
     <section className="pb-14">
-      <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
+      <div className="bg-gallery-common w-[100%] h-[430px] flex flex-col justify-center items-start" style={{ backgroundImage: `url(${CommomHero})`}}>
         <div className="grid grid-cols-1 w-[70%] mx-auto py-16">
           <h1 className="contact-title">Gallery</h1>
-          <p className="bg-black-rappper">
+          <p className="bg-black-rappper" style={{ backgroundImage: `url(${CommonTextBlackWrapper})`}}>
             H&H &ndash;
             <span className="text-[var(--primary-color)] uppercase">
               {" "}

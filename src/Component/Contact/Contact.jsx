@@ -1,4 +1,5 @@
 import "./Contact.css";
+import { CommomHero, CommonTextBlackWrapper } from "../../assets/img";
 import { Link } from "react-router-dom";
 import { AiOutlineInstagram, AiFillPhone } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
@@ -37,10 +38,10 @@ const Contact = () => {
   return (
     <>
       <section className="pb-14">
-        <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
+        <div className="bg-contact-common w-[100%] h-[430px] flex flex-col justify-center items-start" style={{ backgroundImage: `url(${CommomHero})`}}>
           <div className="grid grid-cols-1 w-[70%] mx-auto">
             <h1 className="contact-title">Contact</h1>
-            <p className="bg-black-rappper">
+            <p className="bg-black-rappper" style={{ backgroundImage: `url(${CommonTextBlackWrapper})`}}>
               H&H &ndash;
               <span className="text-[var(--primary-color)] uppercase">
                 {" "}

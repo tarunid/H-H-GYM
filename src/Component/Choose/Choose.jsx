@@ -1,27 +1,30 @@
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import "./choose.css";
-import video from "../../assets/video.mp4";
-
-import dumbellColor from "../../assets/dumbellColor.svg";
-import Wellness from "../../assets/Wellness.svg";
-import Trainer from "../../assets/Trainer.svg"
-import CommunitySupport from "../../assets/CommunitySupport.svg"
-
+import { BlackBg, CommunitySupport, DumbellColored, Trainer, video1, Wellness } from "../../assets/img";
 
 const Choose = () => {
   return (
     <>
-      <section className="bg-choose py-14">
+      <section className="bg-choose py-14" style={{ backgroundImage: `url(${BlackBg})`}}>
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
-            <div className="flex justify-center">
-              <Video
-                loop
-                controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}
-                poster={""}>
-                <source src={video} type="video/mp4" />
-              </Video>
+            <div className="flex justify-center rounded-xl">
+            <Video
+                  loop
+                  controls={[
+                    "PlayPause",
+                    "Seek",
+                    "Time",
+                    "Volume",
+                    "Fullscreen",
+                  ]}
+                  poster="">
+                  <source
+                    src={video1}
+                    type="video/mp4"
+                  />
+                </Video>
             </div>
             <div className="flex flex-col justify-start mt-5">
               <div className="py-5 bg-heroSection-heading">
@@ -41,27 +44,30 @@ const Choose = () => {
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={Trainer}
-                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
+                    className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1"
+                    loading="lazy"
                     alt="thumbImg"
                   />
                   <p className="choose-sub-para">Expert Trainers</p>
                 </div>
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
-                    src={dumbellColor}
+                    src={DumbellColored}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 "
                     alt="thumbImg"
+                    loading="lazy"
                   />
                   <p className="choose-sub-para">Equipment Power</p>
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:flex-row justify-between items-center py-5">
-                
+
                 <div className="flex gap-4 items-center hover:scale-105 w-[100%]">
                   <img
                     src={Wellness}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1  "
                     alt="thumbImg"
+                    loading="lazy"
                   />
                   <p className="choose-sub-para">Holistic Wellness</p>
                 </div>
@@ -71,6 +77,7 @@ const Choose = () => {
                     src={CommunitySupport}
                     className="bg-[var(--primary-color)] rounded-full p-3 rotate-in-diag-1 w-[88.2px] h-[88.2px]"
                     alt="thumbImg"
+                    loading="lazy"
                   />
                   <p className="choose-sub-para">Community Support</p>
                 </div>

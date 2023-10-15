@@ -1,6 +1,7 @@
 import "./Price.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { WhiteBg } from "../../assets/img";
 
 const Price = () => {
 
@@ -23,7 +24,7 @@ const Price = () => {
 
   return (
     <>
-      <section className="py-14 bg">
+      <section className="py-14 bg-Price" style={{ backgroundImage: `url(${WhiteBg})`}}>
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 w-[80%] mx-auto pb-14">
             <div className="flex flex-col justify-center items-center text-center my-1">

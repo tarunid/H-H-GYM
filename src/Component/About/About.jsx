@@ -1,19 +1,18 @@
 import { DefaultPlayer as Video } from "react-html5video";
 import "react-html5video/dist/styles.css";
 import "./About.css";
-import Trainer from "../Trainer/Trainer";
-import poster from "../../assets/Poster.jpg";
-import { video2 } from "../../assets/img"
+import { AboutImg, CommomHero, CommonTextBlackWrapper, DumbbellPlain, Poster, video2, WhiteBg } from "../../assets/img";
 import { Link } from "react-router-dom";
+import Trainer from "../Trainer/Trainer";
 
 const About = () => {
   return (
     <>
       <section className="pb-14">
-        <div className="bg-hero-common w-[100%] h-[430px] flex flex-col justify-center items-start">
+        <div className="bg-about-common w-[100%] h-[430px] flex flex-col justify-center items-start" style={{ backgroundImage: `url(${CommomHero})` }}>
           <div className="grid grid-cols-1 w-[70%] mx-auto py-16">
             <h1 className="contact-title">About us</h1>
-            <p className="bg-black-rappper">
+            <p className="bg-black-rappper" style={{ backgroundImage: `url(${CommonTextBlackWrapper})` }}>
               H&H &ndash;
               <span className="text-[var(--primary-color)] uppercase">
                 &#160;About
@@ -23,7 +22,7 @@ const About = () => {
         </div>
         <div className="2xl:container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto py-14">
-            <div className="bg-about flex justify-center items-center"></div>
+            <div className="bg-about flex justify-center items-center" style={{ backgroundImage: `url(${AboutImg})` }}></div>
             <div className="flex flex-col justify-start">
               <div className="py-5 bg-heroSection-heading">
                 <p className="text-[#fff]">Who We Are</p>
@@ -53,7 +52,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg">
+          <div className="bg" style={{ backgroundImage: `url(${WhiteBg})` }}>
             <div className="grid grid-cols-1 w-[90%] mx-auto py-14">
               <div className="flex justify-center rounded-xl">
                 <Video
@@ -65,7 +64,7 @@ const About = () => {
                     "Volume",
                     "Fullscreen",
                   ]}
-                  poster={poster}>
+                  poster={Poster}>
                   <source
                     src={video2}
                     type="video/mp4"
@@ -83,8 +82,10 @@ const About = () => {
                   <h3 className="title-expert-info">Expert Trainers</h3>
                 </span>
                 <img
-                  src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
+                  src={DumbbellPlain}
                   className="on-hover-img-11"
+                  alt="IconImg"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -96,8 +97,10 @@ const About = () => {
                   <h3 className="title-expert-info">Modern Equipments</h3>
                 </span>
                 <img
-                  src="https://res.cloudinary.com/dsq5spft3/image/upload/v1689404278/dumbbell_de55ek.png"
+                  src={DumbbellPlain}
                   className="on-hover-img-11"
+                  alt="IconImg"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -17,7 +17,6 @@ const Body = () => {
 
   return (
     <>
-
       <Helmet>
 
         <title>H&H FITNESS STUDIO</title>
@@ -28,7 +27,6 @@ const Body = () => {
         {/* <!-- Meta Description (for SEO) --> */}
         <meta name="description"
           content="Welcome to HH Fitness Studio! Discover a world of fitness and wellness at hhfitnessstudio.com. We offer top-notch facilities, expert trainers, and a wide range of fitness programs. Join us today and start your journey to a healthier lifestyle." />
-
 
         {/* <!-- Canonical Link (if necessary) --> */}
         <link rel="canonical" href="https://hhfitnessstudio.com" />

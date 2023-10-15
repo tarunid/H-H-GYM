@@ -5,8 +5,6 @@ import { Helmet } from "react-helmet";
 
 const ContactPage = () => {
 
-
-
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
