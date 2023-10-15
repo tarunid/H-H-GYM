@@ -1,10 +1,10 @@
-import FeedBack from "../Component/Feedback/FeedBack";
-import Offer from "../Component/Offer/Offer";
-import Price from "../Component/Price/Price";
-import HeroSection from "../Component/HeroSection/HeroSection";
-import Bmi from "../Component/Bmi/Bmi";
-import Choose from "../Component/Choose/Choose";
-import Featuers from "../Component/Features/Features";
+import FeedBack from "../component/Feedback/FeedBack";
+import Offer from "../component/Offer/Offer";
+import Price from "../component/Price/Price";
+import HeroSection from "../component/HeroSection/HeroSection";
+import Bmi from "../component/Bmi/Bmi";
+import Choose from "../component/Choose/Choose";
+import Featuers from "../component/Features/Features";
 import { useEffect } from "react";
 import ReactGA from 'react-ga';
 import { Helmet } from "react-helmet";

@@ -2,15 +2,15 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Error from "./Component/Error/Error";
+import Error from "./component/Error/Error";
 import Loader from "./component/Loaded/Loader";
-import App from "./Component/AppLayout";
+import App from "./component/AppLayout";
 import Body from "./pages/Body";
 
 const LazyGalleryPage = lazy(() => import("./pages/Gallery"));
 const LazyAboutPage = lazy(() => import("./pages/About"));
 const LazyContactPage = lazy(() => import("./pages/Contact"));
-const LazyTermCondition = lazy(() => import("./Component/TermAndCondition/TermCondition"));
+const LazyTermCondition = lazy(() => import("./component/TermAndCondition/TermCondition"));
 const LazyPrivacyPolicy = lazy(() => import("./Component/PrivacyPolicy/PrivacyPolicy"));
 const LazySiteMap = lazy(() => import("./component/Sitemap/Sitemap"));
 

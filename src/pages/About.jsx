@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ReactGA from 'react-ga';
 import { Helmet } from "react-helmet";
-import About from "../Component/About/About";
+import About from "../component/About/About";
 
 const AboutPage = () => {
 

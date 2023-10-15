@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import Contact from "../Component/Contact/Contact";
+import Contact from "../component/Contact/Contact";
 import { Helmet } from "react-helmet";
 
 const ContactPage = () => {

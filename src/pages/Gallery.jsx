@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ReactGA from 'react-ga';
 import { Helmet } from "react-helmet";
-import Gallery from "../Component/GalleryGrid/Gallery";
+import Gallery from "../component/GalleryGrid/Gallery";
 
 const GalleryPage = () => {
 

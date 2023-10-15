@@ -19,7 +19,6 @@ const App = () => {
       setLoading(false);
     }, 500);
 
-
     window.scrollTo({
       top: 0,
       behaviour: "smooth",
