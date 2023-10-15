@@ -11,7 +11,7 @@ const LazyGalleryPage = lazy(() => import("./pages/Gallery"));
 const LazyAboutPage = lazy(() => import("./pages/About"));
 const LazyContactPage = lazy(() => import("./pages/Contact"));
 const LazyTermCondition = lazy(() => import("./component/TermAndCondition/TermCondition"));
-const LazyPrivacyPolicy = lazy(() => import("./Component/PrivacyPolicy/PrivacyPolicy"));
+const LazyPrivacyPolicy = lazy(() => import("./component/PrivacyPolicy/PrivacyPolicy"));
 const LazySiteMap = lazy(() => import("./component/Sitemap/Sitemap"));
 
 let browerRouter = createBrowserRouter([
