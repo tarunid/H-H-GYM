@@ -20,12 +20,12 @@ const ContactPage = () => {
         <meta name="description" content="Get in touch with HH Fitness Studio. Our friendly team is here to answer your questions, schedule appointments, and assist with your fitness journey." />
 
         {/* Canonical Link (if necessary) */}
-        <link rel="canonical" href="https://hhfitnessstudio.com/contact-us" />
+        <link rel="canonical" href="https://hhfitnessstudio.com/contact" />
 
         {/* Open Graph Meta Tags (for social media sharing) */}
         <meta property="og:title" content="Contact Us - H&H FITNESS STUDIO" />
         <meta property="og:description" content="Get in touch with HH Fitness Studio. Our friendly team is here to answer your questions, schedule appointments, and assist with your fitness journey." />
-        <meta property="og:url" content="https://hhfitnessstudio.com/contact-us" />
+        <meta property="og:url" content="https://hhfitnessstudio.com/contact" />
 
         {/* Twitter Card Meta Tags (for Twitter sharing) */}
         <meta name="twitter:card" content="summary" />

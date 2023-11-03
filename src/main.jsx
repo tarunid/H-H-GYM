@@ -4,7 +4,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./component/Error/Error";
 import Loader from "./component/Loaded/Loader";
-import App from "./component/AppLayout";
+import App from "./RootLayout/AppLayout";
 import Body from "./pages/Body";
 
 const LazyGalleryPage = lazy(() => import("./pages/Gallery"));

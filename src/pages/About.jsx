@@ -24,7 +24,7 @@ const AboutPage = () => {
         {/* Open Graph Meta Tags (for social media sharing) */}
         <meta property="og:title" content="About Us - H&H FITNESS STUDIO" />
         <meta property="og:description" content="Learn about the story, mission, and passionate team behind HH Fitness Studio. Discover how we're dedicated to helping you achieve your fitness goals." />
-        <meta property="og:url" content="https://hhfitnessstudio.com/about-us" />
+        <meta property="og:url" content="https://hhfitnessstudio.com/about" />
 
         {/* Twitter Card Meta Tags (for Twitter sharing) */}
         <meta name="twitter:card" content="summary" />

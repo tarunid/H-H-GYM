@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import ReactGA from 'react-ga';
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
+import Header from "../component/Header/Header";
+import Footer from "../component/Footer/Footer";
 import { Toaster } from "react-hot-toast";
-import Loader from "./Loaded/Loader";
+import Loader from "../component/Loaded/Loader";
 
 ReactGA.initialize('G-3GZQHE60S2');
 
@@ -14,7 +14,6 @@ const App = () => {
   let location = useLocation();
 
   useEffect(() => {
-
     setTimeout(() => {
       setLoading(false);
     }, 500);
