@@ -7,21 +7,20 @@ import { useEffect } from "react";
 import axiosInstance from "../../interceptors/axiosInstance";
 import Loader from "../Loaded/Loader";
 
-
 const All = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [galleryData, setgalleryData] = useState([]);
+  const [galleryData, setGalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
 
   useEffect(() => {
-    FetchData();
+    fetchData();
   }, []);
 
-  let FetchData = async () => {
+  let fetchData = async () => {
     try {
       setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-all-limit");
-      setgalleryData(response.data.galleryArray);
+      setGalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
       setIsLoading(false);
     } catch (error) {
@@ -29,10 +28,10 @@ const All = () => {
     }
   };
 
-  let FetchAllData = async () => {
+  let fetchAllData = async () => {
     try {
       const response = await axiosInstance.get("/gallery/gallery-all-all");
-      setgalleryData(response.data.galleryArray);
+      setGalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -83,10 +82,13 @@ const All = () => {
       )}
 
       <div className="2xl:container mx-auto">
-        {isLoading ? (<div className="w-[100%] flex flex-col items-center justify-center">
-          <Loader /></div>) : <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
-          {
-            galleryData.map((e, index) => {
+        {isLoading ? (
+          <div className="w-[100%] flex flex-col items-center justify-center">
+            <Loader />
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
+            {galleryData.map((e, index) => {
               return (
                 <>
                   <div
@@ -106,17 +108,17 @@ const All = () => {
                     </div>
                   </div>
                 </>
-              )
-            })
-          }
-        </div>
-        }
-
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 w-[70%] mx-auto">
         <div className="flex justify-center items-center py-10">
-          <button className="button-gallery" onClick={FetchAllData}>LOAD MORE</button>
+          <button className="button-gallery" onClick={fetchAllData}>
+            LOAD MORE
+          </button>
         </div>
       </div>
     </>

@@ -9,18 +9,18 @@ import Loader from "../Loaded/Loader";
 
 const Dumbbell = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [galleryData, setgalleryData] = useState([]);
+  const [galleryData, setGalleryData] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
 
   useEffect(() => {
-    FetchData();
+    fetchData();
   }, []);
 
-  let FetchData = async () => {
+  let fetchData = async () => {
     try {
       setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-type-limit/Equipments");
-      setgalleryData(response.data.galleryArray);
+      setGalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
       setIsLoading(false);
     } catch (error) {
@@ -28,11 +28,11 @@ const Dumbbell = () => {
     }
   };
 
-  let FetchAllData = async () => {
+  let fetchAllData = async () => {
     try {
       setIsLoading(true);
       const response = await axiosInstance.get("/gallery/gallery-type-all/Equipments");
-      setgalleryData(response.data.galleryArray);
+      setGalleryData(response.data.galleryArray);
       setGalleryImages(response.data.galleryArray);
       setIsLoading(false);
     } catch (error) {
@@ -71,10 +71,10 @@ const Dumbbell = () => {
         <div className="sliderWrap">
           <IoIosCloseCircle className="btnClose" onClick={handleCloseModal} />
           <div className="btnPrev" onClick={prevSlide}>
-            <GrFormPreviousLink className="h-11 w-10"/>
+            <GrFormPreviousLink className="h-11 w-10" />
           </div>
           <div className="btnNext" onClick={nextSlide}>
-            <GrFormNextLink className="h-11 w-10"/>
+            <GrFormNextLink className="h-11 w-10" />
           </div>
 
           <div className="fullScreenImage">
@@ -84,37 +84,37 @@ const Dumbbell = () => {
       )}
 
       <div className="2xl:container mx-auto">
-      {isLoading ? (<div className="w-[100%] flex flex-col items-center justify-center">
+        {isLoading ? (<div className="w-[100%] flex flex-col items-center justify-center">
           <Loader /></div>) :
-        <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
-          {galleryData.map((e, index) => {
-            return (
-              <>
-                <div
-                  key={index}
-                  className="card-gallery"
-                  onClick={() => {
-                    handeOpenModal(index);
-                  }}>
-                  <img className="img-img" src={e.imgSrc} alt="GymImg" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-[80%] mx-auto gap-5">
+            {galleryData.map((e, index) => {
+              return (
+                <>
+                  <div
+                    key={index}
+                    className="card-gallery"
+                    onClick={() => {
+                      handeOpenModal(index);
+                    }}>
+                    <img className="img-img" src={e.imgSrc} alt="GymImg" />
 
-                  <div className="img-overlay">
-                    <span>
-                      <h3 className="img-overlay-name text-center">
-                        {e.textName}
-                      </h3>
-                    </span>
+                    <div className="img-overlay">
+                      <span>
+                        <h3 className="img-overlay-name text-center">
+                          {e.textName}
+                        </h3>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </>
-            );
-          })}
-        </div>}
+                </>
+              );
+            })}
+          </div>}
       </div>
 
       <div className="grid grid-cols-1 w-[70%] mx-auto">
         <div className="flex justify-center items-center py-10">
-          <button className="button-gallery" onClick={FetchAllData}>LOAD MORE</button>
+          <button className="button-gallery" onClick={fetchAllData}>LOAD MORE</button>
         </div>
       </div>
     </>
