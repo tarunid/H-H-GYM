@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 
 import Error from "../component/Error/Error";
 import Loader from "../component/Loaded/Loader";
-import App from "../Layout/AppLayout";
+import App from "../layout/AppLayout";
 import Body from "../pages/Body";
 
 const LazyGalleryPage = lazy(() => import("../pages/Gallery"));
